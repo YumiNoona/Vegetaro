@@ -1,57 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2xcdqoqj74ck"]
+[gd_scene load_steps=5 format=3 uid="uid://c2xcdqoqj74ck"]
 
 [ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="1_l6ahy"]
 [ext_resource type="Script" uid="uid://d30rjm10ktq4k" path="res://Scripts/UI/GameOverPanel.gd" id="1_pqxt1"]
+[ext_resource type="FontFile" uid="uid://debd8pk2gwtwk" path="res://Assets/Font/Exo2-Bold.ttf" id="2_ntvxi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpie4"]
-font_size = 40
-font_color = Color(0.682576, 0.164104, 0, 1)
+font = ExtResource("2_ntvxi")
+font_size = 80
+font_color = Color(1, 0.604147, 0.505348, 1)
+outline_size = 3
+outline_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
 
 [node name="GameOverPanel" type="Control"]
-custom_minimum_size = Vector2(700, 500)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 700.0
-offset_bottom = 500.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_pqxt1")
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(700, 500)
+custom_minimum_size = Vector2(900, 700)
 layout_mode = 1
-offset_right = 700.0
-offset_bottom = 400.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -137.0
-offset_right = 137.0
-offset_bottom = 55.0
-grow_horizontal = 2
+offset_left = 510.0
+offset_top = 196.0
+offset_right = 1410.0
+offset_bottom = 293.0
 text = "!!  GAME OVER  !!"
 label_settings = SubResource("LabelSettings_fpie4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BTN_Restart" parent="." instance=ExtResource("1_l6ahy")]
 layout_mode = 1
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -71.0
-offset_right = 168.0
-offset_bottom = 17.0
-grow_vertical = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 510.0
+offset_top = 500.0
+offset_right = 1410.0
+offset_bottom = 588.0
+grow_vertical = 1
 theme_override_font_sizes/font_size = 64
 text = "  RESTART  "
 
 [node name="BTN_Quit" parent="." instance=ExtResource("1_l6ahy")]
 layout_mode = 1
-offset_left = -110.0
-offset_top = -166.0
-offset_right = 111.0
-offset_bottom = -78.0
+offset_left = -450.0
+offset_top = -385.0
+offset_right = 450.0
+offset_bottom = -297.0
 theme_override_font_sizes/font_size = 64
 text = "  QUIT  "
 

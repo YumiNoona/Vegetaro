@@ -34,4 +34,5 @@ spawn_type = 0
 fixed_spawn_time = 0.5
 min_spawn_time = 0.3
 max_spawn_time = 1.5
+is_boss_wave = false
 metadata/_custom_type_script = "uid://dq7rnby5u5823"

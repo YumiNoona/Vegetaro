@@ -24,11 +24,13 @@ position = Vector2(-120, -48)
 script = ExtResource("5_fcfn0")
 boss = NodePath("..")
 minion_scene = ExtResource("6_x3uvh")
-minions_per_spawn = 2
-regen_amount = 5.0
+minions_per_spawn = 5
+max_minion_spawns = 10
 
 [node name="ShootingBehavior" type="Node2D" parent="." index="11" node_paths=PackedStringArray("enemy", "fire_pos")]
 script = ExtResource("5_grqr3")
 enemy = NodePath("..")
 fire_pos = NodePath("../Visuals/FirePos")
 projectile_scene = ExtResource("6_yurbg")
+even_spread = false
+random_spread = true

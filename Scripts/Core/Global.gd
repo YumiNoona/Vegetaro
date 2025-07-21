@@ -70,7 +70,7 @@ enum UpgradeTier{
 	LEGENDARY
 }
 
-var coins: int = 500
+var coins: int = 100
 var player: Player
 var game_paused := false
 

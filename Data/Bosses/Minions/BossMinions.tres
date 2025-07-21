@@ -7,12 +7,12 @@
 script = ExtResource("1_fpu11")
 has_second_phase = true
 second_phase_threshold = 0.1
-second_phase_hp = 40.0
+second_phase_hp = 200.0
 camera_shake_on_second_phase = true
 camera_shake_strength = 50.0
 second_phase_speed = 400.0
 second_phase_attack = 20.0
-second_phase_scale = 1.5
+second_phase_scale = 2.0
 second_phase_pulse_speed = 5.0
 second_phase_glow_color = Color(0.598113, 0.551595, 0.987155, 1)
 second_phase_material = ExtResource("2_nm3dg")

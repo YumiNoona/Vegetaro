@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=9 format=3 uid="uid://lk0aruxq10l6"]
+
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="1_nrtho"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="2_cpyax"]
+[ext_resource type="PackedScene" uid="uid://bbgufv1ucxco3" path="res://Scenes/Enemy/EnemyCharger.tscn" id="3_ky83n"]
+[ext_resource type="PackedScene" uid="uid://dodus8qhsaxxi" path="res://Scenes/Enemy/EnemyChaserMid.tscn" id="4_ierk0"]
+[ext_resource type="PackedScene" uid="uid://dtuh1so08s3gq" path="res://Scenes/Enemy/EnemyShooter.tscn" id="5_qlqe5"]
+
+[sub_resource type="Resource" id="Resource_pwt1f"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("3_ky83n")
+weight = 2
+metadata/_custom_type_script = "uid://durhehh0qa2ju"
+
+[sub_resource type="Resource" id="Resource_vu7hd"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("4_ierk0")
+weight = 3
+metadata/_custom_type_script = "uid://durhehh0qa2ju"
+
+[sub_resource type="Resource" id="Resource_k0t0u"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("5_qlqe5")
+weight = 5
+metadata/_custom_type_script = "uid://durhehh0qa2ju"
+
+[resource]
+script = ExtResource("1_nrtho")
+units = Array[ExtResource("2_cpyax")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd"), SubResource("Resource_k0t0u")])
+from = 68
+to = 85
+wave_time = 30.0
+spawn_type = 1
+fixed_spawn_time = 0.5
+min_spawn_time = 0.4
+max_spawn_time = 1.8
+is_boss_wave = false
+metadata/_custom_type_script = "uid://dq7rnby5u5823"

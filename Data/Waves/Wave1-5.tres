@@ -27,9 +27,9 @@ metadata/_custom_type_script = "uid://durhehh0qa2ju"
 [resource]
 script = ExtResource("1_n02ik")
 units = Array[ExtResource("2_pyx10")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd"), SubResource("Resource_k0t0u")])
-from = 3
+from = 1
 to = 5
-wave_time = 1.0
+wave_time = 20.0
 spawn_type = 1
 fixed_spawn_time = 0.5
 min_spawn_time = 0.3

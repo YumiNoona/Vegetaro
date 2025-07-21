@@ -26,12 +26,13 @@ metadata/_custom_type_script = "uid://durhehh0qa2ju"
 
 [resource]
 script = ExtResource("1_ql6hc")
-units = Array[ExtResource("2_im6dh")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd"), SubResource("Resource_k0t0u")])
+units = Array[ExtResource("2_im6dh")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd"), SubResource("Resource_k0t0u"), null, null])
 from = 35
 to = 65
 wave_time = 30.0
-spawn_type = 0
+spawn_type = 1
 fixed_spawn_time = 0.5
-min_spawn_time = 0.45
-max_spawn_time = 1.9
+min_spawn_time = 0.2
+max_spawn_time = 0.9
+is_boss_wave = false
 metadata/_custom_type_script = "uid://dq7rnby5u5823"
