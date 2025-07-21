@@ -92,13 +92,16 @@ func get_wave_text() -> String:
 
 
 func clear_enemies() -> void:
-	if spawned_enemies.size() > 0:
-		for enemy: Enemy in spawned_enemies:
-			if is_instance_valid(enemy):
+	var all_enemies = get_tree().get_nodes_in_group("enemies")
+	for enemy in all_enemies:
+		if is_instance_valid(enemy):
+			if enemy.has_method("destroy_enemy"):
 				enemy.destroy_enemy()
-			
+			else:
+				enemy.queue_free()
 	spawned_enemies.clear()
-	
+
+
 
 
 func get_wave_timer_text() -> String:

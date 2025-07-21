@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://yx5r63vuwhpb"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_62aou"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2_e1ub6"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="3_j6qap"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/Sprites/Enemies/Enemy_4.png" id="4_ckc22"]
+[ext_resource type="Script" uid="uid://biu0sab8u0i8c" path="res://Data/Bosses/Mine/MineBehavior.gd" id="5_erijl"]
+[ext_resource type="PackedScene" uid="uid://cbm8b53qq26co" path="res://Data/Bosses/Mine/Landmine.tscn" id="6_2oj4e"]
+
+[node name="BossMine" instance=ExtResource("1_62aou")]
+position = Vector2(1, 0)
+script = ExtResource("2_e1ub6")
+stats = ExtResource("3_j6qap")
+
+[node name="Sprite" parent="Visuals" index="1"]
+texture = ExtResource("4_ckc22")
+
+[node name="FirePos" type="Marker2D" parent="Visuals" index="2"]
+position = Vector2(-120, -48)
+
+[node name="MineBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5_erijl")
+boss = NodePath("..")
+mine_scene = ExtResource("6_2oj4e")
+mine_cooldown = 2.0
+max_mines = 3
