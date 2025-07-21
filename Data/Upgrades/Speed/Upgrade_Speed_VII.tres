@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://cdrt582as1g5d"]
+
+[ext_resource type="Script" uid="uid://fhannu8q7i6y" path="res://Scripts/UI/ItemUpgrade.gd" id="1_rv1he"]
+[ext_resource type="Texture2D" uid="uid://jy46p56ktiqs" path="res://Assets/Sprites/Upgrades/Charge.png" id="1_x670q"]
+
+[resource]
+script = ExtResource("1_rv1he")
+value = 7.0
+description = "+7"
+stat_id = "speed"
+item_name = "Speed VII"
+item_icon = ExtResource("1_x670q")
+item_tier = 2
+item_type = 1
+item_cost = 0
+metadata/_custom_type_script = "uid://fhannu8q7i6y"

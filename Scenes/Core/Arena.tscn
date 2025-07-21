@@ -1,0 +1,118 @@
+[gd_scene load_steps=21 format=3 uid="uid://bk381kdecixgc"]
+
+[ext_resource type="Script" uid="uid://b6b7nvocyq31f" path="res://Scripts/Core/Arena.gd" id="1_dvot3"]
+[ext_resource type="Texture2D" uid="uid://cy4xfx762bxgb" path="res://Assets/Sprites/BG.png" id="2_q377n"]
+[ext_resource type="Texture2D" uid="uid://ov4fmsbglo55" path="res://Assets/Sprites/Map.png" id="3_4xlcj"]
+[ext_resource type="Script" uid="uid://b5e0rldhvjdr3" path="res://Scripts/Core/Camera.gd" id="5_a7u2w"]
+[ext_resource type="Script" uid="uid://bougit5dqlg2t" path="res://Scripts/Waves/Spawner.gd" id="6_ctavx"]
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="7_ynyjf"]
+[ext_resource type="Resource" uid="uid://b4rh1clk16if4" path="res://Data/Waves/Wave1-5.tres" id="8_22bra"]
+[ext_resource type="Resource" uid="uid://dtcm5owbhdsvb" path="res://Data/Waves/Wave5-15.tres" id="8_qae75"]
+[ext_resource type="Resource" uid="uid://hwydfiefijf3" path="res://Data/Waves/Wave15-35.tres" id="9_catn3"]
+[ext_resource type="PackedScene" uid="uid://ld7p2otbdcgi" path="res://Scenes/UI/Coins/CoinsBag.tscn" id="9_q377n"]
+[ext_resource type="FontFile" uid="uid://c4t5k5hnacwr1" path="res://Assets/Font/Michroma-Regular.ttf" id="9_qae75"]
+[ext_resource type="PackedScene" uid="uid://dgugckvx4ls3s" path="res://Scenes/UI/Upgrade/UpgradePanel.tscn" id="10_catn3"]
+[ext_resource type="Resource" uid="uid://cdq3dm610r7ku" path="res://Data/Waves/Wave35-65.tres" id="10_jntb4"]
+[ext_resource type="PackedScene" uid="uid://rpbk8vix4rfl" path="res://Scenes/UI/Shop/ShopPanel.tscn" id="11_jntb4"]
+[ext_resource type="Resource" uid="uid://lk0aruxq10l6" path="res://Data/Waves/Wave65-85.tres" id="11_pshlx"]
+[ext_resource type="Resource" uid="uid://bug8apa46ww63" path="res://Data/Waves/Wave85-100.tres" id="12_2qk2d"]
+[ext_resource type="PackedScene" uid="uid://dmdysybjf81e" path="res://Scenes/UI/Selection/SelectionPanel.tscn" id="38_4xlcj"]
+[ext_resource type="AudioStream" uid="uid://prc8bub0x4s1" path="res://Assets/Audio/Bg Music.mp3" id="38_pdycw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2tw1v"]
+font = ExtResource("9_qae75")
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bugre"]
+line_spacing = 0.0
+font = ExtResource("9_qae75")
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Arena" type="Node2D"]
+script = ExtResource("1_dvot3")
+normal_color = Color(1, 1, 1, 1)
+blocked_color = Color(1, 0.290196, 0.454902, 1)
+critical_color = Color(0.996078, 0.780392, 0.380392, 1)
+hp_color = Color(0, 0.627451, 0.482353, 1)
+
+[node name="BlackBackGround" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_q377n")
+
+[node name="GrassBackGround" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("3_4xlcj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_a7u2w")
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("6_ctavx")
+waves_data = Array[ExtResource("7_ynyjf")]([ExtResource("8_22bra"), ExtResource("8_qae75"), ExtResource("9_catn3"), ExtResource("10_jntb4"), ExtResource("11_pshlx"), ExtResource("12_2qk2d")])
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="WaveTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="GameUI" type="CanvasLayer" parent="."]
+
+[node name="CoinsBag" parent="GameUI" instance=ExtResource("9_q377n")]
+unique_name_in_owner = true
+offset_right = 396.0
+
+[node name="WaveIndexLabel" type="Label" parent="GameUI"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 20.0
+offset_right = 208.0
+offset_bottom = 111.0
+grow_horizontal = 2
+text = "Wave 1"
+label_settings = SubResource("LabelSettings_2tw1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaveTimeLabel" type="Label" parent="GameUI"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.5
+offset_top = 100.0
+offset_right = 144.5
+offset_bottom = 188.0
+grow_horizontal = 2
+text = "10"
+label_settings = SubResource("LabelSettings_bugre")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradePanel" parent="GameUI" instance=ExtResource("10_catn3")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ShopPanel" parent="GameUI" instance=ExtResource("11_jntb4")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SelectionPanel" parent="GameUI" instance=ExtResource("38_4xlcj")]
+
+[node name="BGPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_pdycw")
+volume_db = -30.0
+autoplay = true
+
+[connection signal="on_wave_completed" from="Spawner" to="." method="_on_spawner_on_wave_completed"]
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Spawner/WaveTimer" to="Spawner" method="_on_wave_timer_timeout"]
+[connection signal="on_shop_next_wave" from="GameUI/ShopPanel" to="." method="_on_shop_panel_on_shop_next_wave"]
+[connection signal="on_selection_completed" from="GameUI/SelectionPanel" to="." method="_on_selection_panel_on_selection_completed"]

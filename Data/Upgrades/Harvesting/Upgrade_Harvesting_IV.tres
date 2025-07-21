@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://dpaxc3ds8ptgf"]
+
+[ext_resource type="Texture2D" uid="uid://dhay08l1vttrg" path="res://Assets/Sprites/Upgrades/Wolf.png" id="1_3cwlv"]
+[ext_resource type="Script" uid="uid://fhannu8q7i6y" path="res://Scripts/UI/ItemUpgrade.gd" id="2_ek6m4"]
+
+[resource]
+script = ExtResource("2_ek6m4")
+value = 4.0
+description = "+4"
+stat_id = "harvesting"
+item_name = "Harvesting IV"
+item_icon = ExtResource("1_3cwlv")
+item_tier = 1
+item_type = 1
+item_cost = 0
+metadata/_custom_type_script = "uid://fhannu8q7i6y"

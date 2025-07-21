@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://bp6y5koduwxv"]
+
+[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="1_8wuhd"]
+[ext_resource type="Texture2D" uid="uid://b4ryaflx033vc" path="res://Assets/Sprites/Upgrades/Sword.png" id="1_nr0nk"]
+
+[resource]
+script = ExtResource("1_8wuhd")
+add_value = 15.0
+add_stats = "luck"
+remove_value = 0.0
+remove_stats = ""
+item_name = "Blessings"
+item_icon = ExtResource("1_nr0nk")
+item_tier = 3
+item_type = 2
+item_cost = 250
+metadata/_custom_type_script = "uid://d2kmp6p5trcfu"

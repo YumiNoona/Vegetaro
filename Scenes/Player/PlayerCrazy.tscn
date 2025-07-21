@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3lppssg2ff4y"]
+
+[ext_resource type="PackedScene" uid="uid://cep5gpcms5fqg" path="res://Scenes/Player/PlayerWellRounded.tscn" id="1_77c4i"]
+[ext_resource type="Texture2D" uid="uid://dq63ocnu3lset" path="res://Assets/Sprites/Players/Player_3.png" id="2_3tsau"]
+[ext_resource type="Resource" uid="uid://cgt03gutfsy2p" path="res://Data/Characters/PlayerCrazy.tres" id="2_obas1"]
+
+[node name="PlayerCrazy" instance=ExtResource("1_77c4i")]
+stats = ExtResource("2_obas1")
+
+[node name="Sprite" parent="Visuals" index="2"]
+texture = ExtResource("2_3tsau")

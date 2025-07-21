@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemUpgrade" load_steps=3 format=3 uid="uid://bkvfp8gycd38r"]
+
+[ext_resource type="Texture2D" uid="uid://dfdr57eqmji4r" path="res://Assets/Sprites/Upgrades/Heal.png" id="1_ieddv"]
+[ext_resource type="Script" uid="uid://fhannu8q7i6y" path="res://Scripts/UI/ItemUpgrade.gd" id="2_wjne4"]
+
+[resource]
+script = ExtResource("2_wjne4")
+value = 4.0
+description = "+4"
+stat_id = "hp_regen"
+item_name = "Health Regen IV"
+item_icon = ExtResource("1_ieddv")
+item_tier = 1
+item_type = 1
+item_cost = 0
+metadata/_custom_type_script = "uid://fhannu8q7i6y"

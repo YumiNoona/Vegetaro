@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://waw3ademjpvs"]
+
+[ext_resource type="Texture2D" uid="uid://cquwkmkoq7qoq" path="res://Assets/JoyStick/Knob.png" id="1_hv0em"]
+[ext_resource type="Script" uid="uid://bp1kgiohj4b6g" path="res://Scripts/UI/JoyStick.gd" id="1_koblv"]
+[ext_resource type="Texture2D" uid="uid://b4l7lv5exjl2e" path="res://Assets/JoyStick/Ring.png" id="2_koblv"]
+
+[node name="JoyStick" type="CanvasLayer"]
+offset = Vector2(-460, -500)
+transform = Transform2D(1, 0, 0, 1, -460, -500)
+script = ExtResource("1_koblv")
+
+[node name="Knob" type="TextureRect" parent="."]
+offset_left = 320.0
+offset_top = 350.0
+offset_right = 2240.0
+offset_bottom = 2270.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_hv0em")
+
+[node name="Ring" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_koblv")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -1.0
+offset_right = 8.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.9)
