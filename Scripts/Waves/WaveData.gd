@@ -17,6 +17,14 @@ enum SpawnType {
 @export var max_spawn_time:= 1.0
 
 
+#Boss Enemy
+
+@export var is_boss_wave: bool = false
+@export var boss_scene: PackedScene
+@export var boss_config: Resource # Will be BossConfigResource
+
+
+
 func get_random_unit_scene() -> PackedScene:
 	if units.is_empty():
 		printerr("No Units.")

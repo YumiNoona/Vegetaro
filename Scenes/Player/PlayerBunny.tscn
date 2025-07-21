@@ -9,3 +9,5 @@ stats = ExtResource("2_hq34q")
 
 [node name="Sprite" parent="Visuals" index="2"]
 texture = ExtResource("2_pbk1l")
+
+[connection signal="on_unit_died" from="HealthComponent" to="." method="_on_health_component_on_unit_died"]

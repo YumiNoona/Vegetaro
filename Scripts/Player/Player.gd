@@ -105,3 +105,10 @@ func _on_hp_regen_timer_timeout() -> void:
 		var heal := stats.hp_regen
 		health_component.heal(heal)
 		Global.on_create_heal_text.emit(self,heal)
+
+
+func _on_health_component_on_unit_died() -> void:
+	Global.player = null
+	anim_player.play("Death")
+	await anim_player.animation_finished
+	queue_free()
