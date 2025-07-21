@@ -10,12 +10,17 @@ var can_move := true
 var knockback_dir : Vector2
 var knockback_power : float
 
+func _ready() -> void:
+	add_to_group("enemies")
+	# ...any other setup...
+
 func _process(delta: float) -> void:
 	if Global.game_paused: return
 	if not can_move: return
 	if not can_move_toward_player(): return
 
-	position += (get_move_direction() + knockback_dir * knockback_power) * stats.speed * delta
+	var move_vec = (get_move_direction() + knockback_dir * knockback_power) * stats.speed * delta
+	position += move_vec
 	update_rotation()
 
 func get_move_direction() -> Vector2:
@@ -27,7 +32,6 @@ func get_move_direction() -> Vector2:
 		if area != self and area.is_inside_tree():
 			var vector := global_position - area.global_position
 			direction += flock_push * vector.normalized() / vector.length()
-			
 	return direction
 
 func update_rotation() -> void:
@@ -64,7 +68,6 @@ func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 
 func _on_health_component_on_unit_died() -> void:
 	Global.on_enemy_died.emit(self)
-
 
 func destroy_enemy() -> void:
 	can_move = false

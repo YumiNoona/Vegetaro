@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2xcdqoqj74ck"]
+
+[ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="1_l6ahy"]
+[ext_resource type="Script" uid="uid://d30rjm10ktq4k" path="res://Scripts/UI/GameOverPanel.gd" id="1_pqxt1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpie4"]
+font_size = 40
+font_color = Color(0.682576, 0.164104, 0, 1)
+
+[node name="GameOverPanel" type="Control"]
+custom_minimum_size = Vector2(700, 500)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 700.0
+offset_bottom = 500.0
+script = ExtResource("1_pqxt1")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(700, 500)
+layout_mode = 1
+offset_right = 700.0
+offset_bottom = 400.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.0
+offset_right = 137.0
+offset_bottom = 55.0
+grow_horizontal = 2
+text = "!!  GAME OVER  !!"
+label_settings = SubResource("LabelSettings_fpie4")
+
+[node name="BTN_Restart" parent="." instance=ExtResource("1_l6ahy")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -71.0
+offset_right = 168.0
+offset_bottom = 17.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "  RESTART  "
+
+[node name="BTN_Quit" parent="." instance=ExtResource("1_l6ahy")]
+layout_mode = 1
+offset_left = -110.0
+offset_top = -166.0
+offset_right = 111.0
+offset_bottom = -78.0
+theme_override_font_sizes/font_size = 64
+text = "  QUIT  "
+
+[connection signal="pressed" from="BTN_Restart" to="." method="_on_btn_restart_pressed"]
+[connection signal="pressed" from="BTN_Quit" to="." method="_on_btn_quit_pressed"]

@@ -103,7 +103,6 @@ func clear_enemies() -> void:
 
 
 
-
 func get_wave_timer_text() -> String:
 	return str(max(0, int(wave_timer.time_left)))
 
@@ -116,9 +115,17 @@ func get_random_spawn_position() -> Vector2:
 	
 
 func _on_spawn_timer_timeout() -> void:
+	if not is_instance_valid(Global.player):
+		print("Spawner: Player is not valid, stopping spawn.")
+		spawn_timer.stop()
+		return
+
 	if not current_wave_data or wave_timer.is_stopped():
 		spawn_timer.stop()
 		return
+
+	spawn_enemy()
+
 		
 	if not is_instance_valid(Global.player):
 		print("Spawner: Player is not valid, stopping spawn.")
@@ -128,9 +135,18 @@ func _on_spawn_timer_timeout() -> void:
 	spawn_enemy()
 
 
+func show_game_over():
+	var panel = Global.GAME_OVER_SCENE.instantiate()
+	get_tree().root.add_child(panel)
+	get_tree().paused = true
+	panel.process_mode = Node.PROCESS_MODE_ALWAYS # So UI still works when paused
+
+
+
+
 func _on_wave_timer_timeout() -> void:
 	if not is_instance_valid(Global.player):
-		push_error("Wave completed but player is not valid")
+		show_game_over()
 		return
 		
 	Global.game_paused = true

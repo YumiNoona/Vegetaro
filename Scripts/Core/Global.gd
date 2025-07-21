@@ -22,6 +22,7 @@ const COINS_SCENE = preload("res://Scenes/UI/Coins/Coins.tscn")
 const ITEM_CARD_SCENE = preload("res://Scenes/UI/Card/ItemCard.tscn")
 const SELECTION_CARD_SCENE = preload("res://Scenes/UI/Selection/SelectionCard.tscn")
 const ENEMY_SPAWN_EFFECT_SCENE = preload("res://Scenes/Effects/EnemySpawnEffect.tscn")
+const GAME_OVER_SCENE = preload("res://Scenes/UI/Menu/GameOverPanel.tscn")
 
 
 const COMMON_STYLE = preload("res://Scenes/UI/Styles/CommonStyle.tres")
