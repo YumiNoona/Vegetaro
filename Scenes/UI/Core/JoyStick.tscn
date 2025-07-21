@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://waw3ademjpvs"]
+[gd_scene load_steps=5 format=3 uid="uid://waw3ademjpvs"]
 
 [ext_resource type="Texture2D" uid="uid://cquwkmkoq7qoq" path="res://Assets/JoyStick/Knob.png" id="1_hv0em"]
 [ext_resource type="Script" uid="uid://bp1kgiohj4b6g" path="res://Scripts/UI/JoyStick.gd" id="1_koblv"]
 [ext_resource type="Texture2D" uid="uid://b4l7lv5exjl2e" path="res://Assets/JoyStick/Ring.png" id="2_koblv"]
+[ext_resource type="Texture2D" uid="uid://cvau8y6pnnhva" path="res://icon.png" id="4_hfx2i"]
 
 [node name="JoyStick" type="CanvasLayer"]
 offset = Vector2(-460, -500)
@@ -10,28 +11,60 @@ transform = Transform2D(1, 0, 0, 1, -460, -500)
 script = ExtResource("1_koblv")
 
 [node name="Knob" type="TextureRect" parent="."]
-offset_left = 320.0
-offset_top = 350.0
-offset_right = 2240.0
-offset_bottom = 2270.0
-scale = Vector2(0.15, 0.15)
+offset_left = 628.0
+offset_top = 694.0
+offset_right = 2548.0
+offset_bottom = 2614.0
+scale = Vector2(0.0780001, 0.0833334)
 texture = ExtResource("1_hv0em")
 
 [node name="Ring" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.5, 0.5)
+offset_left = 459.0
+offset_top = 501.0
+offset_right = 2379.0
+offset_bottom = 2421.0
+scale = Vector2(0.26, 0.277778)
 texture = ExtResource("2_koblv")
 
-[node name="Button" type="Button" parent="."]
+[node name="BTN_Move" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -1.0
-offset_right = 8.0
-offset_bottom = -1.0
+offset_left = 467.0
+offset_top = 500.0
+offset_right = 467.0
+offset_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.26, 0.5)
+
+[node name="BTN_Dash" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(700, 350)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = 54.0
+offset_right = 667.0
+offset_bottom = 404.0
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(0.5, 0.9)
+text = "Dash
+"
+icon_alignment = 1
+
+[node name="Dash" type="TextureRect" parent="BTN_Dash"]
+offset_left = 36.0
+offset_right = 1236.0
+offset_bottom = 1000.0
+scale = Vector2(0.5, 0.3)
+texture = ExtResource("4_hfx2i")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="BTN_Dash" to="." method="_on_btn_dash_pressed"]

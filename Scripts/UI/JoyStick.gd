@@ -11,6 +11,7 @@ var drag_offset: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	button.pressed.connect(_on_button_pressed)
 	button.gui_input.connect(_on_button_gui_input)
+	visible = OS.has_feature("mobile")
 
 func _on_button_pressed() -> void:
 	knob.position = Vector2.ZERO
@@ -33,3 +34,7 @@ func _on_button_gui_input(event: InputEvent) -> void:
 
 func get_normalized_vector() -> Vector2:
 	return drag_offset.normalized()
+
+
+func _on_btn_dash_pressed() -> void:
+	Input.action_press("Dash")

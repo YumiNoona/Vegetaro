@@ -104,6 +104,10 @@ visible = false
 
 [node name="GameOverPanel" parent="GameUI" instance=ExtResource("13_ymf7d")]
 visible = false
+offset_left = 614.0
+offset_top = 310.0
+offset_right = 1314.0
+offset_bottom = 810.0
 
 [node name="BGPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("38_pdycw")

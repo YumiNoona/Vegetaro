@@ -22,9 +22,9 @@ func _ready() -> void:
 	dash_cooldown_timer.wait_time = dash_cooldown
 
 func _process(delta: float) -> void:
-	if Global.game_paused: return
-
 	move_dir = Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
+
+	if Global.game_paused: return
 
 	var current_velocity := move_dir * stats.speed
 	if is_dashing:
@@ -94,6 +94,7 @@ func _on_hp_regen_timer_timeout() -> void:
 		Global.on_create_heal_text.emit(self, heal)
 
 func _on_health_component_on_unit_died() -> void:
+	print("Player death handler called!")
 	Global.player = null
 	anim_player.play("Death")
 	await anim_player.animation_finished
@@ -105,5 +106,3 @@ func _on_health_component_on_unit_died() -> void:
 		get_tree().root.add_child(game_over_panel)
 		get_tree().paused = true
 		game_over_panel.process_mode = Node.PROCESS_MODE_ALWAYS
-
-  

@@ -15,6 +15,9 @@ signal on_upgrade_selected
 @warning_ignore("UNUSED_SIGNAL")
 signal on_enemy_died(enemy: Enemy)
 
+var admob = null
+
+
 
 const M_FLASH = preload("res://Shaders/M_Flash.tres")
 const FLOATING_TEXT_SCENE = preload("res://Scenes/UI/Core/FloatingText.tscn")
@@ -75,6 +78,25 @@ var main_player_selected : UnitStats
 var main_weapon_selected : ItemWeapon
 
 var equipped_weapons: Array[ItemWeapon]
+
+
+#func _ready() -> void:
+	#if Engine.has_singleton("GodotAdMob"):
+		#admob = Engine.get_singleton("GodotAdMob")
+		#admob.init(true) # true for test mode, false for production
+		#admob.load_rewarded()
+		#print("AdMob initialized and rewarded ad loaded.")
+
+
+# Optional: You can add a global ad-watched handler if you want to use it elsewhere
+func show_rewarded_ad(on_rewarded_callable: Callable) -> void:
+	if admob and admob.is_rewarded_loaded():
+		admob.show_rewarded()
+		admob.connect("on_rewarded", on_rewarded_callable, CONNECT_ONE_SHOT)
+	else:
+		print("Rewarded ad not ready.")
+
+
 
 func get_harvesting_coins() -> void:
 	coins += int(player.stats.harvesting)

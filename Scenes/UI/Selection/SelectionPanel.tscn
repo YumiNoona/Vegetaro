@@ -158,7 +158,7 @@ offset_bottom = 60.0
 grow_horizontal = 0
 grow_vertical = 1
 theme_override_font_sizes/font_size = 45
-text = "Continue"
+text = "  Continue  "
 
 [node name="Items" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 400)

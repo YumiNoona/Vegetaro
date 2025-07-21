@@ -15,7 +15,49 @@ const SHOP_CARD_SCENE = preload("res://Scenes/UI/Shop/ShopCard.tscn")
 
 
 var context_card : ItemCard
+var pending_ad_item: ItemBase = null
 
+func try_purchase_with_ads(item: ItemBase) -> void:
+	if Global.coins >= item.item_cost:
+		Global.coins -= item.item_cost
+		_on_item_purchased(item)
+	else:
+		pending_ad_item = item
+		offer_ad_for_purchase(item)
+
+func offer_ad_for_purchase(item: ItemBase) -> void:
+	var dialog = AcceptDialog.new()
+	dialog.dialog_text = "Not enough coins! Watch an ad to get this item?"
+	dialog.add_button("Watch Ad", true, "watch_ad")
+	dialog.add_button("Cancel", false, "cancel")
+	dialog.connect("custom_action", Callable(self, "_on_ad_dialog_action").bind(item))
+	get_tree().root.add_child(dialog)
+	dialog.popup_centered()
+
+func _on_ad_dialog_action(action: String, item: ItemBase) -> void:
+	if action == "watch_ad":
+		play_rewarded_ad(item)
+
+func play_rewarded_ad(item: ItemBase) -> void:
+	print("Attempting to play rewarded ad for item: ", item.item_name)
+	if Engine.has_singleton("GodotAdMob"):
+		var admob = Engine.get_singleton("GodotAdMob")
+		admob.show_rewarded()
+		admob.connect("on_rewarded", Callable(self, "_on_ad_rewarded").bind(item), CONNECT_ONE_SHOT)
+	else:
+		print("AdMob plugin not found, simulating ad watched.")
+		_on_ad_rewarded("", 0, item)
+
+func _on_ad_rewarded(_currency_type: String, _amount: int, item: ItemBase) -> void:
+	print("Ad watched! Granting item: ", item.item_name)
+	var missing_coins = item.item_cost - Global.coins
+	Global.coins += missing_coins
+	Global.coins -= item.item_cost
+	_on_item_purchased(item)
+	pending_ad_item = null
+	if Engine.has_singleton("GodotAdMob"):
+		var admob = Engine.get_singleton("GodotAdMob")
+		admob.load_rewarded()
 
 func _ready() -> void:
 	for child in passive_container.get_children() : child.queue_free()
