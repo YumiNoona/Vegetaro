@@ -5,10 +5,23 @@
 
 [resource]
 script = ExtResource("1_o1r5w")
-add_value = 5.0
+add_value = 10.0
 add_stats = "life_steal"
-remove_value = 2.0
-remove_stats = "health"
+remove_value = 20.0
+remove_stats = "speed"
+heal_on_dash = 0.0
+coins_on_dash = 0
+double_coins = false
+extra_life = false
+reflect_percent = 0.0
+speed_on_kill = 0.0
+speed_on_kill_duration = 2.0
+cooldown_reduction = 0.0
+momentum = false
+glass_cannon = false
+static_field = false
+retaliation = false
+unstoppable = false
 item_name = "Souls"
 item_icon = ExtResource("1_7chsm")
 item_tier = 0

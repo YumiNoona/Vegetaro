@@ -33,22 +33,6 @@ class_name ItemPassive
 ## Duration of speed boost after kill (in seconds).
 @export var speed_on_kill_duration: float = 2.0
 
-@export_category("Advanced Stats")
-## Flat armor bonus.
-@export var armor: float = 0.0
-## Critical hit chance bonus (e.g., 0.15 for +15%).
-@export var crit_chance: float = 0.0
-## Attack speed multiplier (e.g., 0.2 for +20%).
-@export var attack_speed: float = 0.0
-## Life steal bonus (e.g., 0.05 for 5%).
-@export var life_steal: float = 0.0
-## Luck bonus.
-@export var luck: float = 0.0
-## Health regeneration bonus.
-@export var hp_regen: float = 0.0
-## Harvesting bonus.
-@export var harvesting: float = 0.0
-
 @export_category("Cooldown Effects")
 ## Percentage reduction to cooldowns (e.g., 0.2 for 20%).
 @export var cooldown_reduction: float = 0.0
@@ -92,20 +76,6 @@ func apply_passive() -> void:
 			Global.player.connect("on_dash", Callable(self, "_on_dash_coins"))
 	if cooldown_reduction > 0.0:
 		Global.player.stats.cooldown *= (1.0 - cooldown_reduction)
-	if armor != 0.0:
-		Global.player.stats.armor += armor
-	if crit_chance != 0.0:
-		Global.player.stats.crit_chance += crit_chance
-	if attack_speed != 0.0:
-		Global.player.stats.attack_speed += attack_speed
-	if life_steal != 0.0:
-		Global.player.stats.life_steal += life_steal
-	if luck != 0.0:
-		Global.player.stats.luck += luck
-	if hp_regen != 0.0:
-		Global.player.stats.hp_regen += hp_regen
-	if harvesting != 0.0:
-		Global.player.stats.harvesting += harvesting
 	# Special passives
 	if momentum:
 		Global.player.enable_momentum()

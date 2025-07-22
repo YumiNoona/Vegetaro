@@ -5,10 +5,10 @@
 
 [resource]
 script = ExtResource("1_cxtqt")
-add_value = 10.0
-add_stats = "damage"
-remove_value = 20.0
-remove_stats = "speed"
+add_value = 5.0
+add_stats = "crit_chance"
+remove_value = 0.0
+remove_stats = ""
 heal_on_dash = 0.0
 coins_on_dash = 0
 double_coins = false
@@ -16,13 +16,6 @@ extra_life = false
 reflect_percent = 0.0
 speed_on_kill = 0.0
 speed_on_kill_duration = 2.0
-armor = 0.0
-crit_chance = 0.0
-attack_speed = 0.0
-life_steal = 0.0
-luck = 0.0
-hp_regen = 0.0
-harvesting = 0.0
 cooldown_reduction = 0.0
 momentum = false
 glass_cannon = false
