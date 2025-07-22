@@ -20,3 +20,6 @@ enum UnitType {
 @export var hp_regen:= 0.0
 @export var life_steal:= 0.0
 @export var harvesting:= 0.0
+@export var armor: float = 0.0
+@export var crit_chance: float = 0.0
+@export var attack_speed: float = 1.0

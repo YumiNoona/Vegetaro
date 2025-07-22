@@ -29,7 +29,7 @@ func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 		return
 
 	set_flash_material()
-	health_component.take_damage(hitbox.damage)
+	health_component.take_damage(hitbox.damage, hitbox) # <-- Pass hitbox here!
 	Global.on_create_damage_text.emit(self, hitbox)
 
 

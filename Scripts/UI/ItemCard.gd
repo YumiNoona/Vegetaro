@@ -19,3 +19,6 @@ func _on_pressed() -> void:
 	SoundManager.play_sound(SoundManager.Sound.FIRE)
 	if item.item_type == ItemBase.ItemType.WEAPON:
 		on_item_card_selected.emit(self)
+
+func _ready():
+	self.hint_tooltip = item.description

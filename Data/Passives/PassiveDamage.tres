@@ -7,8 +7,16 @@
 script = ExtResource("1_v0aem")
 add_value = 5.0
 add_stats = "damage"
-remove_value = 0.0
+remove_value = null
 remove_stats = ""
+heal_on_dash = null
+double_coins = null
+extra_life = null
+reflect_percent = null
+speed_on_kill = null
+speed_on_kill_duration = null
+coins_on_dash = null
+cooldown_reduction = null
 item_name = "Punish"
 item_icon = ExtResource("1_sgapb")
 item_tier = 2

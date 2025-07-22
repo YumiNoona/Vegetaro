@@ -14,8 +14,17 @@ const SHOP_CARD_SCENE = preload("res://Scenes/UI/Shop/ShopCard.tscn")
 @onready var btn_combine: Button = %BTN_Combine
 
 
+const MAX_PASSIVES = 16 # or whatever your item/passive slot limit is
+const MAX_WEAPONS = 6   # your weapon slot limit
+
+
 var context_card : ItemCard
 var pending_ad_item: ItemBase = null
+
+
+func get_passive_count() -> int:
+	return passive_container.get_child_count()
+
 
 func try_purchase_with_ads(item: ItemBase) -> void:
 	if Global.coins >= item.item_cost:

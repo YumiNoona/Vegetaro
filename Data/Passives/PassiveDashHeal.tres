@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://dtnnqjcn75b5k"]
+
+[ext_resource type="Texture2D" uid="uid://jy46p56ktiqs" path="res://Assets/Sprites/Upgrades/Charge.png" id="1_umhmm"]
+[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="2_mdw17"]
+
+[resource]
+script = ExtResource("2_mdw17")
+add_value = 5.0
+add_stats = "heal_on_dash "
+remove_value = 0.0
+remove_stats = ""
+heal_on_dash = 0.0
+double_coins = false
+extra_life = false
+reflect_percent = 0.0
+speed_on_kill = 0.0
+speed_on_kill_duration = 2.0
+coins_on_dash = 0
+cooldown_reduction = 0.0
+item_name = "Sprint"
+item_icon = ExtResource("1_umhmm")
+item_tier = 1
+item_type = 2
+item_cost = 120
+metadata/_custom_type_script = "uid://d2kmp6p5trcfu"
