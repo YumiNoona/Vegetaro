@@ -39,8 +39,9 @@ func _on_momentum_enemy_killed(_enemy):
 		add_child(momentum_timer)
 	momentum_timer.wait_time = MOMENTUM_STACK_DURATION
 	momentum_timer.one_shot = true
-	momentum_timer.timeout.connect(_on_momentum_timer_timeout)
-	momentum_timer.start()
+	if not momentum_timer.timeout.is_connected(_on_momentum_timer_timeout):
+		momentum_timer.timeout.connect(_on_momentum_timer_timeout)
+		momentum_timer.start()
 
 func _on_momentum_timer_timeout():
 	stats.speed -= MOMENTUM_STACK_SPEED * momentum_stacks
@@ -93,7 +94,8 @@ func _on_retaliation_hit(_hitbox):
 			add_child(retaliation_timer)
 		retaliation_timer.wait_time = RETALIATION_DURATION
 		retaliation_timer.one_shot = true
-		retaliation_timer.timeout.connect(_on_retaliation_timer_timeout)
+		if not retaliation_timer.timeout.is_connected(_on_retaliation_timer_timeout):
+			retaliation_timer.timeout.connect(_on_retaliation_timer_timeout)
 		retaliation_timer.start()
 
 func _on_retaliation_timer_timeout():

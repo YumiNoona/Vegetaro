@@ -21,7 +21,7 @@ func _ready():
 		if health_component:
 			health_component.on_unit_hit.connect(_on_boss_hit)
 
-func _on_boss_hit():
+func _on_boss_hit(hitbox):
 	time_since_last_hit = 0.0
 
 func _process(delta):

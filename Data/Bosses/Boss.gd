@@ -24,7 +24,7 @@ func connect_second_phase():
 	else:
 		print("Boss: No HealthComponent found!")
 
-func _on_unit_hit():
+func _on_unit_hit(hitbox):
 	print("Boss: _on_unit_hit called. Current HP: %s" % $HealthComponent.current_health)
 	if boss_config and boss_config.has_second_phase and not second_phase_triggered:
 		var threshold = boss_config.second_phase_threshold * $HealthComponent.max_health

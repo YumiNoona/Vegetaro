@@ -73,17 +73,23 @@ func apply_passive() -> void:
 	if remove_value != 0:
 		Global.player.stats[remove_stats] -= remove_value
 	if heal_on_dash > 0.0:
-		Global.player.connect("on_dash", Callable(self, "_on_player_dash"))
+		if not Global.player.is_connected("on_dash", Callable(self, "_on_player_dash")):
+			Global.player.connect("on_dash", Callable(self, "_on_player_dash"))
 	if double_coins:
-		Global.connect("on_enemy_died", Callable(self, "_on_enemy_died"))
+		if not Global.is_connected("on_enemy_died", Callable(self, "_on_enemy_died")):
+			Global.connect("on_enemy_died", Callable(self, "_on_enemy_died"))
 	if extra_life:
-		Global.player.health_component.on_unit_died.connect(_on_player_died)
+		if not Global.player.health_component.on_unit_died.is_connected(_on_player_died):
+			Global.player.health_component.on_unit_died.connect(_on_player_died)
 	if reflect_percent > 0.0:
-		Global.player.health_component.on_unit_hit.connect(_on_player_hit)
+		if not Global.player.health_component.on_unit_hit.is_connected(_on_player_hit):
+			Global.player.health_component.on_unit_hit.connect(_on_player_hit)
 	if speed_on_kill > 0.0:
-		Global.connect("on_enemy_died", Callable(self, "_on_enemy_killed"))
+		if not Global.is_connected("on_enemy_died", Callable(self, "_on_enemy_killed")):
+			Global.connect("on_enemy_died", Callable(self, "_on_enemy_killed"))
 	if coins_on_dash > 0:
-		Global.player.connect("on_dash", Callable(self, "_on_dash_coins"))
+		if not Global.player.is_connected("on_dash", Callable(self, "_on_dash_coins")):
+			Global.player.connect("on_dash", Callable(self, "_on_dash_coins"))
 	if cooldown_reduction > 0.0:
 		Global.player.stats.cooldown *= (1.0 - cooldown_reduction)
 	if armor != 0.0:
