@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://rpbk8vix4rfl"]
+[gd_scene load_steps=70 format=3 uid="uid://rpbk8vix4rfl"]
 
 [ext_resource type="Script" uid="uid://m7jo8e8d1o4d" path="res://Scripts/UI/ShopPanel.gd" id="1_stbq3"]
 [ext_resource type="PackedScene" uid="uid://cxprx4i8ecs6r" path="res://Scenes/UI/Shop/ShopCard.tscn" id="2_lh7e1"]
@@ -54,6 +54,15 @@
 [ext_resource type="Resource" uid="uid://bp6y5koduwxv" path="res://Data/Passives/PassiveLuck.tres" id="48_ghbb8"]
 [ext_resource type="Resource" uid="uid://bu3nxtdg06ovc" path="res://Data/Passives/PassiveRage.tres" id="49_cuf3r"]
 [ext_resource type="PackedScene" uid="uid://ld7p2otbdcgi" path="res://Scenes/UI/Coins/CoinsBag.tscn" id="49_fujpy"]
+[ext_resource type="Resource" uid="uid://dtnnqjcn75b5k" path="res://Data/Passives/PassiveDashHeal.tres" id="50_wem8j"]
+[ext_resource type="Resource" uid="uid://p30tn0s4dqpp" path="res://Data/Passives/PassiveDoubleCoin.tres" id="51_3en5g"]
+[ext_resource type="Resource" uid="uid://b03r1af5j6nu8" path="res://Data/Passives/PassiveGlassCannon.tres" id="52_avfot"]
+[ext_resource type="Resource" uid="uid://bgywxvi1jbpl6" path="res://Data/Passives/PassiveMomentum.tres" id="53_grmsv"]
+[ext_resource type="Resource" uid="uid://x2xir2wjw7ww" path="res://Data/Passives/PassiveReflect.tres" id="54_66321"]
+[ext_resource type="Resource" uid="uid://ounaemm5fwj" path="res://Data/Passives/PassiveRetaliation.tres" id="55_vhh0y"]
+[ext_resource type="Resource" uid="uid://doj057exd27lp" path="res://Data/Passives/PassiveSpeedKill.tres" id="56_uj22q"]
+[ext_resource type="Resource" uid="uid://c5bey06f3m53d" path="res://Data/Passives/PassiveStaticField.tres" id="57_ksesj"]
+[ext_resource type="Resource" uid="uid://3c2qt1hbug0g" path="res://Data/Passives/PassiveUnstoppable.tres" id="58_1pm0n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stbq3"]
 bg_color = Color(0.203922, 0.203922, 0.203922, 1)
@@ -93,7 +102,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_stbq3")
 script = ExtResource("1_stbq3")
-shop_items = Array[ExtResource("2_nqc78")]([ExtResource("3_fcwbt"), ExtResource("4_p7q72"), ExtResource("5_8vb08"), ExtResource("6_b60bv"), ExtResource("7_54mfx"), ExtResource("8_wt1o0"), ExtResource("9_k5bd3"), ExtResource("9_k5bd3"), ExtResource("10_mts4q"), ExtResource("11_fujpy"), ExtResource("12_86rt3"), ExtResource("13_x0ies"), ExtResource("14_h1bun"), ExtResource("15_pngul"), ExtResource("16_eyq4s"), ExtResource("17_p5jkx"), ExtResource("18_ghbb8"), ExtResource("19_cuf3r"), ExtResource("20_ohtaf"), ExtResource("21_iyqph"), ExtResource("22_3b045"), ExtResource("23_dw0a7"), ExtResource("24_72q3s"), ExtResource("25_wem8j"), ExtResource("26_3en5g"), ExtResource("27_avfot"), ExtResource("28_grmsv"), ExtResource("29_66321"), ExtResource("30_vhh0y"), ExtResource("31_uj22q"), ExtResource("32_ksesj"), ExtResource("33_1pm0n"), ExtResource("34_7u6fw"), ExtResource("35_6tfvu"), ExtResource("36_ds8ok"), ExtResource("37_4mf7e"), ExtResource("38_i6paq"), ExtResource("39_6raj3"), ExtResource("40_geue6"), ExtResource("41_x0qd8"), ExtResource("42_y00tb"), ExtResource("43_8rny2"), ExtResource("44_cl2b5"), ExtResource("45_4v62n"), ExtResource("46_eyq4s"), ExtResource("47_p5jkx"), ExtResource("48_ghbb8"), ExtResource("49_cuf3r")])
+shop_items = Array[ExtResource("2_nqc78")]([ExtResource("3_fcwbt"), ExtResource("4_p7q72"), ExtResource("5_8vb08"), ExtResource("6_b60bv"), ExtResource("7_54mfx"), ExtResource("8_wt1o0"), ExtResource("9_k5bd3"), ExtResource("9_k5bd3"), ExtResource("10_mts4q"), ExtResource("11_fujpy"), ExtResource("12_86rt3"), ExtResource("13_x0ies"), ExtResource("14_h1bun"), ExtResource("15_pngul"), ExtResource("16_eyq4s"), ExtResource("17_p5jkx"), ExtResource("18_ghbb8"), ExtResource("19_cuf3r"), ExtResource("20_ohtaf"), ExtResource("21_iyqph"), ExtResource("22_3b045"), ExtResource("23_dw0a7"), ExtResource("24_72q3s"), ExtResource("25_wem8j"), ExtResource("26_3en5g"), ExtResource("27_avfot"), ExtResource("28_grmsv"), ExtResource("29_66321"), ExtResource("30_vhh0y"), ExtResource("31_uj22q"), ExtResource("32_ksesj"), ExtResource("33_1pm0n"), ExtResource("34_7u6fw"), ExtResource("35_6tfvu"), ExtResource("36_ds8ok"), ExtResource("37_4mf7e"), ExtResource("38_i6paq"), ExtResource("39_6raj3"), ExtResource("40_geue6"), ExtResource("41_x0qd8"), ExtResource("42_y00tb"), ExtResource("43_8rny2"), ExtResource("44_cl2b5"), ExtResource("45_4v62n"), ExtResource("46_eyq4s"), ExtResource("47_p5jkx"), ExtResource("48_ghbb8"), ExtResource("49_cuf3r"), ExtResource("50_wem8j"), ExtResource("51_3en5g"), ExtResource("52_avfot"), ExtResource("53_grmsv"), ExtResource("54_66321"), ExtResource("55_vhh0y"), ExtResource("56_uj22q"), ExtResource("57_ksesj"), ExtResource("58_1pm0n")])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0

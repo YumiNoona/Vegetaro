@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://dtnnqjcn75b5k"]
+[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://b03r1af5j6nu8"]
 
-[ext_resource type="Texture2D" uid="uid://jy46p56ktiqs" path="res://Assets/Sprites/Upgrades/Charge.png" id="1_umhmm"]
-[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="2_mdw17"]
+[ext_resource type="Texture2D" uid="uid://jy46p56ktiqs" path="res://Assets/Sprites/Upgrades/Charge.png" id="1_3e2uy"]
+[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="2_bjtvk"]
 
 [resource]
-script = ExtResource("2_mdw17")
+script = ExtResource("2_bjtvk")
 add_value = 5.0
 add_stats = "heal_on_dash "
 remove_value = 0.0
 remove_stats = ""
-heal_on_dash = 5.0
+heal_on_dash = 0.0
 coins_on_dash = 0
 double_coins = false
 extra_life = false
@@ -25,12 +25,12 @@ hp_regen = 0.0
 harvesting = 0.0
 cooldown_reduction = 0.0
 momentum = false
-glass_cannon = false
+glass_cannon = true
 static_field = false
 retaliation = false
 unstoppable = false
-item_name = "Dash Heal"
-item_icon = ExtResource("1_umhmm")
+item_name = "Glass Cannon"
+item_icon = ExtResource("1_3e2uy")
 item_tier = 1
 item_type = 2
 item_cost = 120

@@ -20,5 +20,10 @@ func _on_pressed() -> void:
 	if item.item_type == ItemBase.ItemType.WEAPON:
 		on_item_card_selected.emit(self)
 
-func _ready():
-	self.hint_tooltip = item.description
+func _get_tooltip(at_position: Vector2 = Vector2.ZERO) -> String:
+	if item:
+		if "get_description" in item:
+			return item.get_description()
+		elif "description" in item:
+			return item.description
+	return "No item assigned"
