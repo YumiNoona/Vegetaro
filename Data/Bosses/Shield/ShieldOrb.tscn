@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxi5dekq7h8aa"]
+
+[ext_resource type="Script" uid="uid://dgtybe2rqcfqy" path="res://Data/Bosses/Shield/ShieldOrb.gd" id="1_ewfo5"]
+[ext_resource type="Texture2D" uid="uid://d1ou504pylric" path="res://Assets/Sprites/Enemies/Enemy_1.png" id="1_shield"]
+[ext_resource type="PackedScene" uid="uid://dh38i1kvyojel" path="res://Scenes/Components/HurtboxComponent.tscn" id="2_5shue"]
+[ext_resource type="PackedScene" uid="uid://cyqk88niuwv8q" path="res://Scenes/Effects/EnemySpawnEffect.tscn" id="2_qexyx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shield"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewfo5"]
+radius = 35.0
+
+[node name="ShieldOrb" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_ewfo5")
+destroy_effect = ExtResource("2_qexyx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.3, 0.6, 1, 0.8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_shield")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_shield")
+
+[node name="HurtboxComponent" parent="." instance=ExtResource("2_5shue")]
+position = Vector2(0, 30)
+collision_layer = 32
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_ewfo5")
+debug_color = Color(0.654902, 0.941176, 0.0784314, 0.419608)

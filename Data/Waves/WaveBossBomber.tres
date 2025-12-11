@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=5 format=3 uid="uid://c0ekgelyq03g2"]
+
+[ext_resource type="Resource" uid="uid://ckya2a2hklhn3" path="res://Data/Bosses/Bomber/BossBomber.tres" id="1_gdjth"]
+[ext_resource type="PackedScene" uid="uid://d1elx4732vnt8" path="res://Data/Bosses/Bomber/BossBomber.tscn" id="2_84m15"]
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="3_m4n31"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="4_03nq3"]
+
+[resource]
+script = ExtResource("3_m4n31")
+from = 35
+to = 35
+wave_time = 60.0
+fixed_spawn_time = 0.5
+min_spawn_time = 2.0
+max_spawn_time = 4.0
+is_boss_wave = true
+boss_scene = ExtResource("2_84m15")
+boss_config = ExtResource("1_gdjth")
+metadata/_custom_type_script = "uid://dq7rnby5u5823"

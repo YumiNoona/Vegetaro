@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://2lc7egfmjibh"]
+
+[ext_resource type="FontFile" uid="uid://btuil5fxofpsw" path="res://Assets/Font/BitcountGridDouble_Cursive-Bold.ttf" id="1_lkre2"]
+[ext_resource type="Script" uid="uid://m3exq8jlpesv" path="res://Scripts/Core/HealthBar.gd" id="1_r0cg3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_at7y4"]
+bg_color = Color(0.137255, 0.0196078, 0.027451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkre2"]
+bg_color = Color(1, 0.290196, 0.454902, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.137255, 0.0196078, 0.027451, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0cg3"]
+font = ExtResource("1_lkre2")
+font_size = 20
+
+[node name="HealthBar" type="Control"]
+custom_minimum_size = Vector2(96, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 20.0
+script = ExtResource("1_r0cg3")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_at7y4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lkre2")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="HealthAmount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.5
+offset_bottom = 2.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_r0cg3")
+horizontal_alignment = 1

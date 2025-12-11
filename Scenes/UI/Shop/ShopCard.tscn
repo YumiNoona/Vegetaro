@@ -1,0 +1,138 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxprx4i8ecs6r"]
+
+[ext_resource type="Script" uid="uid://dj8v8o6jl2is3" path="res://Scripts/UI/ShopCard.gd" id="1_70ghr"]
+[ext_resource type="StyleBox" uid="uid://co1vb5yo7xsd0" path="res://Scenes/UI/Styles/CommonStyle.tres" id="1_e6au0"]
+[ext_resource type="Texture2D" uid="uid://dqjp2ilexicxg" path="res://Assets/Sprites/Upgrades/Punch.png" id="3_317fx"]
+[ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="4_au4mn"]
+[ext_resource type="Texture2D" uid="uid://chm4srsn6xd8y" path="res://Assets/Sprites/Gold/Gold_1.png" id="5_h55au"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6au0"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 0.784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_317fx"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_h55au"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ShopCard" type="Panel"]
+custom_minimum_size = Vector2(320, 400)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = ExtResource("1_e6au0")
+script = ExtResource("1_70ghr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ItemBG" type="Panel" parent="MarginContainer/Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e6au0")
+
+[node name="ItemIcon" type="TextureRect" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_317fx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemName" type="Label" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 120.0
+offset_right = 250.0
+offset_bottom = 35.0
+text = "Item Name"
+label_settings = SubResource("LabelSettings_317fx")
+vertical_alignment = 1
+
+[node name="ItemType" type="Label" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 120.0
+offset_top = 32.0
+offset_right = 250.0
+offset_bottom = 67.0
+text = "Item Type"
+label_settings = SubResource("LabelSettings_317fx")
+vertical_alignment = 1
+
+[node name="ItemDescription" type="RichTextLabel" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(290, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -264.0
+offset_right = 145.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+text = "I Was Here"
+
+[node name="BTN_Buy" parent="MarginContainer/Control" instance=ExtResource("4_au4mn")]
+custom_minimum_size = Vector2(120, 70)
+layout_mode = 1
+offset_left = -82.5
+offset_top = -42.0
+offset_right = 82.5
+text = ""
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/BTN_Buy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/BTN_Buy/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_h55au")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinsLabel" type="Label" parent="MarginContainer/Control/BTN_Buy/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "500"
+label_settings = SubResource("LabelSettings_h55au")
+
+[connection signal="pressed" from="MarginContainer/Control/BTN_Buy" to="." method="_on_btn_buy_pressed"]

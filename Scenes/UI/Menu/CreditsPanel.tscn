@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://suansb7dfqbt"]
+
+[ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="1_credits"]
+[ext_resource type="Script" uid="uid://cddy5a6q6phtb" path="res://Scripts/UI/Menu/CreditsPanel.gd" id="2_credits"]
+[ext_resource type="Texture2D" uid="uid://dvrc1oavyd1m5" path="res://Assets/Sprites/Credits.png" id="2_denv2"]
+[ext_resource type="FontFile" uid="uid://debd8pk2gwtwk" path="res://Assets/Font/Exo2-Bold.ttf" id="3_credits"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_credits"]
+bg_color = Color(0.203922, 0.203922, 0.203922, 0.9)
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font = ExtResource("3_credits")
+font_size = 80
+font_color = Color(1, 0.604147, 0.505348, 1)
+outline_size = 3
+outline_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_credits"]
+font = ExtResource("3_credits")
+font_size = 60
+font_color = Color(1, 0.604147, 0.505348, 1)
+outline_size = 3
+outline_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+
+[node name="CreditsPanel" type="Panel"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_credits")
+script = ExtResource("2_credits")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_denv2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="Credits" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Developed by Veil 
+with Godot Engine
+
+Thank you for playing!"
+label_settings = SubResource("LabelSettings_credits")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BTN_Back" parent="." instance=ExtResource("1_credits")]
+unique_name_in_owner = true
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1720.0
+offset_top = 10.0
+offset_right = 1954.0
+offset_bottom = 98.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  BACK  "

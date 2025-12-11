@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=9 format=3 uid="uid://bug8apa46ww63"]
+
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="1_c6i6i"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="2_5fq3c"]
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="3_upnyg"]
+[ext_resource type="PackedScene" uid="uid://dodus8qhsaxxi" path="res://Scenes/Enemy/EnemyChaserMid.tscn" id="4_v2l30"]
+[ext_resource type="PackedScene" uid="uid://cf26h38tap18w" path="res://Scenes/Enemy/EnemyChaserFast.tscn" id="5_lq5l7"]
+
+[sub_resource type="Resource" id="Resource_pwt1f"]
+script = ExtResource("2_5fq3c")
+unit_scene = ExtResource("3_upnyg")
+weight = 1
+metadata/_custom_type_script = "uid://durhehh0qa2ju"
+
+[sub_resource type="Resource" id="Resource_vu7hd"]
+script = ExtResource("2_5fq3c")
+unit_scene = ExtResource("4_v2l30")
+weight = 3
+metadata/_custom_type_script = "uid://durhehh0qa2ju"
+
+[sub_resource type="Resource" id="Resource_k0t0u"]
+script = ExtResource("2_5fq3c")
+unit_scene = ExtResource("5_lq5l7")
+weight = 6
+metadata/_custom_type_script = "uid://durhehh0qa2ju"
+
+[resource]
+script = ExtResource("1_c6i6i")
+units = Array[ExtResource("2_5fq3c")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd"), SubResource("Resource_k0t0u")])
+from = 85
+to = 100
+wave_time = 30.0
+spawn_type = 0
+fixed_spawn_time = 0.5
+min_spawn_time = 0.3
+max_spawn_time = 1.5
+metadata/_custom_type_script = "uid://dq7rnby5u5823"

@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://bho1u8bgnl31v"]
+
+[ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="1_settings"]
+[ext_resource type="Texture2D" uid="uid://dxmna6ha8hkqx" path="res://Assets/Sprites/Settings.png" id="2_3egk0"]
+[ext_resource type="Script" uid="uid://bct7uc0jtbta" path="res://Scripts/UI/Menu/SettingsPanel.gd" id="2_settings"]
+[ext_resource type="FontFile" uid="uid://debd8pk2gwtwk" path="res://Assets/Font/Exo2-Bold.ttf" id="3_settings"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_settings"]
+bg_color = Color(0.203922, 0.203922, 0.203922, 0.9)
+
+[sub_resource type="LabelSettings" id="LabelSettings_settings"]
+font = ExtResource("3_settings")
+font_size = 80
+font_color = Color(1, 0.604147, 0.505348, 1)
+outline_size = 10
+outline_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+
+[node name="SettingsPanel" type="Panel"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_settings")
+script = ExtResource("2_settings")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_3egk0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_settings")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="BTN_Music" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_settings")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  MUSIC: ON  "
+
+[node name="BTN_SFX" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_settings")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  SFX: ON  "
+
+[node name="BTN_Back" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_settings")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  BACK  "

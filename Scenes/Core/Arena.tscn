@@ -1,0 +1,136 @@
+[gd_scene load_steps=31 format=3 uid="uid://bk381kdecixgc"]
+
+[ext_resource type="Script" uid="uid://b6b7nvocyq31f" path="res://Scripts/Core/Arena.gd" id="1_dvot3"]
+[ext_resource type="Texture2D" uid="uid://b83g3djhjoqk4" path="res://Assets/Sprites/Black.png" id="2_3w0r8"]
+[ext_resource type="Texture2D" uid="uid://ov4fmsbglo55" path="res://Assets/Sprites/Map.png" id="3_4xlcj"]
+[ext_resource type="Script" uid="uid://b5e0rldhvjdr3" path="res://Scripts/Core/Camera.gd" id="5_a7u2w"]
+[ext_resource type="Script" uid="uid://bougit5dqlg2t" path="res://Scripts/Waves/Spawner.gd" id="6_ctavx"]
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="7_ynyjf"]
+[ext_resource type="Resource" uid="uid://b7hvlny4rlou0" path="res://Data/Waves/Wave1-4.tres" id="8_22bra"]
+[ext_resource type="Resource" uid="uid://dlq0uhvrrglow" path="res://Data/Waves/WaveBossTeleport.tres" id="8_acukt"]
+[ext_resource type="Resource" uid="uid://dfyhrj5hbfjb6" path="res://Data/Waves/Wave6-9.tres" id="9_6dwrc"]
+[ext_resource type="Resource" uid="uid://d1mis1rmgi0gx" path="res://Data/Waves/Wave11-14.tres" id="9_catn3"]
+[ext_resource type="PackedScene" uid="uid://ld7p2otbdcgi" path="res://Scenes/UI/Coins/CoinsBag.tscn" id="9_q377n"]
+[ext_resource type="FontFile" uid="uid://c4t5k5hnacwr1" path="res://Assets/Font/Michroma-Regular.ttf" id="9_qae75"]
+[ext_resource type="Resource" uid="uid://dbvf6cpwqtcbb" path="res://Data/Waves/WaveBossMinions.tres" id="10_6dwrc"]
+[ext_resource type="PackedScene" uid="uid://dgugckvx4ls3s" path="res://Scenes/UI/Upgrade/UpgradePanel.tscn" id="10_catn3"]
+[ext_resource type="Resource" uid="uid://bm1ft44t5kf0a" path="res://Data/Waves/Wave16-19.tres" id="10_jntb4"]
+[ext_resource type="PackedScene" uid="uid://rpbk8vix4rfl" path="res://Scenes/UI/Shop/ShopPanel.tscn" id="11_jntb4"]
+[ext_resource type="Resource" uid="uid://bug8apa46ww63" path="res://Data/Waves/Wave85-100.tres" id="12_2qk2d"]
+[ext_resource type="Resource" uid="uid://igey55xvg5xo" path="res://Data/Waves/WaveBossSheild.tres" id="12_kky24"]
+[ext_resource type="Resource" uid="uid://dcbbbkp25eivv" path="res://Data/Waves/Wave21-24.tres" id="13_3w0r8"]
+[ext_resource type="PackedScene" uid="uid://c2xcdqoqj74ck" path="res://Scenes/UI/Menu/GameOverPanel.tscn" id="13_ymf7d"]
+[ext_resource type="Resource" uid="uid://4o2qjeik5ete" path="res://Data/Waves/WaveBossBerserker.tres" id="14_cqkdp"]
+[ext_resource type="PackedScene" uid="uid://waw3ademjpvs" path="res://Scenes/UI/Core/JoyStick.tscn" id="14_joystick"]
+[ext_resource type="Resource" uid="uid://dvj6j0utj8bwa" path="res://Data/Waves/WaveBossPhase.tres" id="16_ptsow"]
+[ext_resource type="Resource" uid="uid://bbw3ooftad7b0" path="res://Data/Waves/WaveBossTank.tres" id="18_syi04"]
+[ext_resource type="Resource" uid="uid://c0ekgelyq03g2" path="res://Data/Waves/WaveBossBomber.tres" id="19_7hkcj"]
+[ext_resource type="Resource" uid="uid://bjb2km31oo7b3" path="res://Data/Waves/WaveBossVampire.tres" id="20_j4wb0"]
+[ext_resource type="PackedScene" uid="uid://dmdysybjf81e" path="res://Scenes/UI/Selection/SelectionPanel.tscn" id="38_4xlcj"]
+[ext_resource type="AudioStream" uid="uid://prc8bub0x4s1" path="res://Assets/Audio/Bg Music.mp3" id="38_pdycw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2tw1v"]
+font = ExtResource("9_qae75")
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bugre"]
+line_spacing = 0.0
+font = ExtResource("9_qae75")
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Arena" type="Node2D"]
+script = ExtResource("1_dvot3")
+normal_color = Color(1, 1, 1, 1)
+blocked_color = Color(1, 0.290196, 0.454902, 1)
+critical_color = Color(0.996078, 0.780392, 0.380392, 1)
+hp_color = Color(0, 0.627451, 0.482353, 1)
+
+[node name="BlackBackGround" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_3w0r8")
+
+[node name="GrassBackGround" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("3_4xlcj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_a7u2w")
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("6_ctavx")
+waves_data = Array[ExtResource("7_ynyjf")]([ExtResource("8_22bra"), ExtResource("10_6dwrc"), ExtResource("9_6dwrc"), ExtResource("8_acukt"), ExtResource("9_catn3"), ExtResource("12_kky24"), ExtResource("10_jntb4"), ExtResource("14_cqkdp"), ExtResource("13_3w0r8"), ExtResource("16_ptsow"), ExtResource("12_2qk2d"), ExtResource("18_syi04"), ExtResource("19_7hkcj"), ExtResource("20_j4wb0")])
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="WaveTimer" type="Timer" parent="Spawner"]
+one_shot = true
+
+[node name="GameUI" type="CanvasLayer" parent="."]
+
+[node name="CoinsBag" parent="GameUI" instance=ExtResource("9_q377n")]
+unique_name_in_owner = true
+offset_right = 396.0
+
+[node name="WaveIndexLabel" type="Label" parent="GameUI"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -210.0
+offset_top = 20.0
+offset_right = 208.0
+offset_bottom = 111.0
+grow_horizontal = 2
+text = "Wave 1"
+label_settings = SubResource("LabelSettings_2tw1v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaveTimeLabel" type="Label" parent="GameUI"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.5
+offset_top = 100.0
+offset_right = 144.5
+offset_bottom = 188.0
+grow_horizontal = 2
+text = "10"
+label_settings = SubResource("LabelSettings_bugre")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradePanel" parent="GameUI" instance=ExtResource("10_catn3")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ShopPanel" parent="GameUI" instance=ExtResource("11_jntb4")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SelectionPanel" parent="GameUI" instance=ExtResource("38_4xlcj")]
+unique_name_in_owner = true
+
+[node name="GameOverPanel" parent="GameUI" instance=ExtResource("13_ymf7d")]
+unique_name_in_owner = true
+visible = false
+
+[node name="JoyStick" parent="GameUI" instance=ExtResource("14_joystick")]
+unique_name_in_owner = true
+
+[node name="BGPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_pdycw")
+volume_db = -30.0
+autoplay = true
+
+[connection signal="on_wave_completed" from="Spawner" to="." method="_on_spawner_on_wave_completed"]
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Spawner/WaveTimer" to="Spawner" method="_on_wave_timer_timeout"]
+[connection signal="on_shop_next_wave" from="GameUI/ShopPanel" to="." method="_on_shop_panel_on_shop_next_wave"]
+[connection signal="on_selection_completed" from="GameUI/SelectionPanel" to="." method="_on_selection_panel_on_selection_completed"]

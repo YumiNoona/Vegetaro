@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://dtnnqjcn75b5k"]
+
+[ext_resource type="Texture2D" uid="uid://jy46p56ktiqs" path="res://Assets/Sprites/Upgrades/Charge.png" id="1_umhmm"]
+[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="2_mdw17"]
+
+[resource]
+script = ExtResource("2_mdw17")
+heal_on_dash = 5.0
+item_name = "Dash Heal"
+item_icon = ExtResource("1_umhmm")
+item_tier = 1
+item_type = 2
+item_cost = 120
+metadata/_custom_type_script = "uid://d2kmp6p5trcfu"

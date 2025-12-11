@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyvqqg61yumad"]
+
+[ext_resource type="Texture2D" uid="uid://kcmw221jc2hl" path="res://Assets/Sprites/BG.png" id="1_3uyw7"]
+[ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="2_0gd0q"]
+[ext_resource type="Script" uid="uid://wxo4s18jl6g8" path="res://Scripts/UI/Menu/MainMenu.gd" id="3_mainmenu"]
+[ext_resource type="PackedScene" uid="uid://bho1u8bgnl31v" path="res://Scenes/UI/Menu/SettingsPanel.tscn" id="4_settings"]
+[ext_resource type="PackedScene" uid="uid://suansb7dfqbt" path="res://Scenes/UI/Menu/CreditsPanel.tscn" id="5_credits"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_mainmenu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("1_3uyw7")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="BTN_Start" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_0gd0q")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  START  "
+
+[node name="BTN_Settings" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_0gd0q")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  SETTINGS  "
+
+[node name="BTN_Credits" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_0gd0q")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  CREDITS  "
+
+[node name="BTN_Exit" parent="MarginContainer/HBoxContainer" instance=ExtResource("2_0gd0q")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  EXIT  "
+
+[node name="SettingsPanel" parent="." instance=ExtResource("4_settings")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CreditsPanel" parent="." instance=ExtResource("5_credits")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

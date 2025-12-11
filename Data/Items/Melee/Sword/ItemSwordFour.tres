@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemWeapon" load_steps=5 format=3 uid="uid://duxnyljw4vyjj"]
+
+[ext_resource type="Texture2D" uid="uid://bnb452021oi28" path="res://Assets/Sprites/Weapons/Icons/Weapon_sword_icon.png" id="1_nxhe6"]
+[ext_resource type="PackedScene" uid="uid://o7cvvq7jow2r" path="res://Scenes/Weapons/Melle/WeaponSword.tscn" id="2_nxhe6"]
+[ext_resource type="Script" uid="uid://d2v2mo7j3nvfy" path="res://Scripts/Weapon/ItemWeapon.gd" id="3_f2mjy"]
+[ext_resource type="Resource" uid="uid://peo63wn6wpdd" path="res://Data/Stats/Melle/Sword/StatsSwordFour.tres" id="4_nxhe6"]
+
+[resource]
+script = ExtResource("3_f2mjy")
+scene = ExtResource("2_nxhe6")
+stats = ExtResource("4_nxhe6")
+item_name = "Sword IV"
+item_icon = ExtResource("1_nxhe6")
+item_tier = 3
+item_cost = 320
+metadata/_custom_type_script = "uid://d2v2mo7j3nvfy"

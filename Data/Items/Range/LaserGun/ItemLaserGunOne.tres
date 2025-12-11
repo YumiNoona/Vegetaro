@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemWeapon" load_steps=6 format=3 uid="uid://chxtpq0uhbkq4"]
+
+[ext_resource type="Texture2D" uid="uid://crs6paux78un0" path="res://Assets/Sprites/Weapons/Icons/Weapon_laser_icon.png" id="1_brrvo"]
+[ext_resource type="PackedScene" uid="uid://d38tj7jgodkqc" path="res://Scenes/Weapons/Range/WeaponLaserGun.tscn" id="2_bff73"]
+[ext_resource type="Script" uid="uid://d2v2mo7j3nvfy" path="res://Scripts/Weapon/ItemWeapon.gd" id="3_5jx6k"]
+[ext_resource type="Resource" uid="uid://hy52hnrukptq" path="res://Data/Stats/Range/LaserGun/StatsLaserGunOne.tres" id="4_5jx6k"]
+[ext_resource type="Resource" uid="uid://ce47c7w62d0t5" path="res://Data/Items/Range/LaserGun/ItemLaserGunTwo.tres" id="4_bff73"]
+
+[resource]
+script = ExtResource("3_5jx6k")
+type = 1
+scene = ExtResource("2_bff73")
+stats = ExtResource("4_5jx6k")
+upgrade_to = ExtResource("4_bff73")
+item_name = "LaserGun I"
+item_icon = ExtResource("1_brrvo")
+item_cost = 110
+metadata/_custom_type_script = "uid://d2v2mo7j3nvfy"

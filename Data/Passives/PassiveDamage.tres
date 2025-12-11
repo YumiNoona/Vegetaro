@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://dmhvky8famxkl"]
+
+[ext_resource type="Texture2D" uid="uid://bhu03xogdvskw" path="res://Assets/Sprites/Upgrades/Fire.png" id="1_sgapb"]
+[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="1_v0aem"]
+
+[resource]
+script = ExtResource("1_v0aem")
+add_value = 5.0
+add_stats = "damage"
+remove_value = 2.0
+remove_stats = "health"
+heal_on_dash = 0.0
+coins_on_dash = 0
+double_coins = false
+extra_life = false
+reflect_percent = 0.0
+speed_on_kill = 0.0
+speed_on_kill_duration = 2.0
+cooldown_reduction = 0.0
+momentum = false
+glass_cannon = false
+static_field = false
+retaliation = false
+unstoppable = false
+item_name = "Punish"
+item_icon = ExtResource("1_sgapb")
+item_tier = 2
+item_type = 2
+item_cost = 120
+metadata/_custom_type_script = "uid://d2kmp6p5trcfu"

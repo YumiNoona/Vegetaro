@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=9 format=3 uid="uid://dfyhrj5hbfjb6"]
+
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="1_iqols"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="2_fkedq"]
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="3_plqhy"]
+[ext_resource type="PackedScene" uid="uid://dodus8qhsaxxi" path="res://Scenes/Enemy/EnemyChaserMid.tscn" id="4_nmk60"]
+[ext_resource type="PackedScene" uid="uid://cf26h38tap18w" path="res://Scenes/Enemy/EnemyChaserFast.tscn" id="5_vvh6p"]
+
+[sub_resource type="Resource" id="Resource_pwt1f"]
+script = ExtResource("2_fkedq")
+unit_scene = ExtResource("3_plqhy")
+weight = 5
+
+[sub_resource type="Resource" id="Resource_vu7hd"]
+script = ExtResource("2_fkedq")
+unit_scene = ExtResource("4_nmk60")
+weight = 4
+
+[sub_resource type="Resource" id="Resource_k0t0u"]
+script = ExtResource("2_fkedq")
+unit_scene = ExtResource("5_vvh6p")
+weight = 1
+
+[resource]
+script = ExtResource("1_iqols")
+units = Array[ExtResource("2_fkedq")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd"), SubResource("Resource_k0t0u")])
+from = 6
+to = 9
+wave_time = 18.0
+fixed_spawn_time = 0.5
+min_spawn_time = 0.4
+max_spawn_time = 0.9

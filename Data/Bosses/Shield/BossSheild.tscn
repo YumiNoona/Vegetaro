@@ -1,0 +1,27 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7om2uvfcddil"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_dra6g"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2_ukmlh"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="3_m2ayi"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/Sprites/Enemies/Enemy_4.png" id="4_sb30u"]
+[ext_resource type="Script" path="res://Data/Bosses/Shield/ShieldBehavior.gd" id="5_shield"]
+[ext_resource type="PackedScene" path="res://Data/Bosses/Shield/ShieldOrb.tscn" id="6_shield_orb"]
+
+[node name="BossShield" instance=ExtResource("1_dra6g")]
+position = Vector2(1, 0)
+script = ExtResource("2_ukmlh")
+stats = ExtResource("3_m2ayi")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(0.3, 0.6, 1.0, 1)
+texture = ExtResource("4_sb30u")
+
+[node name="ShieldBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5_shield")
+boss = NodePath("..")
+shield_scene = ExtResource("6_shield_orb")
+num_shields = 3
+shield_radius = 150.0
+rotation_speed = 2.0
+second_phase_rotation_speed = 5.0
+shield_damage = 5.0

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BossConfigResource" load_steps=3 format=3 uid="uid://c24gk0ruud54p"]
+
+[ext_resource type="Script" uid="uid://c2y1nqsc7upg6" path="res://Data/Bosses/BossConfigResource.gd" id="1_vampire"]
+[ext_resource type="Material" uid="uid://4kenq1x4uhaj" path="res://Shaders/SecondPhaseMaterial.tres" id="2_vampire"]
+
+[resource]
+script = ExtResource("1_vampire")
+has_second_phase = true
+second_phase_threshold = 0.4
+second_phase_hp = 110.0
+camera_shake_on_second_phase = true
+camera_shake_strength = 45.0
+second_phase_speed = 380.0
+second_phase_attack = 30.0
+second_phase_scale = 2.3
+second_phase_pulse_speed = 9.0
+second_phase_glow_color = Color(0.8, 0, 0.8, 1)
+second_phase_material = ExtResource("2_vampire")

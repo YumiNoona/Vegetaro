@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://s5jgoc506sbm"]
+
+[ext_resource type="Texture2D" uid="uid://cproxhccob85g" path="res://Assets/Sprites/Players/Player_1.png" id="1_0j2ql"]
+[ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="1_10pro"]
+
+[resource]
+script = ExtResource("1_10pro")
+name = "WellRounded"
+icon = ExtResource("1_0j2ql")
+health = 20.0
+health_increased_Per_wave = 0.5
+damage = 3.0
+damage_increased_Per_wave = 0.5
+luck = 10.0
+block_chance = 15.0
+gold_drop = 5.0
+hp_regen = 1.0
+life_steal = 5.0
+harvesting = 10.0
+metadata/_custom_type_script = "uid://4qpn834qds5r"

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://bu3nxtdg06ovc"]
+
+[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="1_cxtqt"]
+[ext_resource type="Texture2D" uid="uid://cxbo6u5yx2dv7" path="res://Assets/Sprites/Upgrades/Rage.png" id="1_e6rcp"]
+
+[resource]
+script = ExtResource("1_cxtqt")
+add_value = 5.0
+add_stats = "crit_chance"
+remove_value = 0.0
+remove_stats = ""
+heal_on_dash = 0.0
+coins_on_dash = 0
+double_coins = false
+extra_life = false
+reflect_percent = 0.0
+speed_on_kill = 0.0
+speed_on_kill_duration = 2.0
+cooldown_reduction = 0.0
+momentum = false
+glass_cannon = false
+static_field = false
+retaliation = false
+unstoppable = false
+item_name = "Rage"
+item_icon = ExtResource("1_e6rcp")
+item_tier = 0
+item_type = 2
+item_cost = 100
+metadata/_custom_type_script = "uid://d2kmp6p5trcfu"

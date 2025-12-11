@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://4kenq1x4uhaj"]
+
+[ext_resource type="Shader" uid="uid://i88ulteomwf2" path="res://Shaders/SecondPhase.gdshader" id="1_67c6i"]
+
+[resource]
+shader = ExtResource("1_67c6i")
+shader_parameter/time = 0.0
+shader_parameter/glow_color = Color(1, 0.1, 0.1, 1)
+shader_parameter/pulse_speed = 2.0

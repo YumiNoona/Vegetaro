@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://brhpf5vwfu5ep"]
+
+[ext_resource type="PackedScene" uid="uid://cxuyl3ww5or8o" path="res://Scenes/Weapons/Projectile/ProjectileLaserGun.tscn" id="1_i5ny5"]
+[ext_resource type="Script" uid="uid://bxtgv5ngtqup4" path="res://Scripts/Weapon/WeaponStats.gd" id="2_5qfkf"]
+
+[resource]
+script = ExtResource("2_5qfkf")
+projectile_scene = ExtResource("1_i5ny5")
+damage = 7.0
+accuracy = 1.0
+cooldown = 0.5
+crit_damage = 1.8
+crit_chance = 0.1
+max_range = 380.0
+knockback = 1.2
+projectile_speed = 1200.0
+back_duration = 0.2
+metadata/_custom_type_script = "uid://bxtgv5ngtqup4"

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://h4hit4fnpn2v"]
+
+[ext_resource type="Texture2D" uid="uid://3whhcfsjcd5m" path="res://Assets/JoyStick/running.png" id="1_2sc0j"]
+[ext_resource type="Script" uid="uid://kbrvjeufogd1" path="res://Scenes/Items/HealingOrb.gd" id="1_heal"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_heal")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+texture = ExtResource("1_2sc0j")
+expand_mode = 1

@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://waw3ademjpvs"]
+
+[ext_resource type="Texture2D" uid="uid://cquwkmkoq7qoq" path="res://Assets/JoyStick/Knob.png" id="1_hv0em"]
+[ext_resource type="Script" uid="uid://bp1kgiohj4b6g" path="res://Scripts/UI/JoyStick.gd" id="1_koblv"]
+[ext_resource type="Texture2D" uid="uid://b4l7lv5exjl2e" path="res://Assets/JoyStick/Ring.png" id="2_koblv"]
+[ext_resource type="Texture2D" uid="uid://oacxwvpdae3q" path="res://Assets/JoyStick/Dash.png" id="4_hfx2i"]
+
+[node name="JoyStick" type="CanvasLayer"]
+script = ExtResource("1_koblv")
+
+[node name="Ring" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -200.0
+offset_right = 175.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("2_koblv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Knob" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -165.0
+offset_right = 140.0
+offset_bottom = -85.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("1_hv0em")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BTN_Move" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(300, 320)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -350.0
+offset_right = 300.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BTN_Dash" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -200.0
+offset_right = -20.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Dash
+"
+icon_alignment = 1
+
+[node name="Dash" type="TextureRect" parent="BTN_Dash"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 35.0
+offset_right = -25.000046
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.005, 0.54)
+mouse_filter = 2
+texture = ExtResource("4_hfx2i")
+expand_mode = 1
+
+[connection signal="pressed" from="BTN_Dash" to="." method="_on_btn_dash_pressed"]

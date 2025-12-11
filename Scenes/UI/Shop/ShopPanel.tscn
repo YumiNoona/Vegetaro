@@ -1,0 +1,359 @@
+[gd_scene load_steps=70 format=3 uid="uid://rpbk8vix4rfl"]
+
+[ext_resource type="Script" uid="uid://m7jo8e8d1o4d" path="res://Scripts/UI/ShopPanel.gd" id="1_stbq3"]
+[ext_resource type="PackedScene" uid="uid://cxprx4i8ecs6r" path="res://Scenes/UI/Shop/ShopCard.tscn" id="2_lh7e1"]
+[ext_resource type="Script" uid="uid://coifcearf14vr" path="res://Scripts/Weapon/ItemsBase.gd" id="2_nqc78"]
+[ext_resource type="PackedScene" uid="uid://uwf2w238evcp" path="res://Scenes/UI/Stats/StatsContainer.tscn" id="3_6g0gq"]
+[ext_resource type="Resource" uid="uid://dod3vhu0qbet7" path="res://Data/Items/Melee/Axe/ItemAxeOne.tres" id="3_fcwbt"]
+[ext_resource type="StyleBox" uid="uid://co1vb5yo7xsd0" path="res://Scenes/UI/Styles/CommonStyle.tres" id="4_2d58a"]
+[ext_resource type="Resource" uid="uid://cocf47fae8ceh" path="res://Data/Items/Melee/Axe/ItemAxeTwo.tres" id="4_p7q72"]
+[ext_resource type="Resource" uid="uid://iwpmdpnapnq4" path="res://Data/Items/Melee/Axe/ItemAxeThree.tres" id="5_8vb08"]
+[ext_resource type="Resource" uid="uid://b0m1dmt0eqa40" path="res://Data/Items/Melee/Axe/ItemAxeFour.tres" id="6_b60bv"]
+[ext_resource type="Resource" uid="uid://bkd7c42o3xi0w" path="res://Data/Items/Melee/ChainSaw/ItemChainSawOne.tres" id="7_54mfx"]
+[ext_resource type="Resource" uid="uid://cnrhn5tvjkmtx" path="res://Data/Items/Melee/ChainSaw/ItemChainSawTwo.tres" id="8_wt1o0"]
+[ext_resource type="Resource" uid="uid://defccih2md5m1" path="res://Data/Items/Melee/ChainSaw/ItemChainSawThree.tres" id="9_k5bd3"]
+[ext_resource type="Resource" uid="uid://ddo2g6py0p80r" path="res://Data/Items/Melee/Mace/ItemMaceOne.tres" id="10_mts4q"]
+[ext_resource type="Resource" uid="uid://cbtal46lv4py8" path="res://Data/Items/Melee/Mace/ItemMaceTwo.tres" id="11_fujpy"]
+[ext_resource type="Resource" uid="uid://bt0n6w4e4mre5" path="res://Data/Items/Melee/Mace/ItemMaceThree.tres" id="12_86rt3"]
+[ext_resource type="Resource" uid="uid://c4xfla7xuxrir" path="res://Data/Items/Melee/Mace/ItemMaceFour.tres" id="13_x0ies"]
+[ext_resource type="Resource" uid="uid://c42a48l7lbaoq" path="res://Data/Items/Melee/Punch/ItemPunchOne.tres" id="14_h1bun"]
+[ext_resource type="Resource" uid="uid://d0evujviltsu6" path="res://Data/Items/Melee/Punch/ItemPunchTwo.tres" id="15_pngul"]
+[ext_resource type="Resource" uid="uid://cqjk63bixu324" path="res://Data/Items/Melee/Punch/ItemPunchThree.tres" id="16_eyq4s"]
+[ext_resource type="Resource" uid="uid://b0br8ngvo8mn8" path="res://Data/Items/Melee/Punch/ItemPunchFour.tres" id="17_p5jkx"]
+[ext_resource type="Resource" uid="uid://60hvk1k0bqa5" path="res://Data/Items/Melee/Sword/ItemSwordOne.tres" id="18_ghbb8"]
+[ext_resource type="Resource" uid="uid://h4qs14teqbck" path="res://Data/Items/Melee/Sword/ItemSwordTwo.tres" id="19_cuf3r"]
+[ext_resource type="Resource" uid="uid://cxeif6pwomkvc" path="res://Data/Items/Melee/Sword/ItemSwordThree.tres" id="20_ohtaf"]
+[ext_resource type="Resource" uid="uid://duxnyljw4vyjj" path="res://Data/Items/Melee/Sword/ItemSwordFour.tres" id="21_iyqph"]
+[ext_resource type="Resource" uid="uid://y0733w5uvalk" path="res://Data/Items/Melee/Wand/ItemWandOne.tres" id="22_3b045"]
+[ext_resource type="Resource" uid="uid://bncxlaliskkov" path="res://Data/Items/Melee/Wand/ItemWandTwo.tres" id="23_dw0a7"]
+[ext_resource type="Resource" uid="uid://ce2w2fhvbum80" path="res://Data/Items/Melee/Wand/ItemWandThree.tres" id="24_72q3s"]
+[ext_resource type="Resource" uid="uid://vpk2cgilhkw7" path="res://Data/Items/Melee/Wand/ItemWandFour.tres" id="25_wem8j"]
+[ext_resource type="Resource" uid="uid://chxtpq0uhbkq4" path="res://Data/Items/Range/LaserGun/ItemLaserGunOne.tres" id="26_3en5g"]
+[ext_resource type="Resource" uid="uid://ce47c7w62d0t5" path="res://Data/Items/Range/LaserGun/ItemLaserGunTwo.tres" id="27_avfot"]
+[ext_resource type="Resource" uid="uid://b0ch8itd4i8lk" path="res://Data/Items/Range/LaserGun/ItemLaserGunThree.tres" id="28_grmsv"]
+[ext_resource type="Resource" uid="uid://c0nr2gbh6im3m" path="res://Data/Items/Range/LaserGun/ItemLaserGunFour.tres" id="29_66321"]
+[ext_resource type="Resource" uid="uid://jlcs7ymtsxjq" path="res://Data/Items/Range/Pistol/ItemPistolOne.tres" id="30_vhh0y"]
+[ext_resource type="Resource" uid="uid://bpltitfmknc0s" path="res://Data/Items/Range/Pistol/ItemPistolTwo.tres" id="31_uj22q"]
+[ext_resource type="Resource" uid="uid://cwix7psanneem" path="res://Data/Items/Range/Pistol/ItemPistolThree.tres" id="32_ksesj"]
+[ext_resource type="Resource" uid="uid://71bnsbowsmhl" path="res://Data/Items/Range/Pistol/ItemPistolFour.tres" id="33_1pm0n"]
+[ext_resource type="Resource" uid="uid://bdt66rh56exfb" path="res://Data/Items/Range/Revolver/ItemRevolverOne.tres" id="34_7u6fw"]
+[ext_resource type="Resource" uid="uid://deh6v5yrdru3w" path="res://Data/Items/Range/Revolver/ItemRevolverTwo.tres" id="35_6tfvu"]
+[ext_resource type="Resource" uid="uid://bnnlvk4mhgfeg" path="res://Data/Items/Range/Revolver/ItemRevolverThree.tres" id="36_ds8ok"]
+[ext_resource type="Resource" uid="uid://depfj5ecs6ilq" path="res://Data/Items/Range/Revolver/ItemRevolverFour.tres" id="37_4mf7e"]
+[ext_resource type="Resource" uid="uid://vycqctj7pcyl" path="res://Data/Items/Range/ShotGun/ItemShotGunOne.tres" id="38_i6paq"]
+[ext_resource type="Resource" uid="uid://dr7skod5bhs8g" path="res://Data/Items/Range/ShotGun/ItemShotGunTwo.tres" id="39_6raj3"]
+[ext_resource type="Resource" uid="uid://drpo7nxs80xqf" path="res://Data/Items/Range/ShotGun/ItemShotGunThree.tres" id="40_geue6"]
+[ext_resource type="Resource" uid="uid://cmfg2bvalnbr7" path="res://Data/Items/Range/ShotGun/ItemShotGunFour.tres" id="41_x0qd8"]
+[ext_resource type="Resource" uid="uid://dgxn7kslyttjm" path="res://Data/Items/Range/SMG/ItemSMGOne.tres" id="42_y00tb"]
+[ext_resource type="Resource" uid="uid://ck3g7fhu2w101" path="res://Data/Items/Range/SMG/ItemSMGTwo.tres" id="43_8rny2"]
+[ext_resource type="Resource" uid="uid://c05nlob0pdcll" path="res://Data/Items/Range/SMG/ItemSMGThree.tres" id="44_cl2b5"]
+[ext_resource type="Resource" uid="uid://dwnn8ch0mmmot" path="res://Data/Items/Range/SMG/ItemSMGFour.tres" id="45_4v62n"]
+[ext_resource type="Resource" uid="uid://dmhvky8famxkl" path="res://Data/Passives/PassiveDamage.tres" id="46_eyq4s"]
+[ext_resource type="Resource" uid="uid://7wru3vl6o6pf" path="res://Data/Passives/PassiveLifeSteal.tres" id="47_p5jkx"]
+[ext_resource type="PackedScene" uid="uid://cxfa11hd3e8s0" path="res://Scenes/UI/Card/ItemCard.tscn" id="48_86rt3"]
+[ext_resource type="Resource" uid="uid://bp6y5koduwxv" path="res://Data/Passives/PassiveLuck.tres" id="48_ghbb8"]
+[ext_resource type="Resource" uid="uid://bu3nxtdg06ovc" path="res://Data/Passives/PassiveRage.tres" id="49_cuf3r"]
+[ext_resource type="PackedScene" uid="uid://ld7p2otbdcgi" path="res://Scenes/UI/Coins/CoinsBag.tscn" id="49_fujpy"]
+[ext_resource type="Resource" uid="uid://dtnnqjcn75b5k" path="res://Data/Passives/PassiveDashHeal.tres" id="50_wem8j"]
+[ext_resource type="Resource" uid="uid://p30tn0s4dqpp" path="res://Data/Passives/PassiveDoubleCoin.tres" id="51_3en5g"]
+[ext_resource type="Resource" uid="uid://b03r1af5j6nu8" path="res://Data/Passives/PassiveGlassCannon.tres" id="52_avfot"]
+[ext_resource type="Resource" uid="uid://bgywxvi1jbpl6" path="res://Data/Passives/PassiveMomentum.tres" id="53_grmsv"]
+[ext_resource type="Resource" uid="uid://x2xir2wjw7ww" path="res://Data/Passives/PassiveReflect.tres" id="54_66321"]
+[ext_resource type="Resource" uid="uid://ounaemm5fwj" path="res://Data/Passives/PassiveRetaliation.tres" id="55_vhh0y"]
+[ext_resource type="Resource" uid="uid://doj057exd27lp" path="res://Data/Passives/PassiveSpeedKill.tres" id="56_uj22q"]
+[ext_resource type="Resource" uid="uid://c5bey06f3m53d" path="res://Data/Passives/PassiveStaticField.tres" id="57_ksesj"]
+[ext_resource type="Resource" uid="uid://3c2qt1hbug0g" path="res://Data/Passives/PassiveUnstoppable.tres" id="58_1pm0n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stbq3"]
+bg_color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_stbq3"]
+font_size = 64
+font_color = Color(1, 0.13725491, 1, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6g0gq"]
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d58a"]
+bg_color = Color(0.235294, 0.603922, 0.231373, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auuba"]
+bg_color = Color(0.184314, 0.439216, 0.435294, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdv7r"]
+bg_color = Color(0.898039, 0.243137, 0.313726, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="ShopPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_stbq3")
+script = ExtResource("1_stbq3")
+shop_items = Array[ExtResource("2_nqc78")]([ExtResource("3_fcwbt"), ExtResource("4_p7q72"), ExtResource("5_8vb08"), ExtResource("6_b60bv"), ExtResource("7_54mfx"), ExtResource("8_wt1o0"), ExtResource("9_k5bd3"), ExtResource("9_k5bd3"), ExtResource("10_mts4q"), ExtResource("11_fujpy"), ExtResource("12_86rt3"), ExtResource("13_x0ies"), ExtResource("14_h1bun"), ExtResource("15_pngul"), ExtResource("16_eyq4s"), ExtResource("17_p5jkx"), ExtResource("18_ghbb8"), ExtResource("19_cuf3r"), ExtResource("20_ohtaf"), ExtResource("21_iyqph"), ExtResource("22_3b045"), ExtResource("23_dw0a7"), ExtResource("24_72q3s"), ExtResource("25_wem8j"), ExtResource("26_3en5g"), ExtResource("27_avfot"), ExtResource("28_grmsv"), ExtResource("29_66321"), ExtResource("30_vhh0y"), ExtResource("31_uj22q"), ExtResource("32_ksesj"), ExtResource("33_1pm0n"), ExtResource("34_7u6fw"), ExtResource("35_6tfvu"), ExtResource("36_ds8ok"), ExtResource("37_4mf7e"), ExtResource("38_i6paq"), ExtResource("39_6raj3"), ExtResource("40_geue6"), ExtResource("41_x0qd8"), ExtResource("42_y00tb"), ExtResource("43_8rny2"), ExtResource("44_cl2b5"), ExtResource("45_4v62n"), ExtResource("46_eyq4s"), ExtResource("47_p5jkx"), ExtResource("48_ghbb8"), ExtResource("49_cuf3r"), ExtResource("50_wem8j"), ExtResource("51_3en5g"), ExtResource("52_avfot"), ExtResource("53_grmsv"), ExtResource("54_66321"), ExtResource("55_vhh0y"), ExtResource("56_uj22q"), ExtResource("57_ksesj"), ExtResource("58_1pm0n")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 830.0
+offset_right = 1020.0
+offset_bottom = 90.0
+grow_horizontal = 2
+text = "SHOP"
+label_settings = SubResource("LabelSettings_stbq3")
+
+[node name="ItemsContainer" type="HBoxContainer" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1328, 400)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 180.0
+offset_right = 1348.0
+offset_bottom = 580.0
+theme_override_constants/separation = 20
+
+[node name="ShopCard" parent="MarginContainer/Control/ItemsContainer" instance=ExtResource("2_lh7e1")]
+layout_mode = 2
+
+[node name="ShopCard2" parent="MarginContainer/Control/ItemsContainer" instance=ExtResource("2_lh7e1")]
+layout_mode = 2
+
+[node name="ShopCard3" parent="MarginContainer/Control/ItemsContainer" instance=ExtResource("2_lh7e1")]
+layout_mode = 2
+
+[node name="ShopCard4" parent="MarginContainer/Control/ItemsContainer" instance=ExtResource("2_lh7e1")]
+layout_mode = 2
+
+[node name="StatsContainer" parent="MarginContainer/Control" instance=ExtResource("3_6g0gq")]
+layout_mode = 0
+offset_left = 1425.0
+offset_top = 130.0
+offset_right = 1795.0
+offset_bottom = 710.0
+
+[node name="Passives" type="VBoxContainer" parent="MarginContainer/Control"]
+custom_minimum_size = Vector2(750, 250)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 750.0
+offset_right = 880.0
+offset_bottom = 1015.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="PassiveLabel" type="Label" parent="MarginContainer/Control/Passives"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Items"
+label_settings = SubResource("LabelSettings_6g0gq")
+horizontal_alignment = 1
+
+[node name="PassiveContainer" type="GridContainer" parent="MarginContainer/Control/Passives"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 8
+
+[node name="ItemCard" parent="MarginContainer/Control/Passives/PassiveContainer" instance=ExtResource("48_86rt3")]
+layout_mode = 2
+
+[node name="ItemCard2" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard3" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard4" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard5" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard6" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard7" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard8" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard9" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard10" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard11" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard12" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard13" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard14" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard15" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard16" type="Button" parent="MarginContainer/Control/Passives/PassiveContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="Weapons" type="VBoxContainer" parent="MarginContainer/Control"]
+custom_minimum_size = Vector2(350, 250)
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 750.0
+offset_right = 1350.0
+offset_bottom = 1015.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="WeaponLabel" type="Label" parent="MarginContainer/Control/Weapons"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Weapons"
+label_settings = SubResource("LabelSettings_6g0gq")
+horizontal_alignment = 1
+
+[node name="WeaponsContainer" type="GridContainer" parent="MarginContainer/Control/Weapons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="ItemCard" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard2" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard3" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard4" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard5" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="ItemCard6" type="Button" parent="MarginContainer/Control/Weapons/WeaponsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("4_2d58a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control"]
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 0
+offset_left = 1440.0
+offset_top = 740.0
+offset_right = 1790.0
+offset_bottom = 1040.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="BTN_NewWave" type="Button" parent="MarginContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_2d58a")
+text = "Next Wave"
+
+[node name="BTN_Combine" type="Button" parent="MarginContainer/Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_auuba")
+text = "Combine"
+
+[node name="BTN_Sell" type="Button" parent="MarginContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_wdv7r")
+text = "Sell"
+
+[node name="CoinsBag" parent="MarginContainer/Control" instance=ExtResource("49_fujpy")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 290.0
+offset_bottom = 100.0
+
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/BTN_NewWave" to="." method="_on_btn_new_wave_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/BTN_Combine" to="." method="_on_btn_combine_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/VBoxContainer/BTN_Sell" to="." method="_on_btn_sell_pressed"]

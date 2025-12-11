@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=5 format=3 uid="uid://igey55xvg5xo"]
+
+[ext_resource type="Resource" uid="uid://cmarbq6yikup7" path="res://Data/Bosses/Shield/BossShield.tres" id="1_vl705"]
+[ext_resource type="PackedScene" uid="uid://b7om2uvfcddil" path="res://Data/Bosses/Shield/BossSheild.tscn" id="2_l0p62"]
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="3_aqrcp"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="4_si5kg"]
+
+[resource]
+script = ExtResource("3_aqrcp")
+from = 15
+to = 15
+wave_time = 60.0
+fixed_spawn_time = 0.5
+min_spawn_time = 2.0
+max_spawn_time = 4.0
+is_boss_wave = true
+boss_scene = ExtResource("2_l0p62")
+boss_config = ExtResource("1_vl705")
+metadata/_custom_type_script = "uid://dq7rnby5u5823"

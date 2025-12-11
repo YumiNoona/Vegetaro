@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://7wru3vl6o6pf"]
+
+[ext_resource type="Texture2D" uid="uid://b6irf4tdav53r" path="res://Assets/Sprites/Upgrades/LifeSteal.png" id="1_7chsm"]
+[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="1_o1r5w"]
+
+[resource]
+script = ExtResource("1_o1r5w")
+add_value = 10.0
+add_stats = "life_steal"
+remove_value = 20.0
+remove_stats = "speed"
+heal_on_dash = 0.0
+coins_on_dash = 0
+double_coins = false
+extra_life = false
+reflect_percent = 0.0
+speed_on_kill = 0.0
+speed_on_kill_duration = 2.0
+cooldown_reduction = 0.0
+momentum = false
+glass_cannon = false
+static_field = false
+retaliation = false
+unstoppable = false
+item_name = "Souls"
+item_icon = ExtResource("1_7chsm")
+item_tier = 0
+item_type = 2
+item_cost = 50
+metadata/_custom_type_script = "uid://d2kmp6p5trcfu"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=7 format=3 uid="uid://b7hvlny4rlou0"]
+
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="1_n02ik"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="2_pyx10"]
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="3_nfod4"]
+[ext_resource type="PackedScene" uid="uid://dodus8qhsaxxi" path="res://Scenes/Enemy/EnemyChaserMid.tscn" id="4_c2ei1"]
+
+[sub_resource type="Resource" id="Resource_pwt1f"]
+script = ExtResource("2_pyx10")
+unit_scene = ExtResource("3_nfod4")
+weight = 8
+
+[sub_resource type="Resource" id="Resource_vu7hd"]
+script = ExtResource("2_pyx10")
+unit_scene = ExtResource("4_c2ei1")
+weight = 2
+
+[resource]
+script = ExtResource("1_n02ik")
+units = Array[ExtResource("2_pyx10")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd")])
+from = 1
+to = 4
+wave_time = 15.0
+fixed_spawn_time = 0.5
+min_spawn_time = 0.5

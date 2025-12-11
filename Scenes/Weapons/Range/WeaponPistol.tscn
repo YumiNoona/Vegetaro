@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://8as61udr3qkd"]
+
+[ext_resource type="PackedScene" uid="uid://bi16ai31f3noh" path="res://Scenes/Weapons/WeaponBase.tscn" id="1_j35pv"]
+[ext_resource type="Texture2D" uid="uid://bbsd0o1wllf0p" path="res://Assets/Sprites/Weapons/Range/WeaponPistol.png" id="2_vi17r"]
+[ext_resource type="Script" uid="uid://cu53ss3erm56b" path="res://Scripts/Weapon/RangeBehavior.gd" id="3_63u15"]
+
+[node name="WeaponPistol" instance=ExtResource("1_j35pv")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(20, 0)
+texture = ExtResource("2_vi17r")
+
+[node name="Muzzle" type="Marker2D" parent="Sprite2D" index="0"]
+unique_name_in_owner = true
+position = Vector2(118, -26)
+
+[node name="WeaponBehavior" parent="." index="3" node_paths=PackedStringArray("weapon")]
+script = ExtResource("3_63u15")
+weapon = NodePath("..")

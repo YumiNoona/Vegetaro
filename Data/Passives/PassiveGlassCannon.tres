@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemPassive" load_steps=3 format=3 uid="uid://b03r1af5j6nu8"]
+
+[ext_resource type="Texture2D" uid="uid://jy46p56ktiqs" path="res://Assets/Sprites/Upgrades/Charge.png" id="1_3e2uy"]
+[ext_resource type="Script" uid="uid://d2kmp6p5trcfu" path="res://Scripts/UI/ItemPassives.gd" id="2_bjtvk"]
+
+[resource]
+script = ExtResource("2_bjtvk")
+glass_cannon = true
+item_name = "Glass Cannon"
+item_icon = ExtResource("1_3e2uy")
+item_tier = 1
+item_type = 2
+item_cost = 120
+metadata/_custom_type_script = "uid://d2kmp6p5trcfu"

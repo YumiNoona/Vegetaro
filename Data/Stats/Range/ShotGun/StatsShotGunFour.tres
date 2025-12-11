@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://cknmepbk477pc"]
+
+[ext_resource type="PackedScene" uid="uid://bgi133vdps7ho" path="res://Scenes/Weapons/Projectile/ProjectileShotGun.tscn" id="1_6th8x"]
+[ext_resource type="Script" uid="uid://bxtgv5ngtqup4" path="res://Scripts/Weapon/WeaponStats.gd" id="2_nvfro"]
+
+[resource]
+script = ExtResource("2_nvfro")
+projectile_scene = ExtResource("1_6th8x")
+damage = 4.0
+cooldown = 1.3
+crit_damage = 1.7
+crit_chance = 0.08
+max_range = 230.0
+knockback = 1.5
+projectile_speed = 860.0
+back_duration = 0.2
+metadata/_custom_type_script = "uid://bxtgv5ngtqup4"

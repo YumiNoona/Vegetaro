@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=13 format=3 uid="uid://dcbbbkp25eivv"]
+
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="1_nrtho"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="2_cpyax"]
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="3_slow"]
+[ext_resource type="PackedScene" uid="uid://dodus8qhsaxxi" path="res://Scenes/Enemy/EnemyChaserMid.tscn" id="4_mid"]
+[ext_resource type="PackedScene" uid="uid://cf26h38tap18w" path="res://Scenes/Enemy/EnemyChaserFast.tscn" id="5_fast"]
+[ext_resource type="PackedScene" uid="uid://bbgufv1ucxco3" path="res://Scenes/Enemy/EnemyCharger.tscn" id="6_charger"]
+[ext_resource type="PackedScene" uid="uid://dtuh1so08s3gq" path="res://Scenes/Enemy/EnemyShooter.tscn" id="7_shooter"]
+
+[sub_resource type="Resource" id="Resource_slow"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("3_slow")
+weight = 3
+
+[sub_resource type="Resource" id="Resource_mid"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("4_mid")
+weight = 3
+
+[sub_resource type="Resource" id="Resource_fast"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("5_fast")
+weight = 2
+
+[sub_resource type="Resource" id="Resource_charger"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("6_charger")
+weight = 2
+
+[sub_resource type="Resource" id="Resource_shooter"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("7_shooter")
+weight = 2
+
+[resource]
+script = ExtResource("1_nrtho")
+units = Array[ExtResource("2_cpyax")]([SubResource("Resource_slow"), SubResource("Resource_mid"), SubResource("Resource_fast"), SubResource("Resource_charger"), SubResource("Resource_shooter")])
+from = 21
+to = 24
+wave_time = 25.0
+fixed_spawn_time = 0.5
+min_spawn_time = 0.2
+max_spawn_time = 0.6

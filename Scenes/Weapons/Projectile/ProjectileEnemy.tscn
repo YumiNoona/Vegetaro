@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://devlq4gex40c"]
+
+[ext_resource type="PackedScene" uid="uid://17k31q687y6a" path="res://Scenes/Weapons/Projectile/ProjectilePistol.tscn" id="1_qi2n0"]
+[ext_resource type="Texture2D" uid="uid://df1ws6d34m5lf" path="res://Assets/Sprites/Projectiles/Projectile_Enemy.png" id="2_ktbog"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktbog"]
+radius = 22.0227
+
+[node name="ProjectileEnemy" instance=ExtResource("1_qi2n0")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ktbog")
+
+[node name="HitboxComponent" parent="." index="1"]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CircleShape2D_ktbog")

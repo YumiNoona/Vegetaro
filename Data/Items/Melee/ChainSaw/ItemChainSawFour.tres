@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemWeapon" load_steps=5 format=3 uid="uid://btfgx46ft00c3"]
+
+[ext_resource type="Texture2D" uid="uid://yk5ltsb4khr8" path="res://Assets/Sprites/Weapons/Icons/Weapon_chainsaw_icon.png" id="1_i6iwp"]
+[ext_resource type="PackedScene" uid="uid://c84fw0lfqldlp" path="res://Scenes/Weapons/Melle/WeaponChainSaw.tscn" id="2_i6iwp"]
+[ext_resource type="Script" uid="uid://d2v2mo7j3nvfy" path="res://Scripts/Weapon/ItemWeapon.gd" id="3_dmsar"]
+[ext_resource type="Resource" uid="uid://b1dk8jo2yndh0" path="res://Data/Stats/Melle/ChainSaw/StatsChainSawFour.tres" id="4_i6iwp"]
+
+[resource]
+script = ExtResource("3_dmsar")
+scene = ExtResource("2_i6iwp")
+stats = ExtResource("4_i6iwp")
+item_name = "ChainSaw IV"
+item_icon = ExtResource("1_i6iwp")
+item_tier = 3
+item_cost = 350
+metadata/_custom_type_script = "uid://d2v2mo7j3nvfy"

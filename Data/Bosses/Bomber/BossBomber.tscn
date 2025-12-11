@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1elx4732vnt8"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_vc7t3"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2_sw3rp"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="3_j6nc8"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/Sprites/Enemies/Enemy_4.png" id="4_2lqev"]
+[ext_resource type="Script" uid="uid://y502g0fnlbyw" path="res://Data/Bosses/Bomber/BomberBehavior.gd" id="5_bomber"]
+[ext_resource type="PackedScene" uid="uid://dh1iy61sdyy24" path="res://Data/Bosses/Bomber/Bomb.tscn" id="6_bomb"]
+
+[node name="BossBomber" instance=ExtResource("1_vc7t3")]
+position = Vector2(1, 0)
+script = ExtResource("2_sw3rp")
+stats = ExtResource("3_j6nc8")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(1, 0.7, 0.2, 1)
+texture = ExtResource("4_2lqev")
+
+[node name="BomberBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5_bomber")
+boss = NodePath("..")
+bomb_scene = ExtResource("6_bomb")
+bomb_damage = 2.0
+bomb_radius = 120.0
+bomb_cooldown = 5.0

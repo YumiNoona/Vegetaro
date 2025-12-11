@@ -1,0 +1,273 @@
+[gd_scene load_steps=26 format=3 uid="uid://dmdysybjf81e"]
+
+[ext_resource type="Script" uid="uid://ct4si1buuv86m" path="res://Scripts/UI/SelectionPanel.gd" id="1_h5j5x"]
+[ext_resource type="Texture2D" uid="uid://cproxhccob85g" path="res://Assets/Sprites/Players/Player_1.png" id="1_lgq3q"]
+[ext_resource type="StyleBox" uid="uid://co1vb5yo7xsd0" path="res://Scenes/UI/Styles/CommonStyle.tres" id="1_nql25"]
+[ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="2_fvvbe"]
+[ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="2_y4ow5"]
+[ext_resource type="Resource" uid="uid://s5jgoc506sbm" path="res://Data/Characters/PlayerWellRounded.tres" id="3_pjwp5"]
+[ext_resource type="PackedScene" uid="uid://56gt557gt8dg" path="res://Scenes/UI/Selection/SelectionCard.tscn" id="4_3vbaf"]
+[ext_resource type="Resource" uid="uid://chtm3ouaan4dm" path="res://Data/Characters/PlayerBrawler.tres" id="4_5caa7"]
+[ext_resource type="Resource" uid="uid://cekeopxtnmoq0" path="res://Data/Characters/PlayerBunny.tres" id="5_stv2c"]
+[ext_resource type="Resource" uid="uid://cgt03gutfsy2p" path="res://Data/Characters/PlayerCrazy.tres" id="6_q6k10"]
+[ext_resource type="Resource" uid="uid://c57ok35gnild3" path="res://Data/Characters/PlayerKnight.tres" id="7_0o6ww"]
+[ext_resource type="Script" uid="uid://d2v2mo7j3nvfy" path="res://Scripts/Weapon/ItemWeapon.gd" id="8_pjwp5"]
+[ext_resource type="Resource" uid="uid://dod3vhu0qbet7" path="res://Data/Items/Melee/Axe/ItemAxeOne.tres" id="9_ronw2"]
+[ext_resource type="Resource" uid="uid://bkd7c42o3xi0w" path="res://Data/Items/Melee/ChainSaw/ItemChainSawOne.tres" id="10_mj55l"]
+[ext_resource type="Resource" uid="uid://ddo2g6py0p80r" path="res://Data/Items/Melee/Mace/ItemMaceOne.tres" id="11_shy13"]
+[ext_resource type="Resource" uid="uid://c42a48l7lbaoq" path="res://Data/Items/Melee/Punch/ItemPunchOne.tres" id="12_h5w6q"]
+[ext_resource type="Resource" uid="uid://60hvk1k0bqa5" path="res://Data/Items/Melee/Sword/ItemSwordOne.tres" id="13_0xgur"]
+[ext_resource type="Resource" uid="uid://y0733w5uvalk" path="res://Data/Items/Melee/Wand/ItemWandOne.tres" id="14_foybo"]
+[ext_resource type="Resource" uid="uid://chxtpq0uhbkq4" path="res://Data/Items/Range/LaserGun/ItemLaserGunOne.tres" id="15_yfuxt"]
+[ext_resource type="Resource" uid="uid://jlcs7ymtsxjq" path="res://Data/Items/Range/Pistol/ItemPistolOne.tres" id="16_lsvp4"]
+[ext_resource type="Resource" uid="uid://bdt66rh56exfb" path="res://Data/Items/Range/Revolver/ItemRevolverOne.tres" id="17_fvasp"]
+[ext_resource type="Resource" uid="uid://vycqctj7pcyl" path="res://Data/Items/Range/ShotGun/ItemShotGunOne.tres" id="18_cyfpq"]
+[ext_resource type="Resource" uid="uid://dgxn7kslyttjm" path="res://Data/Items/Range/SMG/ItemSMGOne.tres" id="19_in18q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_re22b"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lgq3q"]
+font_size = 24
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="SelectionPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_re22b")
+script = ExtResource("1_h5j5x")
+players = Array[ExtResource("2_y4ow5")]([ExtResource("3_pjwp5"), ExtResource("4_5caa7"), ExtResource("5_stv2c"), ExtResource("6_q6k10"), ExtResource("7_0o6ww")])
+start_weapons = Array[ExtResource("8_pjwp5")]([ExtResource("9_ronw2"), ExtResource("10_mj55l"), ExtResource("11_shy13"), ExtResource("12_h5w6q"), ExtResource("13_0xgur"), ExtResource("14_foybo"), ExtResource("15_yfuxt"), ExtResource("16_lsvp4"), ExtResource("17_fvasp"), ExtResource("18_cyfpq"), ExtResource("19_in18q")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 550)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer/Control"]
+custom_minimum_size = Vector2(380, 550)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -275.0
+offset_right = 190.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_nql25")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/Control/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="PlayerIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/Panel/MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_lgq3q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerName" type="Label" parent="MarginContainer/VBoxContainer/Control/Panel/MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 130.0
+offset_top = 5.0
+offset_right = 278.0
+offset_bottom = 39.0
+text = "Player Name"
+label_settings = SubResource("LabelSettings_lgq3q")
+
+[node name="PlayerTitle" type="Label" parent="MarginContainer/VBoxContainer/Control/Panel/MarginContainer/Control"]
+unique_name_in_owner = true
+modulate = Color(0.803922, 0.67451, 0.537255, 1)
+layout_mode = 0
+offset_left = 130.0
+offset_top = 36.0
+offset_right = 278.0
+offset_bottom = 70.0
+text = "Player"
+label_settings = SubResource("LabelSettings_lgq3q")
+
+[node name="PlayerDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Control/Panel/MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(330, 350)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -350.0
+offset_right = 165.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+text = "I WAS HERE"
+
+[node name="BTN_Continue" parent="MarginContainer/VBoxContainer/Control" instance=ExtResource("2_fvvbe")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -195.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "  Continue  "
+
+[node name="Items" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Items"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="PlayerContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Items/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="BTN_SelectionCard" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer" instance=ExtResource("4_3vbaf")]
+layout_mode = 2
+
+[node name="BTN_SelectionCard2" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard3" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard4" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard5" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/PlayerContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="WeaponContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Items/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="BTN_SelectionCard" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard2" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard3" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard4" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard5" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard6" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard7" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard8" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard9" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard10" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[node name="BTN_SelectionCard11" type="Button" parent="MarginContainer/VBoxContainer/Items/VBoxContainer/WeaponContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("1_nql25")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/BTN_Continue" to="." method="_on_btn_continue_pressed"]

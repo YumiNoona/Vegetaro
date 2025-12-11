@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=2 format=3 uid="uid://bb6cmw7q0rd0h"]
+
+[ext_resource type="Script" uid="uid://bxtgv5ngtqup4" path="res://Scripts/Weapon/WeaponStats.gd" id="1_ifei5"]
+
+[resource]
+script = ExtResource("1_ifei5")
+damage = 13.0
+accuracy = 0.91
+cooldown = 1.95
+crit_damage = 0.07
+crit_chance = 1.0
+max_range = 52.0
+knockback = 1.4
+recoil = 0.13
+projectile_speed = 0.0
+life_steal = 0.0
+recoil_duration = 0.15
+attack_duration = 0.65
+back_duration = 0.65
+metadata/_custom_type_script = "uid://bxtgv5ngtqup4"

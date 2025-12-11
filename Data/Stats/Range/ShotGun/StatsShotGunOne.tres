@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://cbhm0sf7uh6fp"]
+
+[ext_resource type="PackedScene" uid="uid://bgi133vdps7ho" path="res://Scenes/Weapons/Projectile/ProjectileShotGun.tscn" id="1_vdh15"]
+[ext_resource type="Script" uid="uid://bxtgv5ngtqup4" path="res://Scripts/Weapon/WeaponStats.gd" id="2_67j2c"]
+
+[resource]
+script = ExtResource("2_67j2c")
+projectile_scene = ExtResource("1_vdh15")
+damage = 1.5
+accuracy = 0.85
+cooldown = 1.5
+max_range = 200.0
+knockback = 1.3
+projectile_speed = 800.0
+back_duration = 0.2
+metadata/_custom_type_script = "uid://bxtgv5ngtqup4"

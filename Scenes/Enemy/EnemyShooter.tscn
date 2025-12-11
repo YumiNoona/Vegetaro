@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtuh1so08s3gq"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_g2kx8"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/Sprites/Enemies/Enemy_4.png" id="2_nxidk"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="2_rtwf8"]
+[ext_resource type="Script" uid="uid://dx2w80ua38g0m" path="res://Scripts/Enemy/ShootingBehavior.gd" id="4_yrrfh"]
+[ext_resource type="PackedScene" uid="uid://devlq4gex40c" path="res://Scenes/Weapons/Projectile/ProjectileEnemy.tscn" id="5_fsu1u"]
+
+[node name="EnemyShooter" instance=ExtResource("1_g2kx8")]
+position = Vector2(1, 0)
+stats = ExtResource("2_rtwf8")
+
+[node name="Sprite" parent="Visuals" index="1"]
+texture = ExtResource("2_nxidk")
+
+[node name="FirePos" type="Marker2D" parent="Visuals" index="2"]
+position = Vector2(-120, -48)
+
+[node name="ShootingBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("enemy", "fire_pos")]
+script = ExtResource("4_yrrfh")
+enemy = NodePath("..")
+fire_pos = NodePath("../Visuals/FirePos")
+projectile_scene = ExtResource("5_fsu1u")
