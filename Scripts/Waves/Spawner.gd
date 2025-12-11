@@ -39,7 +39,7 @@ var current_boss: Node = null
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var wave_timer: Timer = $WaveTimer
 
-var wave_index := 15  # Start at wave 5 (first boss) for testing
+var wave_index := 1  # Start at wave 5 (first boss) for testing
 var current_wave_data : WaveData
 var spawned_enemies : Array[Enemy] = []
 var use_dynamic_waves := false  # Set to true after wave 25 for infinite mode

@@ -34,6 +34,7 @@ func get_damage() -> float:
 	if Global.get_chance_sucess(crit_chance):
 		critical = true
 		damage = ceil(damage * weapon.data.stats.crit_damage)
+	damage = round(damage * 10.0) / 10.0
 	return damage
 
 
@@ -41,5 +42,8 @@ func apply_life_steal() -> void:
 	var steal_chance := (Global.player.stats.life_steal / 100.0) + weapon.data.stats.life_steal
 	var can_steal := Global.get_chance_sucess(steal_chance)
 	if can_steal and is_instance_valid(Global.player):
-		Global.player.health_component.heal(1.0)
-		Global.on_create_heal_text.emit(Global.player, 1.0)
+		# Access health_component through the player's node structure
+		if Global.player.has_node("HealthComponent"):
+			var health_comp = Global.player.get_node("HealthComponent")
+			health_comp.heal(1.0)
+			Global.on_create_heal_text.emit(Global.player, 1.0)

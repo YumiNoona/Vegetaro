@@ -50,7 +50,7 @@ critical_color = Color(0.996078, 0.780392, 0.380392, 1)
 hp_color = Color(0, 0.627451, 0.482353, 1)
 
 [node name="BlackBackGround" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 texture = ExtResource("2_3w0r8")
 
 [node name="GrassBackGround" type="Sprite2D" parent="."]

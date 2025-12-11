@@ -7,7 +7,6 @@
 script = ExtResource("2_bpb6l")
 projectile_scene = ExtResource("1_ailoa")
 accuracy = 0.85
-cooldown = 0.25
 crit_chance = 0.03
 max_range = 260.0
 knockback = 0.8

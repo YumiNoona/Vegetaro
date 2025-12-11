@@ -13,13 +13,14 @@ func setup(stats: UnitStats) -> void:
 	current_health = max_health
 	on_health_changed.emit(current_health, max_health)
 
-
 func take_damage(value: float, hitbox: HitboxComponent = null) -> void:
 	if current_health <= 0:
 		return
 
-	current_health -= value
+	var dmg: float = round(value * 10.0) / 10.0
+	current_health -= dmg
 	current_health = max(current_health, 0)
+	current_health = round(current_health * 10.0) / 10.0
 
 	on_unit_hit.emit(hitbox)
 	on_health_changed.emit(current_health, max_health)
@@ -34,10 +35,12 @@ func heal(amount: float) -> void:
 	if current_health <= 0:
 		return
 		
-	current_health += amount
-	current_health =  min (current_health, max_health)
+	var heal_amt: float = round(amount * 10.0) / 10.0
+	current_health += heal_amt
+	current_health = min(current_health, max_health)
+	current_health = round(current_health * 10.0) / 10.0
 	on_health_changed.emit(current_health, max_health)
 
-
-func  die() -> void:
-	owner.queue_free()
+func die() -> void:
+	if owner:
+		owner.queue_free()

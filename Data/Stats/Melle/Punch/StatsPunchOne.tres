@@ -6,6 +6,7 @@
 script = ExtResource("1_hecdb")
 damage = 8.0
 accuracy = 0.7
+cooldown = 0.5
 max_range = 40.0
 knockback = 0.8
 recoil = 0.1
