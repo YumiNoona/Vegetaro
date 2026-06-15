@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BossConfigResource" load_steps=3 format=3 uid="uid://cxc2hj1nx25t1"]
+
+[ext_resource type="Script" uid="uid://c2y1nqsc7upg6" path="res://Data/Bosses/BossConfigResource.gd" id="1_tank"]
+[ext_resource type="Material" uid="uid://4kenq1x4uhaj" path="res://Shaders/SecondPhaseMaterial.tres" id="2_tank"]
+
+[resource]
+script = ExtResource("1_tank")
+has_second_phase = true
+second_phase_threshold = 0.3
+second_phase_hp = 120.0
+camera_shake_on_second_phase = true
+camera_shake_strength = 35.0
+second_phase_speed = 150.0
+second_phase_scale = 2.2
+second_phase_pulse_speed = 6.0
+second_phase_glow_color = Color(0.5, 0.5, 0.5, 1)
+second_phase_material = ExtResource("2_tank")

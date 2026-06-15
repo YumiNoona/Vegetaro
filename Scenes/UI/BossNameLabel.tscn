@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Scripts/UI/BossNameLabel.gd" id="1_boss_name"]
+[ext_resource type="FontFile" path="res://Assets/Font/BitcountGridDouble_Cursive-Bold.ttf" id="2_font"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_name"]
+font = ExtResource("2_font")
+font_size = 18
+font_color = Color(1, 1, 1, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="BossNameLabel" type="Label"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -80.0
+offset_top = -120.0
+offset_right = 80.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_boss_name")
+text = "BOSS NAME"
+label_settings = SubResource("LabelSettings_name")
+horizontal_alignment = 1
+vertical_alignment = 1
+

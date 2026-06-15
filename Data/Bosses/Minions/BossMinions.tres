@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BossConfigResource" load_steps=3 format=3 uid="uid://bjmvuyu44rbvo"]
+
+[ext_resource type="Script" uid="uid://c2y1nqsc7upg6" path="res://Data/Bosses/BossConfigResource.gd" id="1_fpu11"]
+[ext_resource type="Material" uid="uid://4kenq1x4uhaj" path="res://Shaders/SecondPhaseMaterial.tres" id="2_nm3dg"]
+
+[resource]
+script = ExtResource("1_fpu11")
+has_second_phase = true
+second_phase_threshold = 0.3
+second_phase_hp = 60.0
+camera_shake_on_second_phase = true
+camera_shake_strength = 50.0
+second_phase_speed = 450.0
+second_phase_attack = 40.0
+second_phase_scale = 3.0
+second_phase_pulse_speed = 10.0
+second_phase_glow_color = Color(0.477907, 0.0634833, 0.00781331, 1)
+second_phase_material = ExtResource("2_nm3dg")
+metadata/_custom_type_script = "uid://c2y1nqsc7upg6"

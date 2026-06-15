@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://ccmb0mkbxs1xa"]
+
+[ext_resource type="Script" uid="uid://cp8hvt5yt8rtf" path="res://Scripts/UI/EnemySpawnEffect.gd" id="1_hke84"]
+[ext_resource type="Texture2D" uid="uid://b41wkb1jo4inn" path="res://Assets/Sprites/Effects/Enemy/Lightning (1).png" id="2_wd07i"]
+[ext_resource type="Texture2D" uid="uid://b8jykw43tgmhl" path="res://Assets/Sprites/Effects/Enemy/Lightning (2).png" id="3_5vdl7"]
+[ext_resource type="Texture2D" uid="uid://d4hp0k74vk5xd" path="res://Assets/Sprites/Effects/Enemy/Lightning (3).png" id="4_ja2oi"]
+[ext_resource type="Texture2D" uid="uid://dm6dygtd23c8g" path="res://Assets/Sprites/Effects/Enemy/Lightning (4).png" id="5_ibc3v"]
+[ext_resource type="Texture2D" uid="uid://ckc3b0ec17auh" path="res://Assets/Sprites/Effects/Enemy/Lightning (5).png" id="6_eeydh"]
+[ext_resource type="Texture2D" uid="uid://cygj3ug4t851w" path="res://Assets/Sprites/Effects/Enemy/Lightning (6).png" id="7_suh5k"]
+[ext_resource type="Texture2D" uid="uid://d1c0v0userh7i" path="res://Assets/Sprites/Effects/Enemy/Lightning (7).png" id="8_dfdtl"]
+[ext_resource type="Texture2D" uid="uid://dir2ldv8p4ku2" path="res://Assets/Sprites/Effects/Enemy/Lightning (8).png" id="9_uvvjl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cj8ct"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("2_wd07i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5vdl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ja2oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ibc3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eeydh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_suh5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dfdtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uvvjl")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 15.0
+}]
+
+[node name="EnemySpawnEffect" type="Sprite2D"]
+script = ExtResource("1_hke84")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_cj8ct")
+animation = &"Idle"
+autoplay = "Idle"
+frame = 7
+frame_progress = 1.0

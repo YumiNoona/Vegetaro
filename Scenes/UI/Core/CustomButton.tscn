@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bux25see30qm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f13sm"]
+bg_color = Color(0.0941176, 0.623529, 0.745098, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p34v7"]
+bg_color = Color(0.388235, 0.388235, 0.388235, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="CustomButton" type="Button"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -31.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_f13sm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p34v7")
+text = "  Purchase  "

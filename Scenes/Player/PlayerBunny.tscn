@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnk83kmpughpu"]
+
+[ext_resource type="PackedScene" uid="uid://cep5gpcms5fqg" path="res://Scenes/Player/PlayerWellRounded.tscn" id="1_udgwc"]
+[ext_resource type="Resource" uid="uid://cekeopxtnmoq0" path="res://Data/Characters/PlayerBunny.tres" id="2_hq34q"]
+[ext_resource type="Texture2D" uid="uid://dmox6e28kf6ax" path="res://Assets/Sprites/Players/Player_4.png" id="2_pbk1l"]
+
+[node name="PlayerBunny" instance=ExtResource("1_udgwc")]
+stats = ExtResource("2_hq34q")
+
+[node name="Sprite" parent="Visuals" index="2"]
+texture = ExtResource("2_pbk1l")
+
+[connection signal="on_unit_died" from="HealthComponent" to="." method="_on_health_component_on_unit_died"]

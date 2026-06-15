@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuevtgg8j1r5y"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_jcly4"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2_p7tid"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="3_04r1g"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/Sprites/Enemies/Enemy_4.png" id="4_2ytlp"]
+[ext_resource type="Script" uid="uid://duc6127pmjux2" path="res://Data/Bosses/Berserker/BerserkerBehavior.gd" id="5_berserker"]
+
+[node name="BossBerserker" instance=ExtResource("1_jcly4")]
+position = Vector2(1, 0)
+script = ExtResource("2_p7tid")
+stats = ExtResource("3_04r1g")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(1, 0.2, 0.2, 1)
+texture = ExtResource("4_2ytlp")
+
+[node name="BerserkerBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5_berserker")
+boss = NodePath("..")
+rage_speed_bonus = 200.0

@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://coweutu65b0dk"]
+
+[ext_resource type="StyleBox" uid="uid://d0kuquyutaqr7" path="res://Scenes/UI/Styles/LegendaryStyle.tres" id="1_idue8"]
+[ext_resource type="Script" uid="uid://dnyugwqq4l7xt" path="res://Scripts/UI/UpgradeCard.gd" id="2_taqee"]
+[ext_resource type="Texture2D" uid="uid://dqjp2ilexicxg" path="res://Assets/Sprites/Upgrades/Punch.png" id="3_amkbo"]
+[ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="4_k04wu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p34v7"]
+font_size = 25
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="UpgradeCard" type="Panel"]
+custom_minimum_size = Vector2(350, 220)
+offset_right = 350.0
+offset_bottom = 220.0
+theme_override_styles/panel = ExtResource("1_idue8")
+script = ExtResource("2_taqee")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_amkbo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="Label" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 100.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 55.0
+text = "Health Regen Cell"
+label_settings = SubResource("LabelSettings_p34v7")
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/Control"]
+unique_name_in_owner = true
+modulate = Color(0.935577, 0.866919, 0.591142, 1)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 220.0
+offset_bottom = 95.0
+text = "+1"
+label_settings = SubResource("LabelSettings_p34v7")
+vertical_alignment = 1
+
+[node name="CustomButton" parent="MarginContainer/Control" instance=ExtResource("4_k04wu")]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 1
+offset_left = -90.0
+offset_top = -50.0
+offset_right = 90.0
+
+[connection signal="pressed" from="MarginContainer/Control/CustomButton" to="." method="_on_custom_button_pressed"]

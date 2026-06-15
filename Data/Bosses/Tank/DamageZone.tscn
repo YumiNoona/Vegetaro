@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://c32iioiuip0a3"]
+
+[ext_resource type="Texture2D" uid="uid://b83g3djhjoqk4" path="res://Assets/Sprites/Black.png" id="1_zone"]
+[ext_resource type="PackedScene" uid="uid://cc4a22vm2vb0h" path="res://Scenes/Components/HitboxComponent.tscn" id="2_bo11q"]
+
+[sub_resource type="Animation" id="Animation_pulse"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.2, 0.2, 0.30588236), Color(1, 0.4, 0.4, 0.31764707), Color(1, 0.2, 0.2, 0.2627451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_zone"]
+_data = {
+&"Pulse": SubResource("Animation_pulse")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb534"]
+size = Vector2(184, 185)
+
+[node name="DamageZone" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.2, 0.2, 0.26274514)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("1_zone")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_zone")
+}
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_bo11q")]
+visible = false
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_sb534")
+debug_color = Color(0.902296, 0.484191, 1.34766e-06, 0.42)

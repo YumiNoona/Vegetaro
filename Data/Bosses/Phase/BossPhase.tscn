@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://cw2324yd0iu8h"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_hjp6n"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2_235ly"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="3_fk3on"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/Sprites/Enemies/Enemy_4.png" id="4_4j5vq"]
+[ext_resource type="Script" path="res://Data/Bosses/Phase/PhaseBehavior.gd" id="5_phase"]
+[ext_resource type="Script" uid="uid://dx2w80ua38g0m" path="res://Scripts/Enemy/ShootingBehavior.gd" id="7_phase"]
+[ext_resource type="PackedScene" uid="uid://devlq4gex40c" path="res://Scenes/Weapons/Projectile/ProjectileEnemy.tscn" id="8_phase"]
+[ext_resource type="PackedScene" path="res://Data/Bosses/Tank/DamageZone.tscn" id="9_zone"]
+
+[node name="BossPhase" instance=ExtResource("1_hjp6n")]
+position = Vector2(1, 0)
+script = ExtResource("2_235ly")
+stats = ExtResource("3_fk3on")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(0.2, 1.0, 0.8, 1)
+texture = ExtResource("4_4j5vq")
+
+[node name="FirePos" type="Marker2D" parent="Visuals" index="2"]
+position = Vector2(-120, -48)
+
+[node name="PhaseBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5_phase")
+boss = NodePath("..")
+phase_switch_interval = 10.0
+melee_speed_multiplier = 1.5
+ranged_attack_cooldown = 2.0
+area_denial_zone_scene = ExtResource("9_zone")
+
+[node name="ShootingBehavior" type="Node2D" parent="." index="11" node_paths=PackedStringArray("enemy", "fire_pos")]
+script = ExtResource("7_phase")
+enemy = NodePath("..")
+fire_pos = NodePath("../Visuals/FirePos")
+projectile_scene = ExtResource("8_phase")
+even_spread = false
+random_spread = true

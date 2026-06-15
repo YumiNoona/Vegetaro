@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2xcdqoqj74ck"]
+
+[ext_resource type="PackedScene" uid="uid://bux25see30qm7" path="res://Scenes/UI/Core/CustomButton.tscn" id="1_l6ahy"]
+[ext_resource type="Script" uid="uid://d3p7c0vhl264c" path="res://Scripts/UI/GameOver.gd" id="2_5tpoa"]
+[ext_resource type="FontFile" uid="uid://debd8pk2gwtwk" path="res://Assets/Font/Exo2-Bold.ttf" id="2_ntvxi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gameover"]
+bg_color = Color(0.203922, 0.203922, 0.203922, 0.9)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpie4"]
+font = ExtResource("2_ntvxi")
+font_size = 80
+font_color = Color(1, 0.604147, 0.505348, 1)
+outline_size = 3
+outline_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+
+[node name="GameOverPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gameover")
+script = ExtResource("2_5tpoa")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="BTN_Restart" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_l6ahy")]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  RESTART  "
+
+[node name="BTN_Quit" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_l6ahy")]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "  QUIT  "
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 250.0
+offset_right = 1280.0
+offset_bottom = 347.0
+size_flags_horizontal = 4
+text = "!!  GAME OVER  !!"
+label_settings = SubResource("LabelSettings_fpie4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BTN_Restart" to="." method="_on_btn_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BTN_Quit" to="." method="_on_btn_quit_pressed"]

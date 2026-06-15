@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbgufv1ucxco3"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_0w8qd"]
+[ext_resource type="Resource" uid="uid://bn2kw4cefcei" path="res://Data/Characters/EnemyCharger.tres" id="2_beu0w"]
+[ext_resource type="Texture2D" uid="uid://emsi6ifyt0vf" path="res://Assets/Sprites/Enemies/Enemy_5.png" id="2_ernld"]
+[ext_resource type="Script" uid="uid://6u2wu5yb8pwx" path="res://Scripts/Enemy/ChargerBehavior.gd" id="4_beu0w"]
+
+[sub_resource type="Animation" id="Animation_beu0w"]
+resource_name = "Charge"
+length = 0.7
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.919579, 0.260599, 9.62615e-07, 1), Color(1, 1, 1, 1), Color(0.919579, 0.260599, 9.62615e-07, 1), Color(1, 1, 1, 1), Color(0.919579, 0.260599, 9.62615e-07, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o5dq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o5dq6"]
+_data = {
+&"Charge": SubResource("Animation_beu0w"),
+&"RESET": SubResource("Animation_o5dq6")
+}
+
+[node name="EnemyCharger" instance=ExtResource("1_0w8qd")]
+stats = ExtResource("2_beu0w")
+
+[node name="Sprite" parent="Visuals" index="1"]
+texture = ExtResource("2_ernld")
+
+[node name="ChargerBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("enemy", "anim_effects")]
+script = ExtResource("4_beu0w")
+enemy = NodePath("..")
+anim_effects = NodePath("../AnimationEffects")
+stop_distance = 50
+
+[node name="AnimationEffects" type="AnimationPlayer" parent="." index="11"]
+libraries = {
+&"": SubResource("AnimationLibrary_o5dq6")
+}

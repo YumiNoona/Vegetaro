@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BossConfigResource" load_steps=2 format=3 uid="uid://bj2hh6xwlnj45"]
+
+[ext_resource type="Script" uid="uid://c2y1nqsc7upg6" path="res://Data/Bosses/BossConfigResource.gd" id="1_2g4rx"]
+
+[resource]
+script = ExtResource("1_2g4rx")
+has_second_phase = true
+second_phase_hp = 80.0
+camera_shake_on_second_phase = true
+camera_shake_strength = 30.0
+metadata/_custom_type_script = "uid://c2y1nqsc7upg6"

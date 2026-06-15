@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cglby31laeekf"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_x3uvh"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2_bwttd"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="3_xe3e5"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/Sprites/Enemies/Enemy_4.png" id="4_oyacp"]
+[ext_resource type="Script" uid="uid://dj8ppigeloi3t" path="res://Data/Bosses/Minions/MinionsBehavior.gd" id="5_fcfn0"]
+[ext_resource type="Script" uid="uid://dx2w80ua38g0m" path="res://Scripts/Enemy/ShootingBehavior.gd" id="5_grqr3"]
+[ext_resource type="PackedScene" uid="uid://bbgufv1ucxco3" path="res://Scenes/Enemy/EnemyCharger.tscn" id="6_x3uvh"]
+[ext_resource type="PackedScene" uid="uid://devlq4gex40c" path="res://Scenes/Weapons/Projectile/ProjectileEnemy.tscn" id="6_yurbg"]
+
+[node name="BossMinions" instance=ExtResource("1_x3uvh")]
+position = Vector2(1, 0)
+script = ExtResource("2_bwttd")
+flock_push = 10.0
+stats = ExtResource("3_xe3e5")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(1, 0.6, 0.3, 1)
+texture = ExtResource("4_oyacp")
+
+[node name="FirePos" type="Marker2D" parent="Visuals" index="2"]
+position = Vector2(-120, -48)
+
+[node name="MinionsBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5_fcfn0")
+boss = NodePath("..")
+minion_scene = ExtResource("6_x3uvh")
+minions_per_spawn = 2
+max_minion_spawns = 3
+regen_amount = 2.0
+regen_cooldown = 10.0
+max_regens = 1
+
+[node name="ShootingBehavior" type="Node2D" parent="." index="11" node_paths=PackedStringArray("enemy", "fire_pos")]
+script = ExtResource("5_grqr3")
+enemy = NodePath("..")
+fire_pos = NodePath("../Visuals/FirePos")
+cooldown = 5.0
+projectile_scene = ExtResource("6_yurbg")
+damage_multiplier = 0.5
+even_spread = false
+random_spread = true

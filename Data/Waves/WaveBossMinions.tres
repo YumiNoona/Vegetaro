@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=9 format=3 uid="uid://dbvf6cpwqtcbb"]
+
+[ext_resource type="Resource" uid="uid://bjmvuyu44rbvo" path="res://Data/Bosses/Minions/BossMinions.tres" id="1_ar3bu"]
+[ext_resource type="PackedScene" uid="uid://cglby31laeekf" path="res://Data/Bosses/Minions/BossMinions.tscn" id="2_8oul2"]
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="3_5elag"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="4_duvp7"]
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="5_1bqft"]
+[ext_resource type="PackedScene" uid="uid://dodus8qhsaxxi" path="res://Scenes/Enemy/EnemyChaserMid.tscn" id="6_rgugr"]
+
+[sub_resource type="Resource" id="Resource_pwt1f"]
+script = ExtResource("4_duvp7")
+unit_scene = ExtResource("5_1bqft")
+weight = 6
+metadata/_custom_type_script = "uid://durhehh0qa2ju"
+
+[sub_resource type="Resource" id="Resource_vu7hd"]
+script = ExtResource("4_duvp7")
+unit_scene = ExtResource("6_rgugr")
+weight = 3
+metadata/_custom_type_script = "uid://durhehh0qa2ju"
+
+[resource]
+script = ExtResource("3_5elag")
+units = Array[ExtResource("4_duvp7")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd")])
+from = 5
+to = 5
+wave_time = 60.0
+fixed_spawn_time = 0.5
+min_spawn_time = 2.0
+max_spawn_time = 4.0
+is_boss_wave = true
+boss_scene = ExtResource("2_8oul2")
+boss_config = ExtResource("1_ar3bu")
+metadata/_custom_type_script = "uid://dq7rnby5u5823"

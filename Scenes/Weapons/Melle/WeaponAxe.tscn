@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://biwwnqmoi784p"]
+
+[ext_resource type="PackedScene" uid="uid://bi16ai31f3noh" path="res://Scenes/Weapons/WeaponBase.tscn" id="1_0gif7"]
+[ext_resource type="Texture2D" uid="uid://bbw1axlomamnl" path="res://Assets/Sprites/Weapons/Melee/Weapon_axe.png" id="2_5pyww"]
+[ext_resource type="PackedScene" uid="uid://cc4a22vm2vb0h" path="res://Scenes/Components/HitboxComponent.tscn" id="2_288fd"]
+[ext_resource type="Shader" uid="uid://bcaji0ylsyoep" path="res://Shaders/Weapons.gdshader" id="2_v78o6"]
+[ext_resource type="Script" uid="uid://cvcyuwjsnjbql" path="res://Scripts/Weapon/MelleBehavior.gd" id="4_bdpd0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_muusy"]
+resource_local_to_scene = true
+shader = ExtResource("2_v78o6")
+shader_parameter/Smooth = true
+shader_parameter/width = 60.0
+shader_parameter/outline_color = Color(1, 1, 0.235294, 1)
+shader_parameter/pixel_size = 10
+shader_parameter/width_speed = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pyww"]
+size = Vector2(58, 33)
+
+[node name="WeaponAxe" instance=ExtResource("1_0gif7")]
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_muusy")
+position = Vector2(30, 8)
+texture = ExtResource("2_5pyww")
+
+[node name="HitboxComponent" parent="Sprite2D" index="0" instance=ExtResource("2_288fd")]
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 32
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitboxComponent" index="0"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_5pyww")
+debug_color = Color(0.859037, 0.363215, 0.00837937, 0.42)
+
+[node name="WeaponBehavior" parent="." index="3" node_paths=PackedStringArray("hitbox", "weapon")]
+script = ExtResource("4_bdpd0")
+hitbox = NodePath("../Sprite2D/HitboxComponent")
+weapon = NodePath("..")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxuyl3ww5or8o"]
+
+[ext_resource type="Script" uid="uid://dshlf25nka0gg" path="res://Scripts/Weapon/Projectile.gd" id="1_dk86l"]
+[ext_resource type="Texture2D" uid="uid://cf2jawl0ns5dc" path="res://Assets/Sprites/Projectiles/Projectile_LaserGun.png" id="2_dk86l"]
+[ext_resource type="PackedScene" uid="uid://cc4a22vm2vb0h" path="res://Scenes/Components/HitboxComponent.tscn" id="3_b66ty"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fsx0u"]
+radius = 21.0
+
+[node name="ProjectileLaserGun" type="Node2D" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_dk86l")
+hitbox = NodePath("HitboxComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_dk86l")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_b66ty")]
+collision_layer = 4
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_fsx0u")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="on_hit_hurtbox" from="HitboxComponent" to="." method="_on_hitbox_component_on_hit_hurtbox"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

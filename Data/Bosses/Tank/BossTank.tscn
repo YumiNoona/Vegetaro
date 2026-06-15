@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfxc3tc33pw8c"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_myglc"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2_nlcrj"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="3_ssgae"]
+[ext_resource type="Texture2D" uid="uid://4mllmwdfhmce" path="res://Assets/Sprites/Enemies/Enemy_4.png" id="4_17y0p"]
+[ext_resource type="Script" uid="uid://dcqjkc0wj7uiy" path="res://Data/Bosses/Tank/ZoneBehavior.gd" id="5_tank"]
+[ext_resource type="PackedScene" path="res://Data/Bosses/Tank/DamageZone.tscn" id="6_zone"]
+
+[node name="BossTank" instance=ExtResource("1_myglc")]
+position = Vector2(1, 0)
+script = ExtResource("2_nlcrj")
+stats = ExtResource("3_ssgae")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(0.5, 0.5, 0.5, 1)
+texture = ExtResource("4_17y0p")
+
+[node name="ZoneBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5_tank")
+boss = NodePath("..")
+zone_scene = ExtResource("6_zone")
+zone_cooldown = 10.0
+zone_radius = 300.0

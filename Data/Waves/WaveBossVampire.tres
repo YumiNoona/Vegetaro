@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=5 format=3 uid="uid://bjb2km31oo7b3"]
+
+[ext_resource type="Resource" uid="uid://c24gk0ruud54p" path="res://Data/Bosses/Vampire/BossVampire.tres" id="1_4q75d"]
+[ext_resource type="PackedScene" uid="uid://fo273saw06n8" path="res://Data/Bosses/Vampire/BossVampire.tscn" id="2_0fl1o"]
+[ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="3_6boke"]
+[ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="4_ebnk6"]
+
+[resource]
+script = ExtResource("3_6boke")
+from = 30
+to = 30
+wave_time = 60.0
+fixed_spawn_time = 0.5
+min_spawn_time = 2.0
+max_spawn_time = 4.0
+is_boss_wave = true
+boss_scene = ExtResource("2_0fl1o")
+boss_config = ExtResource("1_4q75d")
+metadata/_custom_type_script = "uid://dq7rnby5u5823"

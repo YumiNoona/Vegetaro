@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccg15a65dgu28"]
+
+[ext_resource type="Script" uid="uid://dfsncfbb8qo57" path="res://Scripts/Core/FloatingText.gd" id="1_5clbq"]
+[ext_resource type="FontFile" uid="uid://d2oanrg1nxklr" path="res://Assets/Font/Saira_Condensed-Black.ttf" id="1_qygeh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lmjhl"]
+font = ExtResource("1_qygeh")
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="FloatingText" type="Node2D"]
+z_index = 4
+script = ExtResource("1_5clbq")
+
+[node name="ValueLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "10"
+label_settings = SubResource("LabelSettings_lmjhl")
+horizontal_alignment = 1

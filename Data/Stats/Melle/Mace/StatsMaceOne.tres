@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=2 format=3 uid="uid://cnmhia842twht"]
+
+[ext_resource type="Script" uid="uid://bxtgv5ngtqup4" path="res://Scripts/Weapon/WeaponStats.gd" id="1_wulqa"]
+
+[resource]
+script = ExtResource("1_wulqa")
+damage = 10.0
+accuracy = 0.7
+cooldown = 1.5
+crit_damage = 1.5
+crit_chance = 0.05
+max_range = 40.0
+knockback = 1.0
+recoil = 0.1
+projectile_speed = 0.0
+life_steal = 0.0
+recoil_duration = 0.1
+attack_duration = 0.5
+back_duration = 0.5
+metadata/_custom_type_script = "uid://bxtgv5ngtqup4"

@@ -1,0 +1,13 @@
+# Godot
+.import/
+.godot/
+mono/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build exports
+/export/
+*.pck

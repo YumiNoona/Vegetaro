@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh1iy61sdyy24"]
+
+[ext_resource type="Script" uid="uid://w55icj2hdi8p" path="res://Data/Bosses/Bomber/Bomb.gd" id="1_bomb"]
+[ext_resource type="Texture2D" uid="uid://bk71pllu37m1b" path="res://Assets/Sprites/Landmine.png" id="2_u7bhk"]
+[ext_resource type="PackedScene" uid="uid://cc4a22vm2vb0h" path="res://Scenes/Components/HitboxComponent.tscn" id="3_3g52i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fc4y2"]
+radius = 23.0
+
+[node name="Bomb" type="Node2D" node_paths=PackedStringArray("source")]
+script = ExtResource("1_bomb")
+damage = 2.0
+radius = 20.0
+source = NodePath(".")
+random_position_range = 130.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.5, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_u7bhk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_3g52i")]
+position = Vector2(0, 27)
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_fc4y2")
+debug_color = Color(0.902296, 0.484191, 1.34766e-06, 0.42)
+
+[connection signal="timeout" from="Timer" to="." method="_explode"]

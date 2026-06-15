@@ -1,0 +1,109 @@
+[gd_scene load_steps=44 format=3 uid="uid://dgugckvx4ls3s"]
+
+[ext_resource type="PackedScene" uid="uid://uwf2w238evcp" path="res://Scenes/UI/Stats/StatsContainer.tscn" id="1_2xpnu"]
+[ext_resource type="Script" uid="uid://brgu6cd1fnjaf" path="res://Scripts/UI/UpgradePanel.gd" id="1_7jqw0"]
+[ext_resource type="PackedScene" uid="uid://coweutu65b0dk" path="res://Scenes/UI/Upgrade/UpgradeCard.tscn" id="1_d8ggc"]
+[ext_resource type="Script" uid="uid://fhannu8q7i6y" path="res://Scripts/UI/ItemUpgrade.gd" id="2_qe1su"]
+[ext_resource type="Resource" uid="uid://begf2rhelexxv" path="res://Data/Upgrades/Block/Upgrade_Block_I.tres" id="3_e82ix"]
+[ext_resource type="Resource" uid="uid://x1y64pd6x0ei" path="res://Data/Upgrades/Block/Upgrade_Block_II.tres" id="4_2uh07"]
+[ext_resource type="Resource" uid="uid://kgtobul1a1hx" path="res://Data/Upgrades/Damage/Upgrade_Damage_I.tres" id="4_jspod"]
+[ext_resource type="Resource" uid="uid://dyhgrp83nnl74" path="res://Data/Upgrades/Harvesting/Upgrade_Harvesting_I.tres" id="5_i5lwx"]
+[ext_resource type="Resource" uid="uid://c2g4amtajwjd3" path="res://Data/Upgrades/Block/Upgrade_Block_IV.tres" id="5_sfts2"]
+[ext_resource type="Resource" uid="uid://b8cpq7w1d403w" path="res://Data/Upgrades/Health/Upgrade_Health_I.tres" id="6_hieme"]
+[ext_resource type="Resource" uid="uid://bjtivh5hxvsos" path="res://Data/Upgrades/Block/Upgrade_Block_V.tres" id="6_xr55k"]
+[ext_resource type="Resource" uid="uid://4dbp4kbew3ex" path="res://Data/Upgrades/HealthRegen/Upgrade_HealthRegen_I.tres" id="7_ifjw0"]
+[ext_resource type="Resource" uid="uid://cg0yfk6fc25dh" path="res://Data/Upgrades/Block/Upgrade_Block_VII.tres" id="7_r57px"]
+[ext_resource type="Resource" uid="uid://c112ivrq8cbi1" path="res://Data/Upgrades/LifeSteal/Upgrade_LifeSteal_I.tres" id="8_i2qap"]
+[ext_resource type="Resource" uid="uid://cy8d73g8a5nts" path="res://Data/Upgrades/Luck/Upgrade_Luck_III.tres" id="9_ctrrr"]
+[ext_resource type="Resource" uid="uid://dxkhug8u33gq5" path="res://Data/Upgrades/Damage/Upgrade_Damage_II.tres" id="9_mwlrg"]
+[ext_resource type="Resource" uid="uid://bwhvot1vlhx3f" path="res://Data/Upgrades/Damage/Upgrade_Damage_IV.tres" id="10_qmtmj"]
+[ext_resource type="Resource" uid="uid://cy3p6t43dj2ny" path="res://Data/Upgrades/Speed/Upgrade_Speed_V.tres" id="10_qu632"]
+[ext_resource type="Resource" uid="uid://chbtva5m3t31h" path="res://Data/Upgrades/Damage/Upgrade_Damage_VI.tres" id="11_q6fft"]
+[ext_resource type="Resource" uid="uid://bg14ijpacrkwq" path="res://Data/Upgrades/Damage/Upgrade_Damage_VIII.tres" id="12_xdiag"]
+[ext_resource type="Resource" uid="uid://dpaxc3ds8ptgf" path="res://Data/Upgrades/Harvesting/Upgrade_Harvesting_IV.tres" id="14_3ceyr"]
+[ext_resource type="Resource" uid="uid://d15dqybwhr7a2" path="res://Data/Upgrades/Harvesting/Upgrade_Harvesting_IX.tres" id="15_w4lpn"]
+[ext_resource type="Resource" uid="uid://1g3nl8hpolij" path="res://Data/Upgrades/Harvesting/Upgrade_Harvesting_VI.tres" id="16_4rbus"]
+[ext_resource type="Resource" uid="uid://h12m080223dy" path="res://Data/Upgrades/Health/Upgrade_Health_IX.tres" id="18_1ph1w"]
+[ext_resource type="Resource" uid="uid://c7oiy1qafql0l" path="res://Data/Upgrades/Health/Upgrade_Health_V.tres" id="19_ma8j3"]
+[ext_resource type="Resource" uid="uid://cyhplds3rxxhk" path="res://Data/Upgrades/Health/Upgrade_Health_VII.tres" id="20_8lndv"]
+[ext_resource type="Resource" uid="uid://c4qi6y2cwido7" path="res://Data/Upgrades/Health/Upgrade_Health_X.tres" id="21_ms4be"]
+[ext_resource type="Resource" uid="uid://cvvcahhybdgw1" path="res://Data/Upgrades/HealthRegen/Upgrade_HealthRegen_III.tres" id="23_0uvq8"]
+[ext_resource type="Resource" uid="uid://bkvfp8gycd38r" path="res://Data/Upgrades/HealthRegen/Upgrade_HealthRegen_IV.tres" id="24_lmkai"]
+[ext_resource type="Resource" uid="uid://pr4vluugjax2" path="res://Data/Upgrades/HealthRegen/Upgrade_HealthRegen_IX.tres" id="25_dafdj"]
+[ext_resource type="Resource" uid="uid://bwafr52mxqsor" path="res://Data/Upgrades/HealthRegen/Upgrade_HealthRegen_VII.tres" id="26_rit0h"]
+[ext_resource type="Resource" uid="uid://bfpxcgxyjjbfj" path="res://Data/Upgrades/LifeSteal/Upgrade_LifeSteal_III.tres" id="28_7uwis"]
+[ext_resource type="Resource" uid="uid://bjslq4dcm54v5" path="res://Data/Upgrades/LifeSteal/Upgrade_LifeSteal_VI.tres" id="29_e1ajo"]
+[ext_resource type="Resource" uid="uid://dof824rtcaifj" path="res://Data/Upgrades/LifeSteal/Upgrade_LifeSteal_X.tres" id="30_nvvoc"]
+[ext_resource type="Resource" uid="uid://bh38fhutmfnon" path="res://Data/Upgrades/Luck/Upgrade_Luck_I.tres" id="31_ggj8t"]
+[ext_resource type="Resource" uid="uid://kbsxu8j86w4n" path="res://Data/Upgrades/Luck/Upgrade_Luck_IX.tres" id="33_a2wd7"]
+[ext_resource type="Resource" uid="uid://dl8x05i2q5ai" path="res://Data/Upgrades/Luck/Upgrade_Luck_VII.tres" id="34_jvggs"]
+[ext_resource type="Resource" uid="uid://cu40x42ov4ajc" path="res://Data/Upgrades/Speed/Upgrade_Speed_IV.tres" id="35_3dpnu"]
+[ext_resource type="Resource" uid="uid://def58uf62fva1" path="res://Data/Upgrades/Speed/Upgrade_Speed_IX.tres" id="36_bhtls"]
+[ext_resource type="Resource" uid="uid://cdrt582as1g5d" path="res://Data/Upgrades/Speed/Upgrade_Speed_VII.tres" id="38_lrwhk"]
+[ext_resource type="Resource" uid="uid://0ecxc7recptw" path="res://Data/Upgrades/Speed/Upgrade_Speed_X.tres" id="39_e6sc8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u56rl"]
+bg_color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2xpnu"]
+font_size = 120
+font_color = Color(1, 1, 0.011764706, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="UpgradePanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u56rl")
+script = ExtResource("1_7jqw0")
+upgrade_list = Array[ExtResource("2_qe1su")]([ExtResource("3_e82ix"), ExtResource("4_2uh07"), ExtResource("5_sfts2"), ExtResource("6_xr55k"), ExtResource("7_r57px"), ExtResource("4_jspod"), ExtResource("9_mwlrg"), ExtResource("10_qmtmj"), ExtResource("11_q6fft"), ExtResource("12_xdiag"), ExtResource("5_i5lwx"), ExtResource("14_3ceyr"), ExtResource("15_w4lpn"), ExtResource("16_4rbus"), ExtResource("6_hieme"), ExtResource("18_1ph1w"), ExtResource("19_ma8j3"), ExtResource("20_8lndv"), ExtResource("21_ms4be"), ExtResource("7_ifjw0"), ExtResource("23_0uvq8"), ExtResource("24_lmkai"), ExtResource("25_dafdj"), ExtResource("26_rit0h"), ExtResource("8_i2qap"), ExtResource("28_7uwis"), ExtResource("29_e1ajo"), ExtResource("30_nvvoc"), ExtResource("31_ggj8t"), ExtResource("9_ctrrr"), ExtResource("33_a2wd7"), ExtResource("34_jvggs"), ExtResource("35_3dpnu"), ExtResource("36_bhtls"), ExtResource("10_qu632"), ExtResource("38_lrwhk"), ExtResource("39_e6sc8")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Wave Completed"
+label_settings = SubResource("LabelSettings_2xpnu")
+horizontal_alignment = 1
+
+[node name="ItemsContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="UpgradeCard" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemsContainer" instance=ExtResource("1_d8ggc")]
+layout_mode = 2
+
+[node name="UpgradeCard2" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemsContainer" instance=ExtResource("1_d8ggc")]
+layout_mode = 2
+
+[node name="UpgradeCard3" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemsContainer" instance=ExtResource("1_d8ggc")]
+layout_mode = 2
+
+[node name="UpgradeCard4" parent="MarginContainer/HBoxContainer/VBoxContainer/ItemsContainer" instance=ExtResource("1_d8ggc")]
+layout_mode = 2
+
+[node name="StatsContainer" parent="MarginContainer/HBoxContainer" instance=ExtResource("1_2xpnu")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

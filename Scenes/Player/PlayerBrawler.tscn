@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw56jphd6fes7"]
+
+[ext_resource type="PackedScene" uid="uid://cep5gpcms5fqg" path="res://Scenes/Player/PlayerWellRounded.tscn" id="1_1r3lf"]
+[ext_resource type="Texture2D" uid="uid://dpxw8tsbgrfse" path="res://Assets/Sprites/Players/Player_2.png" id="2_1c0u7"]
+[ext_resource type="Resource" uid="uid://chtm3ouaan4dm" path="res://Data/Characters/PlayerBrawler.tres" id="2_5u3e2"]
+
+[node name="PlayerBrawler" instance=ExtResource("1_1r3lf")]
+stats = ExtResource("2_5u3e2")
+
+[node name="Sprite" parent="Visuals" index="2"]
+texture = ExtResource("2_1c0u7")
