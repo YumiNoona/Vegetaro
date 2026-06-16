@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3]
+
+[ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="1_ae3s2"]
+[ext_resource type="Texture2D" uid="uid://cjtqnii2ghcsx" path="res://Assets/Sprites/Players/Player_9.png" id="1_k1l5g"]
+
+[resource]
+script = ExtResource("1_ae3s2")
+name = "Shinobu"
+description = "A phantom blade in the dark. She strikes from the shadows and vanishes without a trace."
+icon = ExtResource("1_k1l5g")
+health = 6.0
+damage = 12.0
+speed = 450
+luck = 15.0
+block_chance = 5.0
+life_steal = 5.0
+harvesting = 2.0

@@ -5,15 +5,14 @@
 
 [resource]
 script = ExtResource("1_ae3s2")
-name = "GhostCry"
-description = "A sorrowful spirit drowned in endless tears. Its cries echo through the void."
+name = "Kayo"
+description = "A relic from a broken world. Her circuits hum with the last echo of humanity."
 icon = ExtResource("1_k1l5g")
 health = 8.0
 damage = 9.0
 speed = 350
 luck = 20.0
 block_chance = 20.0
-hp_regen = 0.0
 life_steal = 15.0
 harvesting = 5.0
 metadata/_custom_type_script = "uid://4qpn834qds5r"

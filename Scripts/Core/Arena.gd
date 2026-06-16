@@ -111,15 +111,18 @@ func clean_arena() -> void:
 
 func spawn_coins(enemy: Enemy) -> void:
 	var random_angle := randf_range(0, TAU)
-	var offset := Vector2.RIGHT.rotated(random_angle) * 35 
+	var offset := Vector2.RIGHT.rotated(random_angle) * 35
 	var spawn_pos := enemy.global_position + offset
-	
+
 	var gold_instance := Global.COINS_SCENE.instantiate() as Coins
 	gold_list.append(gold_instance)
-	
+
 	gold_instance.global_position = spawn_pos
 	gold_instance.value = int(enemy.stats.gold_drop)
+	gold_instance.scale = Vector2.ZERO
 	call_deferred("add_child", gold_instance)
+	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(gold_instance, "scale", Vector2.ONE, 0.3)
 
 
 
@@ -189,6 +192,9 @@ func _on_shop_panel_on_shop_next_wave() -> void:
 
 func _on_enemy_died(enemy: Enemy) -> void:
 	spawn_coins(enemy)
+	var cam = get_viewport().get_camera_2d()
+	if cam and cam.has_method("shake"):
+		cam.shake(3.0, 0.15)
 
 func _on_player_died() -> void:
 	show_game_over()

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://q6vgfm7h7gvp"]
+
+[ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="1_ae3s2"]
+[ext_resource type="Texture2D" uid="uid://bvfscpwctgis2" path="res://Assets/Sprites/Players/Player_10.png" id="1_k1l5g"]
+
+[resource]
+script = ExtResource("1_ae3s2")
+name = "Dazai"
+description = "A master strategist who turns misfortune into triumph."
+icon = ExtResource("1_k1l5g")
+health = 10.0
+damage = 8.0
+speed = 340
+luck = 25.0
+block_chance = 15.0
+life_steal = 12.0
+harvesting = 7.0

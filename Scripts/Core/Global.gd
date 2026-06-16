@@ -73,9 +73,12 @@ var available_players: Dictionary[String, PackedScene] = {
 	"Brawler":preload("res://Scenes/Player/PlayerBrawler.tscn"),
 	"Bunny":preload("res://Scenes/Player/PlayerBunny.tscn"),
 	"Crazy":preload("res://Scenes/Player/PlayerCrazy.tscn"),
+	"Dazai":preload("res://Scenes/Player/PlayerDazai.tscn"),
 	"Ghost":preload("res://Scenes/Player/PlayerGhost.tscn"),
-	"GhostCry":preload("res://Scenes/Player/PlayerGhostCry.tscn"),
+	"Kayo":preload("res://Scenes/Player/PlayerGhostCry.tscn"),
 	"Knight":preload("res://Scenes/Player/PlayerKnight.tscn"),
+	"Medusa":preload("res://Scenes/Player/PlayerMedusa.tscn"),
+	"Shinobu":preload("res://Scenes/Player/PlayerShinobu.tscn"),
 	"WellRounded":preload("res://Scenes/Player/PlayerWellRounded.tscn")
 } 
 
@@ -148,6 +151,40 @@ func get_tier_style(tier: UpgradeTier) -> StyleBoxFlat:
 			return EPIC_STYLE
 		_:
 			return LEGENDARY_STYLE
+
+func make_hover_style(base: StyleBoxFlat) -> StyleBoxFlat:
+	var s = StyleBoxFlat.new()
+	s.bg_color = base.bg_color.lightened(0.3)
+	s.border_color = base.border_color.lightened(0.4)
+	s.border_width_left = base.border_width_left + 1
+	s.border_width_top = base.border_width_top + 1
+	s.border_width_right = base.border_width_right + 1
+	s.border_width_bottom = base.border_width_bottom + 1
+	s.corner_radius_top_left = base.corner_radius_top_left
+	s.corner_radius_top_right = base.corner_radius_top_right
+	s.corner_radius_bottom_right = base.corner_radius_bottom_right
+	s.corner_radius_bottom_left = base.corner_radius_bottom_left
+	return s
+
+func make_pressed_style(base: StyleBoxFlat) -> StyleBoxFlat:
+	var s = StyleBoxFlat.new()
+	s.bg_color = base.bg_color.darkened(0.3)
+	s.border_color = base.border_color.darkened(0.3)
+	s.border_width_left = base.border_width_left
+	s.border_width_top = base.border_width_top
+	s.border_width_right = base.border_width_right
+	s.border_width_bottom = base.border_width_bottom
+	s.corner_radius_top_left = base.corner_radius_top_left
+	s.corner_radius_top_right = base.corner_radius_top_right
+	s.corner_radius_bottom_right = base.corner_radius_bottom_right
+	s.corner_radius_bottom_left = base.corner_radius_bottom_left
+	return s
+
+func get_tier_hover_style(tier: UpgradeTier) -> StyleBoxFlat:
+	return make_hover_style(get_tier_style(tier))
+
+func get_tier_pressed_style(tier: UpgradeTier) -> StyleBoxFlat:
+	return make_pressed_style(get_tier_style(tier))
 
 func calculate_tier_probability(current_wave: int, config: Dictionary) -> Array[float]:
 	var common_chance := 0.0

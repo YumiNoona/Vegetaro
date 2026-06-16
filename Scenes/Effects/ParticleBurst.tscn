@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dfa7bl2d6sdwh"]
+
+[ext_resource type="Script" uid="uid://dbyt6hy5u7wf7" path="res://Scripts/Effects/ParticleBurst.gd"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_onoxd"]
+emission_shape = 0
+emission_sphere_radius = 4.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+gravity = Vector3(0, 80, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 120.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+scale_min = 0.5
+scale_max = 1.5
+color = Color(1, 1, 1, 1)
+
+[node name="ParticleBurst" type="GPUParticles2D"]
+amount = 12
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_onoxd")
+visibility_rect = Rect2(-200, -200, 400, 400)
+script = ExtResource("1_dbyt6hy5u7wf7")

@@ -16,9 +16,9 @@ radius = 3.0
 height = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3pmx4"]
-radius = 33.1361
+radius = 39.012817
 
-[node name="PlayerGhostCry" instance=ExtResource("1_e161l")]
+[node name="PlayerGhostCry" unique_id=1080996549 instance=ExtResource("1_e161l")]
 collision_mask = 2
 script = ExtResource("2_rsjky")
 dash_duration = 0.5
@@ -26,7 +26,7 @@ dash_speed_multi = 2.0
 dash_cooldown = 1.5
 stats = ExtResource("3_oonac")
 
-[node name="Trail" type="Line2D" parent="Visuals" index="0" node_paths=PackedStringArray("player")]
+[node name="Trail" type="Line2D" parent="Visuals" index="0" unique_id=2067600986 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 top_level = true
 position = Vector2(0, -31)
@@ -48,97 +48,100 @@ z_index = 1
 position = Vector2(0, -31)
 shape = SubResource("CapsuleShape2D_rsjky")
 
-[node name="WeaponContainer" type="Node2D" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="2"]
+autoplay = &"Idle"
+
+[node name="WeaponContainer" type="Node2D" parent="." index="3" unique_id=1808527203]
 script = ExtResource("6_yq281")
 
-[node name="SlotOne" type="Node2D" parent="WeaponContainer" index="0"]
+[node name="SlotOne" type="Node2D" parent="WeaponContainer" index="0" unique_id=631360199]
 visible = false
 
-[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotOne" index="0"]
+[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotOne" index="0" unique_id=1287820264]
 position = Vector2(0, -15)
 
-[node name="SlotTwo" type="Node2D" parent="WeaponContainer" index="1"]
+[node name="SlotTwo" type="Node2D" parent="WeaponContainer" index="1" unique_id=824766217]
 visible = false
 
-[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotTwo" index="0"]
+[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotTwo" index="0" unique_id=2114988594]
 position = Vector2(40, 20)
 
-[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotTwo" index="1"]
+[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotTwo" index="1" unique_id=62565112]
 position = Vector2(-40, 20)
 
-[node name="SlotThree" type="Node2D" parent="WeaponContainer" index="2"]
+[node name="SlotThree" type="Node2D" parent="WeaponContainer" index="2" unique_id=2021904887]
 visible = false
 
-[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotThree" index="0"]
+[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotThree" index="0" unique_id=394196976]
 position = Vector2(40, 20)
 
-[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotThree" index="1"]
+[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotThree" index="1" unique_id=1687455348]
 position = Vector2(-40, 20)
 
-[node name="Marker2D3" type="Marker2D" parent="WeaponContainer/SlotThree" index="2"]
+[node name="Marker2D3" type="Marker2D" parent="WeaponContainer/SlotThree" index="2" unique_id=1959194358]
 position = Vector2(0, -115)
 
-[node name="SlotFour" type="Node2D" parent="WeaponContainer" index="3"]
+[node name="SlotFour" type="Node2D" parent="WeaponContainer" index="3" unique_id=1331340786]
 visible = false
 
-[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotFour" index="0"]
+[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotFour" index="0" unique_id=1699613538]
 position = Vector2(40, 20)
 
-[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotFour" index="1"]
+[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotFour" index="1" unique_id=427323068]
 position = Vector2(-40, 20)
 
-[node name="Marker2D3" type="Marker2D" parent="WeaponContainer/SlotFour" index="2"]
+[node name="Marker2D3" type="Marker2D" parent="WeaponContainer/SlotFour" index="2" unique_id=811022389]
 position = Vector2(40, -115)
 
-[node name="Marker2D4" type="Marker2D" parent="WeaponContainer/SlotFour" index="3"]
+[node name="Marker2D4" type="Marker2D" parent="WeaponContainer/SlotFour" index="3" unique_id=1807334544]
 position = Vector2(-40, -115)
 
-[node name="SlotFive" type="Node2D" parent="WeaponContainer" index="4"]
+[node name="SlotFive" type="Node2D" parent="WeaponContainer" index="4" unique_id=1878579850]
 visible = false
 
-[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotFive" index="0"]
+[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotFive" index="0" unique_id=167186672]
 position = Vector2(40, 20)
 
-[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotFive" index="1"]
+[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotFive" index="1" unique_id=794002358]
 position = Vector2(-40, 20)
 
-[node name="Marker2D3" type="Marker2D" parent="WeaponContainer/SlotFive" index="2"]
+[node name="Marker2D3" type="Marker2D" parent="WeaponContainer/SlotFive" index="2" unique_id=1521460768]
 position = Vector2(60, -40)
 
-[node name="Marker2D4" type="Marker2D" parent="WeaponContainer/SlotFive" index="3"]
+[node name="Marker2D4" type="Marker2D" parent="WeaponContainer/SlotFive" index="3" unique_id=232067343]
 position = Vector2(-60, -40)
 
-[node name="Marker2D5" type="Marker2D" parent="WeaponContainer/SlotFive" index="4"]
+[node name="Marker2D5" type="Marker2D" parent="WeaponContainer/SlotFive" index="4" unique_id=1639054756]
 position = Vector2(0, -115)
 
-[node name="SlotSix" type="Node2D" parent="WeaponContainer" index="5"]
+[node name="SlotSix" type="Node2D" parent="WeaponContainer" index="5" unique_id=540275332]
 visible = false
 
-[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotSix" index="0"]
+[node name="Marker2D" type="Marker2D" parent="WeaponContainer/SlotSix" index="0" unique_id=1411537052]
 position = Vector2(35, 20)
 
-[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotSix" index="1"]
+[node name="Marker2D2" type="Marker2D" parent="WeaponContainer/SlotSix" index="1" unique_id=422885673]
 position = Vector2(-35, 20)
 
-[node name="Marker2D3" type="Marker2D" parent="WeaponContainer/SlotSix" index="2"]
+[node name="Marker2D3" type="Marker2D" parent="WeaponContainer/SlotSix" index="2" unique_id=1706644630]
 position = Vector2(35, -115)
 
-[node name="Marker2D4" type="Marker2D" parent="WeaponContainer/SlotSix" index="3"]
+[node name="Marker2D4" type="Marker2D" parent="WeaponContainer/SlotSix" index="3" unique_id=245848349]
 position = Vector2(-35, -115)
 
-[node name="Marker2D5" type="Marker2D" parent="WeaponContainer/SlotSix" index="4"]
+[node name="Marker2D5" type="Marker2D" parent="WeaponContainer/SlotSix" index="4" unique_id=1736323897]
 position = Vector2(60, -45)
 
-[node name="Marker2D6" type="Marker2D" parent="WeaponContainer/SlotSix" index="5"]
+[node name="Marker2D6" type="Marker2D" parent="WeaponContainer/SlotSix" index="5" unique_id=1387699581]
 position = Vector2(-60, -45)
 
-[node name="DashTimer" type="Timer" parent="." index="4"]
+[node name="DashTimer" type="Timer" parent="." index="4" unique_id=2141240444]
 one_shot = true
 
-[node name="DashCooldownTimer" type="Timer" parent="." index="5"]
+[node name="DashCooldownTimer" type="Timer" parent="." index="5" unique_id=1027878468]
 one_shot = true
 
-[node name="TrailTimer" type="Timer" parent="." index="6"]
+[node name="TrailTimer" type="Timer" parent="." index="6" unique_id=1047092757]
 unique_name_in_owner = true
 one_shot = true
 
@@ -146,7 +149,7 @@ one_shot = true
 collision_layer = 8
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0" unique_id=1663208016]
 z_index = 2
 position = Vector2(0, -31)
 shape = SubResource("CircleShape2D_3pmx4")
@@ -154,7 +157,7 @@ shape = SubResource("CircleShape2D_3pmx4")
 [node name="HealthBar" parent="." index="9"]
 fill_color = Color(1, 0.290196, 0.454902, 1)
 
-[node name="HPRegenTimer" type="Timer" parent="." index="11"]
+[node name="HPRegenTimer" type="Timer" parent="." index="11" unique_id=1089509408]
 wait_time = 3.0
 autostart = true
 

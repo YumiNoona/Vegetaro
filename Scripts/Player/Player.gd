@@ -125,9 +125,18 @@ func _ready() -> void:
 	# Connect health component death signal (in case it's not connected in scene)
 	if health_component and not health_component.on_unit_died.is_connected(_on_health_component_on_unit_died):
 		health_component.on_unit_died.connect(_on_health_component_on_unit_died)
+
+	# Camera shake on taking damage
+	if health_component and not health_component.on_unit_hit.is_connected(_on_player_hit):
+		health_component.on_unit_hit.connect(_on_player_hit)
 	
 	# Find joystick if it exists (for mobile)
 	_find_joystick()
+
+func _on_player_hit(_hitbox) -> void:
+	var cam = get_viewport().get_camera_2d()
+	if cam and cam.has_method("shake"):
+		cam.shake(6.0, 0.2)
 
 func _find_joystick() -> void:
 	# Look for joystick in the scene tree

@@ -25,6 +25,9 @@
 [ext_resource type="Resource" uid="uid://bdt66rh56exfb" path="res://Data/Items/Range/Revolver/ItemRevolverOne.tres" id="17_fvasp"]
 [ext_resource type="Resource" uid="uid://vycqctj7pcyl" path="res://Data/Items/Range/ShotGun/ItemShotGunOne.tres" id="18_cyfpq"]
 [ext_resource type="Resource" uid="uid://dgxn7kslyttjm" path="res://Data/Items/Range/SMG/ItemSMGOne.tres" id="19_in18q"]
+[ext_resource type="Resource" path="res://Data/Characters/PlayerMedusa.tres" id="20_medusa"]
+[ext_resource type="Resource" path="res://Data/Characters/PlayerShinobu.tres" id="21_shinobu"]
+[ext_resource type="Resource" path="res://Data/Characters/PlayerDazai.tres" id="22_dazai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_re22b"]
 bg_color = Color(0.239216, 0.239216, 0.239216, 1)
@@ -47,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_re22b")
 script = ExtResource("1_h5j5x")
-players = Array[ExtResource("2_y4ow5")]([ExtResource("3_pjwp5"), ExtResource("4_5caa7"), ExtResource("5_stv2c"), ExtResource("6_q6k10"), ExtResource("7_0o6ww"), ExtResource("7_ghost"), ExtResource("7_ghostcry")])
+players = Array[ExtResource("2_y4ow5")]([ExtResource("3_pjwp5"), ExtResource("4_5caa7"), ExtResource("5_stv2c"), ExtResource("6_q6k10"), ExtResource("7_0o6ww"), ExtResource("7_ghost"), ExtResource("7_ghostcry"), ExtResource("20_medusa"), ExtResource("21_shinobu"), ExtResource("22_dazai")])
 start_weapons = Array[ExtResource("8_pjwp5")]([ExtResource("9_ronw2"), ExtResource("10_mj55l"), ExtResource("11_shy13"), ExtResource("12_h5w6q"), ExtResource("13_0xgur"), ExtResource("14_foybo"), ExtResource("15_yfuxt"), ExtResource("16_lsvp4"), ExtResource("17_fvasp"), ExtResource("18_cyfpq"), ExtResource("19_in18q")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2110070620]

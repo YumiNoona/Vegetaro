@@ -28,7 +28,9 @@ func _process(delta: float) -> void:
 
 func add_coins() -> void:
 	Global.coins += value
-	queue_free()
+	var tween = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", Vector2(2.0, 2.0), 0.15)
+	tween.tween_callback(queue_free)
 
 
 func set_collection_target(screen_pos: Vector2) -> void:

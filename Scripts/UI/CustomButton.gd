@@ -1,26 +1,10 @@
 extends Button
-class_name SelectionCard
-
-const COMMON_STYLE := preload("res://Scenes/UI/Styles/CommonStyle.tres")
 
 func _ready() -> void:
-	add_theme_stylebox_override("normal", COMMON_STYLE)
-	add_theme_stylebox_override("hover", Global.make_hover_style(COMMON_STYLE))
-	add_theme_stylebox_override("pressed", Global.make_pressed_style(COMMON_STYLE))
-
 	mouse_entered.connect(_on_hover)
 	mouse_exited.connect(_on_hover_end)
 	button_down.connect(_on_press)
 	button_up.connect(_on_release)
-
-func set_icon(texture : Texture2D) -> void:
-	icon = texture
-
-func _on_pressed() -> void:
-	SoundManager.play_sound(SoundManager.Sound.UI)
-
-func _on_mouse_entered() -> void:
-	SoundManager.play_sound(SoundManager.Sound.UI)
 
 func _on_hover() -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)

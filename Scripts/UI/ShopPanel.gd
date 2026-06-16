@@ -68,16 +68,56 @@ func _on_ad_rewarded(_currency_type: String, _amount: int, item: ItemBase) -> vo
 func _ready() -> void:
 	for child in passive_container.get_children() : child.queue_free()
 	for child in weapons_container.get_children() : child.queue_free()
+	_setup_button_hover(get_node("MarginContainer/Control/VBoxContainer/BTN_NewWave"))
+	_setup_button_hover(%BTN_Combine)
+	_setup_button_hover(get_node("MarginContainer/Control/VBoxContainer/BTN_Sell"))
+
+func _setup_button_hover(btn: Button) -> void:
+	if not btn:
+		return
+	var base = btn.get_theme_stylebox("normal")
+	if base and base is StyleBoxFlat:
+		btn.add_theme_stylebox_override("hover", Global.make_hover_style(base))
+		btn.add_theme_stylebox_override("pressed", Global.make_pressed_style(base))
+	btn.mouse_entered.connect(_on_btn_hover.bind(btn))
+	btn.mouse_exited.connect(_on_btn_hover_end.bind(btn))
+	btn.button_down.connect(_on_btn_press.bind(btn))
+	btn.button_up.connect(_on_btn_release.bind(btn))
+
+func _on_btn_hover(btn: Button) -> void:
+	if not is_instance_valid(btn): return
+	var tw = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tw.tween_property(btn, "scale", Vector2(1.08, 1.08), 0.25)
+
+func _on_btn_hover_end(btn: Button) -> void:
+	var tw = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tw.tween_property(btn, "scale", Vector2.ONE, 0.2)
+
+func _on_btn_press(btn: Button) -> void:
+	var tw = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tw.tween_property(btn, "scale", Vector2(0.92, 0.92), 0.1)
+
+func _on_btn_release(btn: Button) -> void:
+	var tw = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tw.tween_property(btn, "scale", Vector2(1.08, 1.08), 0.15)
+
+func _animate_shop_card_in(card: ShopCard, index: int) -> void:
+	var tw = create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tw.tween_interval(index * 0.08)
+	tw.tween_property(card, "scale", Vector2.ONE, 0.3)
+
 
 func load_shop(current_wave : int) -> void:
 	for child in items_container.get_children() : child.queue_free()
 	var config := Global.SHOP_PROBABILITY_CONFIG
 	var selected_items := Global.select_items_for_offer(shop_items, current_wave, config, Global.shop_pity_counters)
-	for shop_item : ItemBase in selected_items:
+	for i in selected_items.size():
 		var card_instance := SHOP_CARD_SCENE.instantiate() as ShopCard
 		card_instance.on_item_purchased.connect(_on_item_purchased)
 		items_container.add_child(card_instance)
-		card_instance.shop_item = shop_item
+		card_instance.shop_item = selected_items[i]
+		card_instance.scale = Vector2.ZERO
+		_animate_shop_card_in(card_instance, i)
  
 
 func create_item_card() -> ItemCard:

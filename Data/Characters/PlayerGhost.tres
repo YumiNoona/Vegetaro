@@ -13,7 +13,6 @@ damage = 7.0
 speed = 400
 luck = 15.0
 block_chance = 30.0
-hp_regen = 0.0
 life_steal = 10.0
 harvesting = 3.0
 metadata/_custom_type_script = "uid://4qpn834qds5r"
