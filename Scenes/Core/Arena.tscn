@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bk381kdecixgc"]
+[gd_scene load_steps=36 format=3 uid="uid://bk381kdecixgc"]
 
 [ext_resource type="Script" uid="uid://b6b7nvocyq31f" path="res://Scripts/Core/Arena.gd" id="1_dvot3"]
 [ext_resource type="Texture2D" uid="uid://b83g3djhjoqk4" path="res://Assets/Sprites/Black.png" id="2_3w0r8"]
@@ -27,6 +27,12 @@
 [ext_resource type="Resource" uid="uid://c0ekgelyq03g2" path="res://Data/Waves/WaveBossBomber.tres" id="19_7hkcj"]
 [ext_resource type="Resource" uid="uid://bjb2km31oo7b3" path="res://Data/Waves/WaveBossVampire.tres" id="20_j4wb0"]
 [ext_resource type="PackedScene" uid="uid://dmdysybjf81e" path="res://Scenes/UI/Selection/SelectionPanel.tscn" id="38_4xlcj"]
+[ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="21_stats"]
+[ext_resource type="Resource" uid="uid://p0fn2xjij2kx" path="res://Data/Characters/EnemyChaserSlow.tres" id="21_enemyslow"]
+[ext_resource type="Resource" uid="uid://bswoxk4omoix" path="res://Data/Characters/EnemyChaserMid.tres" id="21_enemymid"]
+[ext_resource type="Resource" uid="uid://b76i8m1waqqbr" path="res://Data/Characters/EnemyChaserFast.tres" id="21_enemyfast"]
+[ext_resource type="Resource" uid="uid://bn2kw4cefcei" path="res://Data/Characters/EnemyCharger.tres" id="21_charger"]
+[ext_resource type="Resource" uid="uid://dg33ebt03tm5h" path="res://Data/Characters/EnemyShooter.tres" id="21_shooter"]
 [ext_resource type="AudioStream" uid="uid://prc8bub0x4s1" path="res://Assets/Audio/Bg Music.mp3" id="38_pdycw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2tw1v"]
@@ -63,6 +69,7 @@ script = ExtResource("5_a7u2w")
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("6_ctavx")
 waves_data = Array[ExtResource("7_ynyjf")]([ExtResource("8_22bra"), ExtResource("10_6dwrc"), ExtResource("9_6dwrc"), ExtResource("8_acukt"), ExtResource("9_catn3"), ExtResource("12_kky24"), ExtResource("10_jntb4"), ExtResource("14_cqkdp"), ExtResource("13_3w0r8"), ExtResource("16_ptsow"), ExtResource("12_2qk2d"), ExtResource("18_syi04"), ExtResource("19_7hkcj"), ExtResource("20_j4wb0")])
+enemy_collection = Array[ExtResource("21_stats")]([ExtResource("21_enemyslow"), ExtResource("21_enemymid"), ExtResource("21_enemyfast"), ExtResource("21_charger"), ExtResource("21_shooter")])
 
 [node name="SpawnTimer" type="Timer" parent="Spawner"]
 one_shot = true

@@ -30,6 +30,8 @@ ranged_attack_cooldown = 2.0
 area_denial_zone_scene = ExtResource("9_zone")
 
 [node name="ShootingBehavior" type="Node2D" parent="." index="11" node_paths=PackedStringArray("enemy", "fire_pos")]
+min_angle = -15
+max_angle = 15
 script = ExtResource("7_phase")
 enemy = NodePath("..")
 fire_pos = NodePath("../Visuals/FirePos")

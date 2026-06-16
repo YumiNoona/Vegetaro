@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://bq4j8dud5xcx2"]
+
+[ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="1_ae3s2"]
+[ext_resource type="Texture2D" uid="uid://cmpx8gsh6bok2" path="res://Assets/Sprites/Players/Player_6.png" id="1_k1l5g"]
+
+[resource]
+script = ExtResource("1_ae3s2")
+name = "Ghost"
+description = "Death was just the beginning. Now I haunt the living."
+icon = ExtResource("1_k1l5g")
+health = 10.0
+damage = 7.0
+speed = 400
+luck = 15.0
+block_chance = 30.0
+hp_regen = 0.0
+life_steal = 10.0
+harvesting = 3.0
+metadata/_custom_type_script = "uid://4qpn834qds5r"

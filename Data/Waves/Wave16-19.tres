@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WaveData" load_steps=11 format=3 uid="uid://bm1ft44t5kf0a"]
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://bm1ft44t5kf0a"]
 
 [ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="1_ql6hc"]
 [ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="2_im6dh"]
@@ -32,7 +32,7 @@ script = ExtResource("1_ql6hc")
 units = Array[ExtResource("2_im6dh")]([SubResource("Resource_pwt1f"), SubResource("Resource_vu7hd"), SubResource("Resource_fast"), SubResource("Resource_charger")])
 from = 16
 to = 19
-wave_time = 22.0
-fixed_spawn_time = 0.5
-min_spawn_time = 0.3
-max_spawn_time = 0.7
+wave_time = 25.0
+fixed_spawn_time = 0
+min_spawn_time = 0.7
+max_spawn_time = 1.3

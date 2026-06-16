@@ -26,6 +26,8 @@ boss = NodePath("..")
 life_steal_percent = 1.0
 
 [node name="ShootingBehavior" type="Node2D" parent="." index="11" node_paths=PackedStringArray("enemy", "fire_pos")]
+min_angle = -15
+max_angle = 15
 script = ExtResource("7_vampire")
 enemy = NodePath("..")
 fire_pos = NodePath("../Visuals/FirePos")

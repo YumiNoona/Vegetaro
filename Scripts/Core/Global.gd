@@ -73,6 +73,8 @@ var available_players: Dictionary[String, PackedScene] = {
 	"Brawler":preload("res://Scenes/Player/PlayerBrawler.tscn"),
 	"Bunny":preload("res://Scenes/Player/PlayerBunny.tscn"),
 	"Crazy":preload("res://Scenes/Player/PlayerCrazy.tscn"),
+	"Ghost":preload("res://Scenes/Player/PlayerGhost.tscn"),
+	"GhostCry":preload("res://Scenes/Player/PlayerGhostCry.tscn"),
 	"Knight":preload("res://Scenes/Player/PlayerKnight.tscn"),
 	"WellRounded":preload("res://Scenes/Player/PlayerWellRounded.tscn")
 } 

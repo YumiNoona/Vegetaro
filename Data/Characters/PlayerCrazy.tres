@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://cgt03gutfsy2p"]
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://cgt03gutfsy2p"]
 
 [ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="1_13845"]
 [ext_resource type="Texture2D" uid="uid://dq63ocnu3lset" path="res://Assets/Sprites/Players/Player_3.png" id="1_q6qm2"]
@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_13845")
 name = "Crazy"
+description = "The voices in my head told me I was going to die. I told them: good."
 icon = ExtResource("1_q6qm2")
 health = 10.0
 health_increased_Per_wave = 0.1

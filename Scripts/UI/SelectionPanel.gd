@@ -12,6 +12,7 @@ signal  on_selection_completed
 @onready var player_icon: TextureRect = %PlayerIcon
 @onready var player_name: Label = %PlayerName
 @onready var player_title: Label = %PlayerTitle
+@onready var player_bio: Label = %PlayerBio
 @onready var player_description: RichTextLabel = %PlayerDescription
 
 func _ready() -> void:
@@ -49,6 +50,7 @@ func show_player_info(value: bool) -> void:
 	player_icon.visible = value
 	player_name.visible = value
 	player_title.visible = value
+	player_bio.visible = value
 	player_description.visible = value
 
 
@@ -58,7 +60,8 @@ func _on_player_selected(player : UnitStats) -> void:
 	
 	player_icon.texture = player.icon
 	player_name.text = player.name
-	player_description.text = "[code]Health: [color=green]%s[/color]\nDamage:[color=green]%s[/color] \nSpeed: [color=green]%s[/color]\nLuck: [color=green]%s[/color]\nBlock Chance: [color=green]%s%%[/color] [/code] " % [player.health, player.damage, player.speed, player.luck, player.block_chance]
+	player_bio.text = player.description
+	player_description.text = "[code]Health: [color=green]%s[/color]\nDamage: [color=green]%s[/color]\nSpeed: [color=green]%s[/color]\nLuck: [color=green]%s[/color]\nBlock Chance: [color=green]%s%%[/color][/code]" % [player.health, player.damage, player.speed, player.luck, player.block_chance]
 	
 	
 func _on_weapon_selected(weapon : ItemWeapon) -> void:

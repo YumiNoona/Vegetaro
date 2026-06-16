@@ -33,6 +33,8 @@ regen_cooldown = 10.0
 max_regens = 1
 
 [node name="ShootingBehavior" type="Node2D" parent="." index="11" node_paths=PackedStringArray("enemy", "fire_pos")]
+min_angle = -15
+max_angle = 15
 script = ExtResource("5_grqr3")
 enemy = NodePath("..")
 fire_pos = NodePath("../Visuals/FirePos")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WaveData" load_steps=9 format=3 uid="uid://bug8apa46ww63"]
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://bug8apa46ww63"]
 
 [ext_resource type="Script" uid="uid://dq7rnby5u5823" path="res://Scripts/Waves/WaveData.gd" id="1_c6i6i"]
 [ext_resource type="Script" uid="uid://durhehh0qa2ju" path="res://Scripts/Waves/WaveUnitData.gd" id="2_5fq3c"]
@@ -31,7 +31,7 @@ from = 85
 to = 100
 wave_time = 30.0
 spawn_type = 0
-fixed_spawn_time = 0.5
-min_spawn_time = 0.3
-max_spawn_time = 1.5
+fixed_spawn_time = 0
+min_spawn_time = 0.2
+max_spawn_time = 0.6
 metadata/_custom_type_script = "uid://dq7rnby5u5823"

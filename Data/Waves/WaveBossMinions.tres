@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WaveData" load_steps=9 format=3 uid="uid://dbvf6cpwqtcbb"]
+[gd_resource type="Resource" script_class="WaveData" format=3 uid="uid://dbvf6cpwqtcbb"]
 
 [ext_resource type="Resource" uid="uid://bjmvuyu44rbvo" path="res://Data/Bosses/Minions/BossMinions.tres" id="1_ar3bu"]
 [ext_resource type="PackedScene" uid="uid://cglby31laeekf" path="res://Data/Bosses/Minions/BossMinions.tscn" id="2_8oul2"]

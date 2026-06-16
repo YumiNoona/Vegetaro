@@ -62,7 +62,7 @@ func _on_knockback_timer_timeout() -> void:
 
 func _on_hurtbox_component_on_damaged(hitbox: HitboxComponent) -> void:
 	super._on_hurtbox_component_on_damaged(hitbox)
-	if hitbox.knockback_power > 0 and hitbox.source:
+	if hitbox.knockback_power > 0 and is_instance_valid(hitbox.source):
 		var dir := hitbox.source.global_position.direction_to(global_position)
 		apply_knockback(dir, hitbox.knockback_power)
 

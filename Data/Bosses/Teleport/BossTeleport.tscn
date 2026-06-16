@@ -27,6 +27,8 @@ teleport_cooldown = 2.0
 teleport_distance = 600.0
 
 [node name="ShootingBehavior" type="Node2D" parent="." index="11" node_paths=PackedStringArray("enemy", "fire_pos")]
+min_angle = -15
+max_angle = 15
 script = ExtResource("5_mtg2t")
 enemy = NodePath("..")
 fire_pos = NodePath("../Visuals/FirePos")

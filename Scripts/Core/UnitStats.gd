@@ -7,6 +7,7 @@ enum UnitType {
 }
 
 @export var name: String
+@export var description: String = ""
 @export var type: UnitType
 @export var icon: Texture2D
 @export var health := 1.0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitStats" load_steps=3 format=3 uid="uid://chtm3ouaan4dm"]
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://chtm3ouaan4dm"]
 
 [ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="1_c4qud"]
 [ext_resource type="Texture2D" uid="uid://dpxw8tsbgrfse" path="res://Assets/Sprites/Players/Player_2.png" id="1_u1hpr"]
@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_c4qud")
 name = "Brawler"
+description = "They took everything from me. Now there's nothing left but my fists."
 icon = ExtResource("1_u1hpr")
 health = 30.0
 damage = 5.0
