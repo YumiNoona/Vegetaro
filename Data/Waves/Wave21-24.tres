@@ -7,16 +7,21 @@
 [ext_resource type="PackedScene" uid="uid://cf26h38tap18w" path="res://Scenes/Enemy/EnemyChaserFast.tscn" id="5_fast"]
 [ext_resource type="PackedScene" uid="uid://bbgufv1ucxco3" path="res://Scenes/Enemy/EnemyCharger.tscn" id="6_charger"]
 [ext_resource type="PackedScene" uid="uid://dtuh1so08s3gq" path="res://Scenes/Enemy/EnemyShooter.tscn" id="7_shooter"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemy/EnemySplitter.tscn" id="8_splitter"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemy/EnemyShielded.tscn" id="9_shielded"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemy/EnemyLeaper.tscn" id="10_leaper"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemy/EnemySniper.tscn" id="11_sniper"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemy/EnemySwarmSpawner.tscn" id="12_swarm"]
 
 [sub_resource type="Resource" id="Resource_slow"]
 script = ExtResource("2_cpyax")
 unit_scene = ExtResource("3_slow")
-weight = 3
+weight = 2
 
 [sub_resource type="Resource" id="Resource_mid"]
 script = ExtResource("2_cpyax")
 unit_scene = ExtResource("4_mid")
-weight = 3
+weight = 2
 
 [sub_resource type="Resource" id="Resource_fast"]
 script = ExtResource("2_cpyax")
@@ -33,9 +38,34 @@ script = ExtResource("2_cpyax")
 unit_scene = ExtResource("7_shooter")
 weight = 2
 
+[sub_resource type="Resource" id="Resource_splitter"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("8_splitter")
+weight = 2
+
+[sub_resource type="Resource" id="Resource_shielded2"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("9_shielded")
+weight = 2
+
+[sub_resource type="Resource" id="Resource_leaper2"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("10_leaper")
+weight = 2
+
+[sub_resource type="Resource" id="Resource_sniper"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("11_sniper")
+weight = 2
+
+[sub_resource type="Resource" id="Resource_swarm"]
+script = ExtResource("2_cpyax")
+unit_scene = ExtResource("12_swarm")
+weight = 1
+
 [resource]
 script = ExtResource("1_nrtho")
-units = Array[ExtResource("2_cpyax")]([SubResource("Resource_slow"), SubResource("Resource_mid"), SubResource("Resource_fast"), SubResource("Resource_charger"), SubResource("Resource_shooter")])
+units = Array[ExtResource("2_cpyax")]([SubResource("Resource_slow"), SubResource("Resource_mid"), SubResource("Resource_fast"), SubResource("Resource_charger"), SubResource("Resource_shooter"), SubResource("Resource_splitter"), SubResource("Resource_shielded2"), SubResource("Resource_leaper2"), SubResource("Resource_sniper"), SubResource("Resource_swarm")])
 from = 21
 to = 24
 wave_time = 26.0

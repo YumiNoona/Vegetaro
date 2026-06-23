@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1_c05pv"]
+[ext_resource type="Texture2D" uid="uid://bm81l25ihnf8q" path="res://Assets/Sprites/Enemies/Enemy_9.png" id="2_0ydb6"]
+[ext_resource type="Resource" path="res://Data/Characters/EnemySwarmSpawner.tres" id="3_203qe"]
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="4_swarm"]
+[ext_resource type="Script" path="res://Scripts/Enemy/SwarmBehavior.gd" id="5_swarm"]
+
+[node name="EnemySwarmSpawner" instance=ExtResource("1_c05pv")]
+stats = ExtResource("3_203qe")
+
+[node name="Sprite" parent="Visuals" index="1"]
+texture = ExtResource("2_0ydb6")
+
+[node name="SwarmBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_swarm")
+enemy = NodePath("..")
+spawn_scene = ExtResource("4_swarm")
+spawn_interval = 5.0
+spawn_count = 2

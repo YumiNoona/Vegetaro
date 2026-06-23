@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi0atggc8ykxd"]
+
+[ext_resource type="PackedScene" uid="uid://17k31q687y6a" path="res://Scenes/Weapons/Projectile/ProjectilePistol.tscn" id="1_qi2n0"]
+[ext_resource type="Texture2D" uid="uid://nkbo2ms61vi3" path="res://Assets/Sprites/Projectiles/Projectile_DemonLock.png" id="2_ktbog"]
+[ext_resource type="Script" uid="uid://tkttt82c2b1n" path="res://Data/Bosses/Demon/ProjectileHoming.gd" id="3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktbog"]
+radius = 16.0
+
+[node name="ProjectileDemonLock" instance=ExtResource("1_qi2n0")]
+script = ExtResource("3")
+turn_speed = 2.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ktbog")
+
+[node name="HitboxComponent" parent="." index="1"]
+collision_layer = 16
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CircleShape2D_ktbog")

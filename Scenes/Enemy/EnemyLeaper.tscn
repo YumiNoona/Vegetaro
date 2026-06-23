@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://bbgufv1ucxco3" path="res://Scenes/Enemy/EnemyCharger.tscn" id="1_0w8qd"]
+[ext_resource type="Texture2D" uid="uid://du35ulsfm8eop" path="res://Assets/Sprites/Enemies/Enemy_7.png" id="2_ernld"]
+[ext_resource type="Resource" path="res://Data/Characters/EnemyLeaper.tres" id="3_203qe"]
+
+[node name="EnemyLeaper" instance=ExtResource("1_0w8qd")]
+stats = ExtResource("3_203qe")
+
+[node name="Sprite" parent="Visuals" index="1"]
+texture = ExtResource("2_ernld")
+
+[node name="ChargerBehavior" parent="." index="10"]
+prep_time = 0.5
+cooldown = 1.5
+stop_distance = 60

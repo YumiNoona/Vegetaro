@@ -16,7 +16,7 @@ func _ready() -> void:
 	current_cooldown = cooldown
 
 func _process(delta: float) -> void:
-	if enemy == null:
+	if Global.game_paused or enemy == null:
 		return
 
 	if is_charging:

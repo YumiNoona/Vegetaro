@@ -100,16 +100,8 @@ func _on_boss_died() -> void:
 	boss_defeated.emit()
 
 func _process(delta: float) -> void:
-	# Debug movement
-	if Global.game_paused: return
-	if not can_move: return
-	if not can_move_toward_player(): return
+	super._process(delta)
 
-	var move_vec = (get_move_direction() + knockback_dir * knockback_power) * stats.speed * delta
-	position += move_vec
-	update_rotation()
-
-	# Shader update
 	if sprite and sprite.material and sprite.material is ShaderMaterial:
 		second_phase_timer += delta
 		sprite.material.set_shader_parameter("time", second_phase_timer)

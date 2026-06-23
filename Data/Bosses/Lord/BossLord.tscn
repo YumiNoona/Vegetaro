@@ -1,0 +1,36 @@
+[gd_scene load_steps=12 format=3 uid="uid://b71p87e70holn"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2"]
+[ext_resource type="Resource" uid="uid://p0fn2xjij2kx" path="res://Data/Characters/EnemyChaserSlow.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://brkvpxcgftbcq" path="res://Assets/Sprites/Enemies/BossLord.png" id="4"]
+[ext_resource type="Script" path="res://Data/Bosses/Lord/LordBehavior.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://dud1cw0pcs7tv" path="res://Data/Bosses/Lord/ProjectileLord.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://b3m3sli6owmvd" path="res://Data/Bosses/Lord/ProjectileLordRain.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://bc5b58i2q0svb" path="res://Data/Bosses/Lord/ProjectileLordSword.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://cjncu5xibhjr0" path="res://Data/Bosses/Lord/ProjectileLordAura.tscn" id="9"]
+
+[node name="BossLord" instance=ExtResource("1")]
+position = Vector2(1, 0)
+script = ExtResource("2")
+stats = ExtResource("3")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(0.6, 0.2, 0.8, 1)
+texture = ExtResource("4")
+
+[node name="LordBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5")
+boss = NodePath("..")
+lord_scene = ExtResource("6")
+rain_scene = ExtResource("7")
+sword_scene = ExtResource("8")
+aura_scene = ExtResource("9")
+lord_cooldown = 2.0
+rain_cooldown = 4.0
+rain_count = 8
+rain_radius = 300.0
+projectile_speed = 1000
+sword_speed = 600
+aura_cooldown = 6.0
+aura_ring_count = 12

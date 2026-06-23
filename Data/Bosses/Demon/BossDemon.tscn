@@ -1,0 +1,31 @@
+[gd_scene load_steps=10 format=3 uid="uid://ct83b4rk31exg"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2"]
+[ext_resource type="Resource" uid="uid://p0fn2xjij2kx" path="res://Data/Characters/EnemyChaserSlow.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://b4itl7hmkbeb6" path="res://Assets/Sprites/Enemies/BossDemon.png" id="4"]
+[ext_resource type="Script" path="res://Data/Bosses/Demon/DemonBehavior.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://bob8r7t28ob2" path="res://Data/Bosses/Demon/ProjectileDemon.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://bi0atggc8ykxd" path="res://Data/Bosses/Demon/ProjectileDemonLock.tscn" id="7"]
+
+[node name="BossDemon" instance=ExtResource("1")]
+position = Vector2(1, 0)
+script = ExtResource("2")
+stats = ExtResource("3")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(0.8, 0.1, 0.1, 1)
+texture = ExtResource("4")
+
+[node name="DemonBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5")
+boss = NodePath("..")
+normal_scene = ExtResource("6")
+lock_scene = ExtResource("7")
+normal_count = 3
+normal_angle = 20.0
+normal_cooldown = 2.5
+lock_count = 2
+lock_cooldown = 3.0
+projectile_speed = 900
+lock_speed = 400

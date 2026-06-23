@@ -28,6 +28,12 @@ var current_boss: Node = null
 @export var boss_bomber_config: Resource = preload("res://Data/Bosses/Bomber/BossBomber.tres")
 @export var boss_phase_scene: PackedScene = preload("res://Data/Bosses/Phase/BossPhase.tscn")
 @export var boss_phase_config: Resource = preload("res://Data/Bosses/Phase/BossPhase.tres")
+@export var boss_golem_scene: PackedScene = preload("res://Data/Bosses/Golem/BossGolem.tscn")
+@export var boss_golem_config: Resource = preload("res://Data/Bosses/Golem/BossGolem.tres")
+@export var boss_demon_scene: PackedScene = preload("res://Data/Bosses/Demon/BossDemon.tscn")
+@export var boss_demon_config: Resource = preload("res://Data/Bosses/Demon/BossDemon.tres")
+@export var boss_lord_scene: PackedScene = preload("res://Data/Bosses/Lord/BossLord.tscn")
+@export var boss_lord_config: Resource = preload("res://Data/Bosses/Lord/BossLord.tres")
 
 # Enemy scenes for dynamic wave generation
 @export var enemy_chaser_slow_scene: PackedScene = preload("res://Scenes/Enemy/EnemyChaserSlow.tscn")
@@ -62,29 +68,32 @@ func get_boss_scene_and_config(wave: int) -> Dictionary:
 		{ "scene": boss_tank_scene, "config": boss_tank_config, "name": "The Fortress" },
 		{ "scene": boss_vampire_scene, "config": boss_vampire_config, "name": "The Bloodsucker" },
 		{ "scene": boss_bomber_scene, "config": boss_bomber_config, "name": "The Demolisher" },
-		{ "scene": boss_phase_scene, "config": boss_phase_config, "name": "The Shapeshifter" }
+		{ "scene": boss_phase_scene, "config": boss_phase_config, "name": "The Shapeshifter" },
+		{ "scene": boss_golem_scene, "config": boss_golem_config, "name": "The Golem" },
+		{ "scene": boss_demon_scene, "config": boss_demon_config, "name": "The Demon" },
+		{ "scene": boss_lord_scene, "config": boss_lord_config, "name": "The Dark Lord" }
 	]
 	
-	# Before wave 40, use fixed boss order
-	if wave < 40:
+	# Before wave 60, use fixed boss order (every 5th wave, 11 bosses = wave 5-55)
+	if wave < 60:
 		@warning_ignore("integer_division")
 		var boss_index = (int(floor(wave / 5.0)) - 1) % boss_scenes.size()
 		return boss_scenes[boss_index]
 	else:
-		# After wave 40, select a random boss
+		# After wave 55, select a random boss
 		var random_index = randi() % boss_scenes.size()
 		return boss_scenes[random_index]
 
 func calculate_boss_scale(wave: int) -> float:
-	# Base scale increases every 10 waves after 40
-	var scale_increase = max(0, (wave - 40) / 10.0) * 0.2
+	# Base scale increases every 10 waves after 55
+	var scale_increase = max(0, (wave - 55) / 10.0) * 0.2
 	# Add some random variation
 	scale_increase += randf_range(-0.1, 0.1)
 	return 1.0 + scale_increase
 
 func calculate_boss_stats_scale(wave: int) -> float:
 	# Stats scale faster than size
-	var boss_scale = 1.0 + (wave - 40) * 0.1  # 10% increase per wave after 40
+	var boss_scale = 1.0 + (wave - 55) * 0.1  # 10% increase per wave after 55
 	# Add some random variation
 	boss_scale *= randf_range(0.9, 1.1)
 	return max(1.0, boss_scale)
@@ -106,8 +115,8 @@ func generate_wave_data() -> WaveData:
 		wave_data.boss_scene = boss_data.scene
 		wave_data.boss_config = boss_data.config.duplicate()  # Create a copy to modify
 		
-		# Scale boss stats for waves after 40
-		if wave_index >= 40:
+		# Scale boss stats for waves after 55
+		if wave_index >= 55:
 			var scale_factor = calculate_boss_stats_scale(wave_index)
 			var size_scale = calculate_boss_scale(wave_index)
 			
@@ -338,8 +347,6 @@ func _on_spawn_timer_timeout() -> void:
 	if not is_instance_valid(Global.player):
 		spawn_timer.stop()
 		return
-
-	spawn_enemy()
 
 	set_spawn_timer()
 

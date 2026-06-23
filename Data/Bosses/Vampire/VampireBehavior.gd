@@ -25,8 +25,17 @@ func _setup_damage_tracking():
 		if not player_health.on_unit_hit.is_connected(_on_player_hit):
 			player_health.on_unit_hit.connect(_on_player_hit)
 
+func _is_hit_from_boss(hitbox: HitboxComponent) -> bool:
+	if not hitbox:
+		return false
+	if hitbox.source == boss:
+		return true
+	# Check if source is a child of the boss or the boss itself
+	var src = hitbox.source
+	return is_instance_valid(src) and (src == boss or src.get_parent() == boss or src.owner == boss)
+
 func _on_player_hit(hitbox: HitboxComponent):
-	if hitbox and hitbox.source == boss:
+	if _is_hit_from_boss(hitbox):
 		# Calculate base damage based on boss stats
 		var base_damage = boss.stats.damage * damage_multiplier
 		

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3]
+
+[ext_resource type="Texture2D" uid="uid://emsi6ifyt0vf" path="res://Assets/Sprites/Enemies/Enemy_5.png" id="1_wenok"]
+[ext_resource type="Script" uid="uid://4qpn834qds5r" path="res://Scripts/Core/UnitStats.gd" id="2_ftmqn"]
+
+[resource]
+script = ExtResource("2_ftmqn")
+name = "Splitter"
+type = 1
+icon = ExtResource("1_wenok")
+health = 6.0
+health_increased_Per_wave = 1.0
+damage = 1.0
+damage_increased_Per_wave = 0.3
+speed = 130
+luck = 0.0
+block_chance = 0.0
+gold_drop = 1.0

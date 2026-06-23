@@ -2,6 +2,8 @@ extends Unit
 class_name Enemy
 
 @export var flock_push := 20.0
+@export var split_on_death := false
+@export var split_scene: PackedScene
 
 @onready var vision_area: Area2D = $VisionArea
 @onready var knockback_timer: Timer = $KnockbackTimer
@@ -74,4 +76,11 @@ func destroy_enemy() -> void:
 	if anim_player and anim_player.has_animation("Death"):
 		anim_player.play("Death")
 		await anim_player.animation_finished
+
+	if split_on_death and split_scene and is_instance_valid(get_parent()):
+		for i in 2:
+			var child := split_scene.instantiate()
+			get_parent().add_child(child)
+			child.global_position = global_position + Vector2(randf_range(-30, 30), randf_range(-30, 30))
+
 	queue_free()

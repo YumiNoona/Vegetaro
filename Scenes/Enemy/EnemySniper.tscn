@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://dtuh1so08s3gq" path="res://Scenes/Enemy/EnemyShooter.tscn" id="1_g2kx8"]
+[ext_resource type="Texture2D" uid="uid://cyubr8q2d46jd" path="res://Assets/Sprites/Enemies/Enemy_8.png" id="2_nxidk"]
+[ext_resource type="Resource" path="res://Data/Characters/EnemySniper.tres" id="3_203qe"]
+[ext_resource type="PackedScene" uid="uid://devlq4gex40c" path="res://Scenes/Weapons/Projectile/ProjectileEnemy.tscn" id="5_fsu1u"]
+
+[node name="EnemySniper" instance=ExtResource("1_g2kx8")]
+stats = ExtResource("3_203qe")
+
+[node name="Sprite" parent="Visuals" index="1"]
+texture = ExtResource("2_nxidk")
+
+[node name="ShootingBehavior" parent="." index="10"]
+cooldown = 4.0
+projectile_count = 1
+min_angle = 0.0
+max_angle = 0.0
+projectile_speed = 2000.0
+shoot_freeze_duration = 0.3

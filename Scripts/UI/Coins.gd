@@ -3,6 +3,8 @@ class_name Coins
 
 @export var move_speed := 1000.0
 @export var collect_distance := 15.0
+@export var magnetism_radius := 120.0
+@export var magnetism_speed := 600.0
 
 var value := 1
 var target_screen_pos := Vector2.INF
@@ -11,6 +13,12 @@ var has_target := false
 var collected := false
 
 func _process(delta: float) -> void:
+	if not collected and is_instance_valid(Global.player):
+		var dist := global_position.distance_to(Global.player.global_position)
+		if dist < magnetism_radius:
+			var pull_strength := magnetism_speed * (1.0 - dist / magnetism_radius)
+			global_position = global_position.move_toward(Global.player.global_position, pull_strength * delta)
+
 	if collected and target_screen_pos == Vector2.INF:
 		if is_instance_valid(Global.player):
 			target_pos = Global.player.global_position

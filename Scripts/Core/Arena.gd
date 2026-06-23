@@ -16,10 +16,12 @@ class_name Arena
 @onready var selection_panel = %SelectionPanel
 @onready var game_over_panel = %GameOverPanel
 @onready var bg_player: AudioStreamPlayer = $BGPlayer
+var boss_vignette: ColorRect
 
 
 var gold_list: Array[Coins]
 var game_started := false  # Track if game has actually started (player was created)
+var vignette_time := 0.0
 
 
 func _process(_delta: float) -> void:
@@ -36,6 +38,19 @@ func _process(_delta: float) -> void:
 	wave_index_label.text = spawner.get_wave_text()
 	wave_time_label.text = spawner.get_wave_timer_text()
 	_update_joystick_visibility()
+	_update_boss_vignette(_delta)
+
+func _update_boss_vignette(delta: float) -> void:
+	if not boss_vignette: return
+	var is_boss := spawner.current_wave_data and spawner.current_wave_data.is_boss_wave
+	if is_boss:
+		vignette_time += delta
+		var pulse := 0.5 + 0.5 * sin(vignette_time * 3.0)
+		boss_vignette.modulate = Color(1, 1, 1, pulse)
+		boss_vignette.show()
+	else:
+		vignette_time = 0.0
+		boss_vignette.hide()
 
 
 
@@ -47,6 +62,31 @@ func _ready() -> void:
 	Global.on_create_heal_text.connect(on_create_heal_text)
 	Global.on_enemy_died.connect(_on_enemy_died)
 	Global.on_player_died.connect(_on_player_died)
+
+	if bg_player:
+		bg_player.bus = "Music"
+		if not Global.music_enabled:
+			bg_player.stop()
+		elif not bg_player.playing:
+			bg_player.play()
+
+	if game_over_panel:
+		game_over_panel.visible = false
+
+	_update_joystick_visibility()
+	_setup_boss_vignette()
+
+func _setup_boss_vignette():
+	boss_vignette = ColorRect.new()
+	boss_vignette.name = "BossVignette"
+	boss_vignette.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	boss_vignette.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var shader := Shader.new()
+	shader.code = "shader_type canvas_item; void fragment(){COLOR=vec4(smoothstep(0.3,0.65,distance(UV,vec2(0.5)))*vec3(0.7,0,0),smoothstep(0.3,0.65,distance(UV,vec2(0.5)))*0.45);}"
+	boss_vignette.material = ShaderMaterial.new()
+	boss_vignette.material.shader = shader
+	boss_vignette.hide()
+	$GameUI.add_child(boss_vignette)
 
 func _exit_tree() -> void:
 	if Global.on_create_block_text.is_connected(_on_create_block_text):
@@ -61,21 +101,6 @@ func _exit_tree() -> void:
 		Global.on_enemy_died.disconnect(_on_enemy_died)
 	if Global.on_player_died.is_connected(_on_player_died):
 		Global.on_player_died.disconnect(_on_player_died)
-	
-	# Control background music based on settings
-	if bg_player:
-		bg_player.bus = "Music"
-		if not Global.music_enabled:
-			bg_player.stop()
-		elif not bg_player.playing:
-			bg_player.play()
-	
-	# Initially hide joystick (will show when gameplay starts)
-	_update_joystick_visibility()
-	
-	# Initially hide game over panel
-	if game_over_panel:
-		game_over_panel.visible = false
 
 func _update_joystick_visibility() -> void:
 	if not joystick:

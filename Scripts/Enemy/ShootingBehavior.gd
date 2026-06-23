@@ -10,6 +10,7 @@ class_name ShootingBehavior
 @export var projectile_scene: PackedScene
 @export var projectile_speed := 1000.0
 @export_range(0.1, 10.0, 0.1) var damage_multiplier: float = 1.0  # Direct damage value for projectiles (not a multiplier)
+@export var shoot_freeze_duration := 0.5
 
 @export var even_spread := true
 @export var random_spread := false
@@ -71,6 +72,6 @@ func shoot() -> void:
 		var final_damage = damage_multiplier
 		projectile.set_projectile(velocity, final_damage, false, 0, enemy)
 
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(shoot_freeze_duration).timeout
 	if is_instance_valid(enemy):
 		enemy.can_move = true

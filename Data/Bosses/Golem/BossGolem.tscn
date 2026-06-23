@@ -1,0 +1,30 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnlhb5o1fc7vt"]
+
+[ext_resource type="PackedScene" uid="uid://cwf5c16saxiy" path="res://Scenes/Enemy/EnemyChaserSlow.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cyfx1rn0indtu" path="res://Data/Bosses/Boss.gd" id="2"]
+[ext_resource type="Resource" uid="uid://p0fn2xjij2kx" path="res://Data/Characters/EnemyChaserSlow.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://baehn4mjs2au6" path="res://Assets/Sprites/Enemies/BossGolem.png" id="4"]
+[ext_resource type="Script" path="res://Data/Bosses/Golem/GolemBehavior.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://f5to26p01dmk" path="res://Data/Bosses/Golem/ProjectileGolem.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://ee0jj6gg5rjr" path="res://Data/Bosses/Golem/ProjectileGolemShower.tscn" id="7"]
+
+[node name="BossGolem" instance=ExtResource("1")]
+position = Vector2(1, 0)
+script = ExtResource("2")
+stats = ExtResource("3")
+
+[node name="Sprite" parent="Visuals" index="1"]
+modulate = Color(0.5, 0.4, 0.2, 1)
+texture = ExtResource("4")
+
+[node name="GolemBehavior" type="Node2D" parent="." index="10" node_paths=PackedStringArray("boss")]
+script = ExtResource("5")
+boss = NodePath("..")
+shower_scene = ExtResource("7")
+golem_scene = ExtResource("6")
+shower_count = 5
+shower_angle = 30.0
+shower_cooldown = 3.0
+projectile_speed = 800
+phase2_shower_count = 7
+phase2_cooldown = 2.0

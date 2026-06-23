@@ -206,8 +206,8 @@ func calculate_tier_probability(current_wave: int, config: Dictionary) -> Array[
 	
 	# Player luck increases the chance of finding higher tiers.
 	# Example: 10 luck = 10% chance = 1.1 multi
-	#var luck_factor := 1.0 + (Global.player.stats.luck / 100.0)
-	var luck_factor := 1.0 + (1 / 100.0)
+	var luck_value := Global.player.stats.luck if is_instance_valid(Global.player) else 1.0
+	var luck_factor := 1.0 + (luck_value / 100.0)
 	rare_chance *= luck_factor
 	epic_chance *= luck_factor
 	legendary_chance *= luck_factor
